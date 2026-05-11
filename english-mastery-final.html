@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Mastery — CEFR Complete</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c0e;--s1:#141416;--s2:#1c1c1f;--s3:#252528;--b1:rgba(255,255,255,.06);--b2:rgba(255,255,255,.11);--b3:rgba(255,255,255,.2);--tx:#edeae3;--mu:#6e6b65;--mu2:#9a968f;--ac:#e9ca7f;--gr:#68d391;--bl:#76b7f5;--pu:#b49cf3;--co:#ef806e;--rd:#f87171;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);font-size:14px;line-height:1.6;min-height:100vh;}
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:rgba(12,12,14,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--b1);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px;gap:1rem;}
+.logo{font-family:var(--serif);font-size:17px;color:var(--ac);white-space:nowrap;flex-shrink:0;}
+.logo small{font-family:var(--sans);font-size:11px;color:var(--mu);margin-left:8px;font-weight:300;}
+.header-right{display:flex;align-items:center;gap:1.2rem;}
+.hstats{display:flex;gap:1.2rem;}
+.hstat .n{font-family:var(--mono);font-size:14px;color:var(--ac);display:block;text-align:center;}
+.hstat .l{font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;display:block;}
+/* ADMIN TOGGLE */
+.admin-btn{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;border:1px solid var(--b2);background:transparent;color:var(--mu);font-size:11px;font-family:var(--sans);cursor:pointer;transition:all .2s;white-space:nowrap;}
+.admin-btn:hover{border-color:var(--b3);color:var(--tx);}
+.admin-btn.active{border-color:rgba(239,128,110,.5);background:rgba(239,128,110,.08);color:var(--co);}
+.admin-dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex-shrink:0;}
+/* ADMIN BAR */
+.admin-bar{background:rgba(239,128,110,.06);border-bottom:1px solid rgba(239,128,110,.15);padding:.7rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.admin-bar.hidden{display:none;}
+.admin-bar-label{font-size:11px;color:var(--co);font-weight:500;display:flex;align-items:center;gap:6px;}
+.admin-bar-label::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--co);}
+.admin-info{font-size:11px;color:var(--mu);}
+/* HERO */
+.hero{padding:3.5rem 1.5rem 1.8rem;max-width:940px;margin:0 auto;}
+.eyebrow{font-family:var(--mono);font-size:10px;color:var(--ac);text-transform:uppercase;letter-spacing:2px;margin-bottom:.8rem;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';display:inline-block;width:20px;height:1px;background:var(--ac);}
+h1{font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:.9rem;}
+h1 em{color:var(--ac);font-style:italic;}
+.hero-sub{color:var(--mu2);font-size:13px;max-width:520px;line-height:1.8;margin-bottom:1.8rem;}
+/* CEFR BADGES */
+.cefr-row{display:flex;gap:6px;flex-wrap:wrap;}
+.cb{padding:4px 13px;border-radius:99px;font-size:10px;font-family:var(--mono);font-weight:500;border:1px solid;cursor:pointer;transition:all .18s;user-select:none;}
+.cb-all{color:var(--mu2);border-color:var(--b2);}
+.cb-A1{color:var(--gr);border-color:rgba(104,211,145,.3);}
+.cb-A2{color:var(--bl);border-color:rgba(118,183,245,.3);}
+.cb-B1{color:var(--pu);border-color:rgba(180,156,243,.3);}
+.cb-B1P{color:#a8d8a8;border-color:rgba(168,216,168,.3);}
+.cb-B2{color:var(--ac);border-color:rgba(233,202,127,.3);}
+.cb-C1{color:var(--co);border-color:rgba(239,128,110,.3);}
+.cb.active{filter:brightness(1.3);box-shadow:0 0 0 1px currentColor;}
+.cb:hover{transform:translateY(-1px);}
+/* OVERVIEW */
+.ov{max-width:940px;margin:0 auto 2rem;padding:0 1.5rem;}
+.ov-box{background:var(--s1);border:1px solid var(--b1);border-radius:14px;padding:1.3rem 1.5rem;display:flex;gap:2rem;align-items:center;flex-wrap:wrap;}
+svg.ring{transform:rotate(-90deg);}
+.ring-info h3{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.4rem;}
+.ring-big{font-family:var(--serif);font-size:2rem;color:var(--ac);}
+.ring-sub{font-size:11px;color:var(--mu);}
+.sbars{flex:1;min-width:200px;display:flex;flex-direction:column;gap:8px;}
+.srow{display:flex;align-items:center;gap:8px;}
+.slbl{font-size:10px;color:var(--mu);width:28px;flex-shrink:0;}
+.strack{flex:1;height:3px;background:var(--s3);border-radius:99px;overflow:hidden;}
+.sfill{height:3px;border-radius:99px;transition:width .5s;}
+.spct{font-family:var(--mono);font-size:10px;color:var(--mu);width:28px;text-align:right;}
+/* FILTER BAR */
+.fbar{max-width:940px;margin:0 auto 1.5rem;padding:0 1.5rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.flbl{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;}
+.fb{padding:5px 12px;border-radius:7px;border:1px solid var(--b2);background:transparent;color:var(--mu);font-size:11px;font-family:var(--sans);cursor:pointer;transition:all .15s;}
+.fb:hover,.fb.active{background:var(--s2);color:var(--tx);}
+.fb.active{border-color:var(--ac);color:var(--ac);}
+/* MAIN */
+.main{max-width:940px;margin:0 auto;padding:0 1.5rem 6rem;}
+/* LEVEL SECTION */
+.lsec{margin-bottom:2.5rem;}
+.lhdr{display:flex;align-items:center;gap:.8rem;margin-bottom:.7rem;cursor:pointer;user-select:none;padding:.2rem 0;}
+.ltag{font-family:var(--mono);font-size:10px;font-weight:500;padding:3px 9px;border-radius:6px;border:1px solid;flex-shrink:0;}
+.ltitle{font-family:var(--serif);font-size:1.25rem;flex:1;}
+.lmeta{font-size:11px;color:var(--mu);}
+.lcount{font-family:var(--mono);font-size:11px;color:var(--mu);}
+.chev{color:var(--mu);font-size:14px;transition:transform .22s;}
+.lhdr.is-collapsed .chev{transform:rotate(-90deg);}
+.lpbar{height:2px;background:var(--s2);border-radius:99px;margin-bottom:1rem;overflow:hidden;}
+.lpfill{height:2px;border-radius:99px;transition:width .4s;}
+/* CATEGORY */
+.catd{margin-bottom:1.3rem;}
+.catname{font-size:9px;text-transform:uppercase;letter-spacing:1.4px;color:var(--mu);margin-bottom:.65rem;display:flex;align-items:center;gap:8px;}
+.catname::after{content:'';flex:1;height:1px;background:var(--b1);}
+/* ADMIN: add topic / add category buttons */
+.add-topic-btn{display:none;align-items:center;gap:5px;padding:4px 10px;border-radius:6px;border:1px dashed rgba(239,128,110,.3);background:transparent;color:rgba(239,128,110,.5);font-size:10px;font-family:var(--sans);cursor:pointer;transition:all .15s;margin-top:6px;}
+.add-topic-btn:hover{border-color:var(--co);color:var(--co);background:rgba(239,128,110,.06);}
+body.admin-on .add-topic-btn{display:flex;}
+.add-cat-btn{display:none;align-items:center;gap:5px;padding:5px 12px;border-radius:7px;border:1px dashed rgba(239,128,110,.25);background:transparent;color:rgba(239,128,110,.4);font-size:11px;font-family:var(--sans);cursor:pointer;transition:all .15s;margin-bottom:.8rem;}
+.add-cat-btn:hover{border-color:var(--co);color:var(--co);}
+body.admin-on .add-cat-btn{display:flex;}
+.add-level-btn{display:none;align-items:center;gap:6px;padding:7px 16px;border-radius:8px;border:1px dashed rgba(239,128,110,.25);background:transparent;color:rgba(239,128,110,.4);font-size:11px;font-family:var(--sans);cursor:pointer;transition:all .15s;margin-bottom:1rem;}
+.add-level-btn:hover{border-color:var(--co);color:var(--co);}
+body.admin-on .add-level-btn{display:flex;}
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;}
+.card{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:.8rem .95rem;cursor:pointer;transition:border-color .15s,transform .1s;position:relative;overflow:hidden;}
+.card:hover{border-color:var(--b2);transform:translateY(-1px);}
+.card.done{opacity:.45;}
+.card.done .cstrip{opacity:1;}
+.card.done .ck{opacity:1;}
+.cstrip{position:absolute;left:0;top:0;bottom:0;width:3px;opacity:0;transition:opacity .2s;}
+.ctop{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px;}
+.cname{font-size:12px;font-weight:500;color:var(--tx);line-height:1.4;padding-right:20px;flex:1;}
+.ctag{font-family:var(--mono);font-size:8px;padding:2px 6px;border-radius:4px;border:1px solid;flex-shrink:0;margin-top:1px;}
+.cdesc{font-size:11px;color:var(--mu2);line-height:1.55;margin-bottom:6px;}
+.chips{display:flex;flex-wrap:wrap;gap:3px;}
+.chip{font-size:9px;font-family:var(--mono);background:var(--s2);color:var(--mu);padding:2px 7px;border-radius:4px;border:1px solid var(--b1);}
+.ck{position:absolute;top:8px;right:8px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;opacity:0;transition:opacity .2s;}
+/* ADMIN CARD CONTROLS */
+.card-admin-row{display:none;align-items:center;gap:4px;margin-top:8px;padding-top:6px;border-top:1px solid var(--b1);}
+body.admin-on .card-admin-row{display:flex;}
+.cad-btn{padding:3px 9px;border-radius:5px;border:1px solid var(--b2);background:transparent;color:var(--mu);font-size:10px;font-family:var(--sans);cursor:pointer;transition:all .15s;}
+.cad-btn:hover{color:var(--tx);border-color:var(--b3);}
+.cad-btn.del{color:rgba(248,113,113,.6);border-color:rgba(248,113,113,.2);}
+.cad-btn.del:hover{color:var(--rd);border-color:var(--rd);}
+/* LEVEL COLOURS */
+.lc-A1{color:var(--gr);border-color:rgba(104,211,145,.25);}
+.lc-A2{color:var(--bl);border-color:rgba(118,183,245,.25);}
+.lc-B1{color:var(--pu);border-color:rgba(180,156,243,.25);}
+.lc-B1P{color:#a8d8a8;border-color:rgba(168,216,168,.25);}
+.lc-B2{color:var(--ac);border-color:rgba(233,202,127,.25);}
+.lc-C1{color:var(--co);border-color:rgba(239,128,110,.25);}
+/* MODAL */
+.moverlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .2s;}
+.moverlay.open{opacity:1;pointer-events:all;}
+.mbox{background:var(--s1);border:1px solid var(--b2);border-radius:16px;max-width:560px;width:100%;max-height:84vh;overflow-y:auto;padding:1.8rem;transform:translateY(12px);transition:transform .22s;}
+.moverlay.open .mbox{transform:translateY(0);}
+.mtop{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.9rem;gap:1rem;}
+.mtitle{font-family:var(--serif);font-size:1.35rem;line-height:1.2;}
+.mcefr{font-family:var(--mono);font-size:10px;padding:2px 9px;border-radius:5px;border:1px solid;display:inline-block;margin-bottom:6px;}
+.mclose{background:var(--s2);border:none;color:var(--mu);width:30px;height:30px;border-radius:7px;cursor:pointer;font-size:14px;flex-shrink:0;}
+.mclose:hover{color:var(--tx);}
+.msec{margin-bottom:1rem;}
+.msh{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:.45rem;}
+.mdesc{color:var(--tx);line-height:1.75;font-size:13px;}
+.mlist{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.mlist li{font-size:12px;color:var(--mu2);padding-left:14px;position:relative;line-height:1.5;}
+.mlist li::before{content:'→';position:absolute;left:0;color:var(--ac);font-size:10px;top:2px;}
+.exblock{background:var(--s2);border:1px solid var(--b1);border-radius:8px;padding:.8rem;font-family:var(--mono);font-size:11px;margin-bottom:6px;}
+.ex-en{color:var(--tx);margin-bottom:3px;}
+.ex-id{color:var(--mu);font-size:10px;}
+.rlinks{display:flex;flex-wrap:wrap;gap:6px;}
+.rlink{padding:4px 11px;border-radius:7px;background:var(--s2);border:1px solid var(--b1);font-size:11px;color:var(--mu);text-decoration:none;display:flex;align-items:center;gap:4px;transition:border-color .15s,color .15s;}
+.rlink:hover{border-color:var(--ac);color:var(--ac);}
+.mbtn{width:100%;padding:11px;border-radius:9px;font-size:13px;font-weight:500;font-family:var(--sans);cursor:pointer;border:1px solid;transition:all .15s;margin-top:.4rem;}
+.mbtn-done{background:rgba(104,211,145,.08);color:var(--gr);border-color:rgba(104,211,145,.3);}
+.mbtn-done:hover{background:rgba(104,211,145,.16);}
+.mbtn-un{background:var(--s2);color:var(--mu);border-color:var(--b2);}
+.mbtn-un:hover{color:var(--tx);}
+/* EDIT / ADD MODAL */
+.eoverlay{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.8);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .2s;}
+.eoverlay.open{opacity:1;pointer-events:all;}
+.ebox{background:var(--s1);border:1px solid rgba(239,128,110,.2);border-radius:16px;max-width:540px;width:100%;max-height:88vh;overflow-y:auto;padding:1.8rem;transform:translateY(12px);transition:transform .22s;}
+.eoverlay.open .ebox{transform:translateY(0);}
+.ebox h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:1.2rem;color:var(--co);}
+.efield{margin-bottom:1rem;}
+.efield label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--mu);margin-bottom:.4rem;}
+.efield input,.efield textarea,.efield select{width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:8px;padding:.6rem .8rem;color:var(--tx);font-family:var(--sans);font-size:13px;outline:none;transition:border-color .15s;}
+.efield input:focus,.efield textarea:focus,.efield select:focus{border-color:rgba(239,128,110,.4);}
+.efield textarea{min-height:80px;resize:vertical;}
+.efield small{display:block;font-size:10px;color:var(--mu);margin-top:.3rem;}
+.ebtns{display:flex;gap:8px;margin-top:1.2rem;}
+.ebtn{flex:1;padding:10px;border-radius:8px;font-size:13px;font-weight:500;font-family:var(--sans);cursor:pointer;border:1px solid;transition:all .15s;}
+.ebtn-save{background:rgba(239,128,110,.1);color:var(--co);border-color:rgba(239,128,110,.3);}
+.ebtn-save:hover{background:rgba(239,128,110,.2);}
+.ebtn-cancel{background:var(--s2);color:var(--mu);border-color:var(--b2);}
+.ebtn-cancel:hover{color:var(--tx);}
+/* CONFIRM DELETE */
+.doverlay{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .2s;}
+.doverlay.open{opacity:1;pointer-events:all;}
+.dbox{background:var(--s1);border:1px solid rgba(248,113,113,.25);border-radius:14px;max-width:400px;width:100%;padding:1.8rem;text-align:center;transform:scale(.96);transition:transform .2s;}
+.doverlay.open .dbox{transform:scale(1);}
+.dbox h3{font-family:var(--serif);font-size:1.2rem;color:var(--rd);margin-bottom:.5rem;}
+.dbox p{font-size:13px;color:var(--mu2);margin-bottom:1.3rem;line-height:1.6;}
+.dbtns{display:flex;gap:8px;}
+.dbtn-del{flex:1;padding:10px;border-radius:8px;font-size:13px;font-weight:500;font-family:var(--sans);cursor:pointer;background:rgba(248,113,113,.12);color:var(--rd);border:1px solid rgba(248,113,113,.3);}
+.dbtn-del:hover{background:rgba(248,113,113,.2);}
+.dbtn-cancel{flex:1;padding:10px;border-radius:8px;font-size:13px;font-family:var(--sans);cursor:pointer;background:var(--s2);color:var(--mu);border:1px solid var(--b2);}
+.dbtn-cancel:hover{color:var(--tx);}
+.empty{text-align:center;padding:4rem 2rem;color:var(--mu);}
+.empty h3{font-family:var(--serif);font-size:1.3rem;color:var(--tx);margin-bottom:.4rem;}
+.hidden{display:none!important;}
+@media(max-width:600px){header{padding:0 1rem;}.hero,.ov,.fbar,.main{padding-left:1rem;padding-right:1rem;}.grid{grid-template-columns:1fr;}.ov-box{flex-direction:column;}.hstats{gap:.8rem;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">English Mastery <small>CEFR Complete v3</small></div>
+  <div class="header-right">
+    <div class="hstats">
+      <div class="hstat"><span class="n" id="hd">0</span><span class="l">Selesai</span></div>
+      <div class="hstat"><span class="n" id="ht">0</span><span class="l">Total</span></div>
+      <div class="hstat"><span class="n" id="hp">0%</span><span class="l">Progress</span></div>
+    </div>
+    <button class="admin-btn" id="vocabBtn" onclick="openVocab()" style="border-color:rgba(104,211,145,.3);color:var(--gr);">
+      <span style="font-size:13px;">📖</span><span>Vocab Harian</span>
+    </button>
+    <button class="admin-btn" id="printBtn" onclick="openPrint()" style="border-color:rgba(118,183,245,.3);color:var(--bl);">
+      <span style="font-size:13px;">🖨️</span><span>Cetak Laporan</span>
+    </button>
+    <button class="admin-btn" id="adminBtn" onclick="toggleAdmin()">
+      <span class="admin-dot"></span><span id="adminLabel">Mode Admin</span>
+    </button>
+  </div>
+</header>
+
+<div class="admin-bar hidden" id="adminBar">
+  <span class="admin-bar-label">Admin Mode Aktif</span>
+  <span class="admin-info">Klik ✎ Edit atau ✕ Hapus pada kartu. Tambah topik/kategori/level di bawah setiap bagian.</span>
+</div>
+
+<section class="hero">
+  <div class="eyebrow">Kurikulum CEFR Lengkap — 160+ Topik</div>
+  <h1>Belajar Inggris<br><em>dari nol sampai mahir</em></h1>
+  <p class="hero-sub">Roadmap berbasis Cambridge English & CEFR — semua topik grammar, pronunciation, dan skill dari A1 sampai C1. Klik topik untuk detail, centang kalau selesai. Aktifkan Admin Mode untuk edit, tambah, atau hapus materi.</p>
+  <div class="cefr-row" id="cefrFilter">
+    <span class="cb cb-all active" data-lv="ALL">Semua Level</span>
+    <span class="cb cb-A1" data-lv="A1">A1 Beginner</span>
+    <span class="cb cb-A2" data-lv="A2">A2 Elementary</span>
+    <span class="cb cb-B1" data-lv="B1">B1 Intermediate</span>
+    <span class="cb cb-B1P" data-lv="B1+">B1+ Upper-Int</span>
+    <span class="cb cb-B2" data-lv="B2">B2 Pre-Advanced</span>
+    <span class="cb cb-C1" data-lv="C1">C1 Advanced</span>
+  </div>
+</section>
+
+<section class="ov">
+  <div class="ov-box">
+    <svg width="80" height="80" viewBox="0 0 80 80" class="ring">
+      <circle cx="40" cy="40" r="33" fill="none" stroke="#252528" stroke-width="7"/>
+      <circle cx="40" cy="40" r="33" fill="none" stroke="#e9ca7f" stroke-width="7" stroke-linecap="round"
+        stroke-dasharray="207.35" stroke-dashoffset="207.35" id="ringC" style="transition:stroke-dashoffset .8s"/>
+    </svg>
+    <div class="ring-info">
+      <h3>Total Progress</h3>
+      <div class="ring-big" id="rPct">0%</div>
+      <div class="ring-sub" id="rSub">belum mulai</div>
+    </div>
+    <div class="sbars" id="sBars"></div>
+  </div>
+</section>
+
+<div class="fbar">
+  <span class="flbl">Filter:</span>
+  <button class="fb active" data-f="all">Semua</button>
+  <button class="fb" data-f="undone">Belum selesai</button>
+  <button class="fb" data-f="done">Sudah selesai</button>
+</div>
+
+<main class="main" id="mc"></main>
+
+<!-- VIEW MODAL -->
+<div class="moverlay" id="mOverlay">
+  <div class="mbox">
+    <div class="mtop">
+      <div>
+        <span class="mcefr" id="mCefr"></span>
+        <h2 class="mtitle" id="mTitle"></h2>
+      </div>
+      <button class="mclose" onclick="closeView()">✕</button>
+    </div>
+    <div class="msec"><div class="msh">Deskripsi</div><div class="mdesc" id="mDesc"></div></div>
+    <div class="msec" id="mLearnWrap"><div class="msh">Yang dipelajari</div><ul class="mlist" id="mLearn"></ul></div>
+    <div class="msec" id="mExWrap"><div class="msh">Contoh</div><div id="mEx"></div></div>
+    <div class="msec" id="mResWrap"><div class="msh">Sumber belajar</div><div class="rlinks" id="mRes"></div></div>
+    <button class="mbtn" id="mBtn"></button>
+  </div>
+</div>
+
+<!-- EDIT/ADD MODAL -->
+<div class="eoverlay" id="eOverlay">
+  <div class="ebox">
+    <h3 id="eTitle">Edit Topik</h3>
+    <div class="efield">
+      <label>Nama Topik *</label>
+      <input type="text" id="eName" placeholder="Contoh: Present Simple Tense">
+    </div>
+    <div class="efield">
+      <label>Kategori</label>
+      <input type="text" id="eCat" placeholder="Contoh: Grammar, Vocabulary, Skills">
+    </div>
+    <div class="efield">
+      <label>Level CEFR</label>
+      <select id="eLv">
+        <option value="A1">A1</option><option value="A2">A2</option>
+        <option value="B1">B1</option><option value="B1+">B1+</option>
+        <option value="B2">B2</option><option value="C1">C1</option>
+      </select>
+    </div>
+    <div class="efield">
+      <label>Deskripsi singkat *</label>
+      <textarea id="eDesc" placeholder="Penjelasan singkat tentang topik ini..."></textarea>
+    </div>
+    <div class="efield">
+      <label>Yang dipelajari (satu per baris)</label>
+      <textarea id="eLearn" style="min-height:120px" placeholder="Baris 1&#10;Baris 2&#10;Baris 3"></textarea>
+      <small>Pisahkan dengan baris baru. Setiap baris = satu poin belajar.</small>
+    </div>
+    <div class="efield">
+      <label>Contoh kalimat (Inggris | Terjemahan — pisah dengan baris baru)</label>
+      <textarea id="eEx" style="min-height:80px" placeholder="She goes to school every day. | Dia pergi ke sekolah setiap hari.&#10;Do you like coffee? | Apakah kamu suka kopi?"></textarea>
+      <small>Format: Kalimat Inggris | Terjemahan Indonesia</small>
+    </div>
+    <div class="efield">
+      <label>Sumber belajar (satu per baris)</label>
+      <textarea id="eRes" placeholder="British Council Grammar&#10;Test-English.com&#10;Cambridge Grammar in Use"></textarea>
+    </div>
+    <div class="ebtns">
+      <button class="ebtn ebtn-cancel" onclick="closeEdit()">Batal</button>
+      <button class="ebtn ebtn-save" onclick="saveEdit()">Simpan</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRINT REPORT MODAL -->
+<div class="moverlay" id="printOverlay" style="z-index:500;">
+  <div class="mbox" style="max-width:720px;max-height:90vh;">
+    <div class="mtop">
+      <div><h2 class="mtitle">🖨️ Laporan Progress Belajar</h2></div>
+      <button class="mclose" onclick="closePrint()">✕</button>
+    </div>
+    <div id="printFilterRow" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.2rem;">
+      <span style="font-size:11px;color:var(--mu);align-self:center;">Filter level:</span>
+      <button class="fb active" data-pf="ALL" onclick="setPrintFilter(this,'ALL')">Semua</button>
+      <button class="fb" data-pf="A1" onclick="setPrintFilter(this,'A1')">A1</button>
+      <button class="fb" data-pf="A2" onclick="setPrintFilter(this,'A2')">A2</button>
+      <button class="fb" data-pf="B1" onclick="setPrintFilter(this,'B1')">B1</button>
+      <button class="fb" data-pf="B1+" onclick="setPrintFilter(this,'B1+')">B1+</button>
+      <button class="fb" data-pf="B2" onclick="setPrintFilter(this,'B2')">B2</button>
+      <button class="fb" data-pf="C1" onclick="setPrintFilter(this,'C1')">C1</button>
+    </div>
+    <div id="printPreview" style="background:var(--s2);border-radius:10px;padding:1.2rem;max-height:52vh;overflow-y:auto;font-size:12px;line-height:1.7;"></div>
+    <div style="display:flex;gap:8px;margin-top:1rem;">
+      <button class="mbtn mbtn-done" onclick="doPrint()" style="flex:1;">🖨️ Print / Save as PDF</button>
+      <button class="mbtn mbtn-un" onclick="copyReport()" style="flex:1;">📋 Copy ke Clipboard</button>
+    </div>
+  </div>
+</div>
+
+<!-- VOCAB MODAL -->
+<div class="moverlay" id="vocabOverlay" style="z-index:500;">
+  <div class="mbox" style="max-width:720px;max-height:92vh;">
+    <div class="mtop">
+      <div>
+        <span class="mcefr" style="background:rgba(104,211,145,.08);color:var(--gr);border-color:rgba(104,211,145,.3);">Oxford 3000 / 5000 · Free Dictionary API</span>
+        <h2 class="mtitle">📖 Vocabulary Harian</h2>
+      </div>
+      <button class="mclose" onclick="closeVocab()">✕</button>
+    </div>
+
+    <!-- TABS -->
+    <div style="display:flex;gap:4px;margin-bottom:1.1rem;background:var(--s2);border-radius:9px;padding:3px;">
+      <button id="vtab-gen" onclick="switchVocabTab('gen')" style="flex:1;padding:7px;border-radius:7px;border:none;font-size:12px;font-family:var(--sans);cursor:pointer;transition:all .15s;background:var(--s1);color:var(--tx);">📖 Generate</button>
+      <button id="vtab-saved" onclick="switchVocabTab('saved')" style="flex:1;padding:7px;border-radius:7px;border:none;font-size:12px;font-family:var(--sans);cursor:pointer;transition:all .15s;background:transparent;color:var(--mu);">⭐ Vocab List <span id="savedCountBadge" style="font-family:var(--mono);"></span></button>
+    </div>
+
+    <!-- GENERATE TAB -->
+    <div id="vtab-gen-content">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.8rem;align-items:center;">
+        <span style="font-size:11px;color:var(--mu);">Level:</span>
+        <select id="vocabLvSel" style="background:var(--s2);border:1px solid var(--b2);border-radius:7px;padding:5px 10px;color:var(--tx);font-size:12px;font-family:var(--sans);outline:none;">
+          <option value="A1">A1 — Beginner</option>
+          <option value="A2">A2 — Elementary</option>
+          <option value="B1">B1 — Intermediate</option>
+          <option value="B2" selected>B2 — Upper-Intermediate</option>
+          <option value="C1">C1 — Advanced</option>
+        </select>
+        <button onclick="generateVocab()" id="genBtn" style="background:rgba(104,211,145,.1);border:1px solid rgba(104,211,145,.3);border-radius:7px;padding:5px 14px;color:var(--gr);font-size:12px;font-family:var(--sans);cursor:pointer;">🔀 Acak Kata Baru</button>
+        <button onclick="saveAllCurrentVocab()" id="saveAllBtn" style="background:rgba(233,202,127,.08);border:1px solid rgba(233,202,127,.2);border-radius:7px;padding:5px 14px;color:var(--ac);font-size:12px;font-family:var(--sans);cursor:pointer;">💾 Simpan Semua</button>
+      </div>
+      <div style="font-size:10px;color:var(--mu);margin-bottom:.9rem;display:flex;align-items:center;gap:6px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--gr);flex-shrink:0;"></span>
+        Oxford 3000/5000 word list · definisi dari <a href="https://dictionaryapi.dev" target="_blank" style="color:var(--mu2);">dictionaryapi.dev</a> · tanpa API key · 10 kata acak per sesi
+      </div>
+      <!-- PROGRESS BAR for batch fetch -->
+      <div id="vocabProgress" class="hidden" style="margin-bottom:.8rem;">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--mu);margin-bottom:4px;">
+          <span>Mengambil definisi...</span><span id="vocabProgressTxt">0/10</span>
+        </div>
+        <div style="height:3px;background:var(--s2);border-radius:99px;overflow:hidden;">
+          <div id="vocabProgressFill" style="height:3px;background:var(--gr);border-radius:99px;width:0%;transition:width .3s;"></div>
+        </div>
+      </div>
+      <div id="vocabGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:54vh;overflow-y:auto;padding-right:2px;"></div>
+      <div id="vocabError" class="hidden" style="text-align:center;padding:1.5rem;color:var(--co);font-size:13px;"></div>
+    </div>
+
+    <!-- SAVED LIST TAB -->
+    <div id="vtab-saved-content" class="hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;flex-wrap:wrap;gap:8px;">
+        <div style="font-size:11px;color:var(--mu2);">Semua kata yang sudah disimpan dari sesi vocab harian.</div>
+        <div style="display:flex;gap:6px;">
+          <select id="savedFilterLv" onchange="renderSavedList()" style="background:var(--s2);border:1px solid var(--b2);border-radius:7px;padding:4px 8px;color:var(--tx);font-size:11px;font-family:var(--sans);outline:none;">
+            <option value="ALL">Semua Level</option>
+            <option value="A1">A1</option><option value="A2">A2</option>
+            <option value="B1">B1</option><option value="B2">B2</option><option value="C1">C1</option>
+          </select>
+          <button onclick="clearAllSaved()" style="background:transparent;border:1px solid rgba(248,113,113,.2);border-radius:7px;padding:4px 10px;color:rgba(248,113,113,.6);font-size:11px;font-family:var(--sans);cursor:pointer;">🗑 Hapus Semua</button>
+        </div>
+      </div>
+      <input type="text" id="savedSearch" placeholder="🔍 Cari kata atau makna..." oninput="renderSavedList()" style="width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:8px;padding:.55rem .8rem;color:var(--tx);font-family:var(--sans);font-size:12px;outline:none;margin-bottom:.8rem;">
+      <div id="savedList" style="max-height:55vh;overflow-y:auto;display:flex;flex-direction:column;gap:6px;"></div>
+      <div id="savedEmpty" class="hidden" style="text-align:center;padding:3rem;color:var(--mu);">
+        <div style="font-size:28px;margin-bottom:.6rem;">⭐</div>
+        <div style="font-size:13px;">Belum ada vocab yang disimpan.<br><span style="font-size:11px;color:var(--mu);">Klik ★ pada kartu vocab untuk menyimpan kata.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM DELETE -->
+<div class="doverlay" id="dOverlay">
+  <div class="dbox">
+    <h3>Hapus Topik?</h3>
+    <p id="dMsg">Topik ini akan dihapus permanen.<br>Progress yang sudah ditandai juga akan hilang.</p>
+    <div class="dbtns">
+      <button class="dbtn-cancel" onclick="closeDelete()">Batal</button>
+      <button class="dbtn-del" onclick="confirmDelete()">Ya, Hapus</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════
+   RESOURCE URL MAP
+══════════════════════════════════════════════ */
+const RU={
+  'British Council Grammar':'https://learnenglish.britishcouncil.org/grammar',
+  'British Council Learn English':'https://learnenglish.britishcouncil.org',
+  'British Council Kids':'https://learnenglishkids.britishcouncil.org',
+  'British Council Writing':'https://learnenglish.britishcouncil.org/skills/writing',
+  'British Council Speaking':'https://learnenglish.britishcouncil.org/skills/speaking',
+  'British Council Listening':'https://learnenglish.britishcouncil.org/skills/listening',
+  'Cambridge Grammar in Use':'https://www.cambridge.org/gb/cambridgeenglish/catalog/grammar-vocabulary-and-pronunciation/grammar-use-series',
+  'Cambridge English':'https://www.cambridgeenglish.org',
+  'Cambridge Dictionary':'https://dictionary.cambridge.org',
+  'Cambridge Academic English':'https://www.cambridge.org/gb/cambridgeenglish/catalog/academic-english',
+  'Test-English.com':'https://test-english.com',
+  'Perfect English Grammar':'https://www.perfect-english-grammar.com',
+  'Oxford Phrasal Verbs':'https://www.oxfordlearnersdictionaries.com/topic/phrasal-verbs',
+  'Oxford Collocations':'https://www.oxfordlearnersdictionaries.com/collocation/',
+  'BBC Learning English':'https://www.bbc.co.uk/learningenglish/',
+  'BBC 6 Minute English':'https://www.bbc.co.uk/learningenglish/english/features/6-minute-english',
+  'Duolingo':'https://www.duolingo.com',
+  'Academic Phrasebank':'https://www.phrasebank.manchester.ac.uk',
+  'Academic Word List':'https://www.wgtn.ac.nz/lals/resources/academicwordlist',
+  'TED Talks':'https://www.ted.com/talks',
+  'The Guardian':'https://www.theguardian.com',
+  'The Economist':'https://www.economist.com',
+  "Rachel's English":'https://www.youtube.com/@rachelsenglish',
+  'Sounds App':'https://www.macmillanenglish.com/sounds/',
+  'ESL Pod':'https://www.eslpod.com',
+  'Quizlet':'https://quizlet.com',
+};
+
+/* ══════════════════════════════════════════════
+   DEFAULT CURRICULUM DATA (160 topics)
+══════════════════════════════════════════════ */
+const DEFAULT_CUR=[
+{lv:'A1',title:'A1 — Beginner',sub:'Cambridge Starters · Setara SD Kelas 1–3',cats:[
+  {name:'Verb To Be & Basic Sentences',topics:[
+    {id:'a1-be',name:'Verb To Be: am / is / are',desc:'Pondasi utama grammar — identitas, deskripsi, lokasi.',learn:["I am, You are, He/She/It is, We/They are","Contraction: I'm, she's, they're","Negative: I'm not, he isn't, they aren't","Question: Are you...? Is she...?","Short answers: Yes, I am. / No, I'm not."],ex:[{en:"She is a teacher. Is she happy? — Yes, she is.",id:"Verb be positif, negatif, pertanyaan."}],res:['British Council Grammar','Test-English.com','Cambridge Grammar in Use']},
+    {id:'a1-was-were',name:'Was / Were — Past of "Be"',desc:'Bentuk lampau dari verb to be — dasar untuk bercerita tentang masa lalu.',learn:["I/He/She/It was — You/We/They were","Negative: wasn't, weren't","Question: Was it? Were they? Short answers","Time expressions: yesterday, last night, ago, in 2020"],ex:[{en:"Was she tired yesterday? — Yes, she was. They weren't at home.",id:"Past be dalam pertanyaan dan negatif."}],res:['British Council Grammar','Test-English.com']},
+    {id:'a1-there-is',name:'There is / There are',desc:'Menyatakan keberadaan sesuatu — sangat sering dipakai.',learn:["There is + singular/uncountable","There are + plural countable","Negative: There isn't / There aren't","Question: Is there...? Are there...?","Past: There was / There were"],ex:[{en:"There are three bedrooms. Is there a supermarket nearby? — Yes, there is.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-there-it',name:'There or It — Perbedaan',desc:'Ada vs Itu — dua kata yang fungsinya berbeda.',learn:["There = existence: There's a problem.","It = identity/description: It's a big problem.","It = weather/time/distance: It's raining. It's 3pm. It's far.","Common errors: There is interesting ✗ / It is interesting ✓"],ex:[{en:"Is there a bus? — Yes, there is. / What's it like? — It's great!",id:""}],res:['Test-English.com']},
+    {id:'a1-word-order',name:'Basic Word Order (SVO)',desc:'Urutan kata dasar dalam bahasa Inggris — berbeda dengan bahasa Indonesia.',learn:["S + V + O: She reads books. (bukan: She books reads)","Adverb of frequency: before main verb, after be","Time expressions: usually at end","Never start with object: Coffee I like ✗","Place before time: She works in Jakarta every day. ✓"],ex:[{en:"I always drink coffee in the morning. She often goes to the gym after work.",id:""}],res:['Test-English.com']},
+    {id:'a1-imperative',name:'Imperative: Perintah & Instruksi',desc:'Kalimat perintah, instruksi, saran, dan larangan langsung.',learn:["Positive: Sit down! Open the book! Come in!","Negative: Don't talk! Don't be late! Don't touch!","Polite: Please sit down. / Sit down, please.","Use: instructions, directions, warnings, invitations, recipes"],ex:[{en:"Turn left at the lights. Don't touch that! Please have a seat.",id:""}],res:['Test-English.com']},
+    {id:'a1-questions',name:'Questions: Word Order & Question Words',desc:'Membentuk pertanyaan dengan benar — sangat berbeda dari bahasa Indonesia.',learn:["Yes/No: Aux + Subject + Verb: Do you like...? Is she...?","Wh-questions: Wh + Aux + Subject + Verb","Question words: what, who, where, when, why, how","How many (countable), how much (uncountable)","How + adjective: How old? How tall? How far?"],ex:[{en:"What time does the film start? Where do you live? How many siblings do you have?",id:""}],res:['Test-English.com','British Council Grammar']},
+  ]},
+  {name:'Present & Past Tenses',topics:[
+    {id:'a1-pres-simple',name:'Present Simple',desc:'Kebiasaan, rutinitas, fakta umum, dan jadwal — tense paling dasar.',learn:["I/You/We/They + V1 (base form)","He/She/It + V1 + s/es (watch→watches, study→studies)","Negative: don't / doesn't + V1","Question: Do/Does + subject + V1?","Adverbs of frequency: always, usually, often, sometimes, never, rarely"],ex:[{en:"She drinks coffee every morning. Does he work here? — Yes, he does.",id:""}],res:['British Council Grammar','Test-English.com','Cambridge Grammar in Use']},
+    {id:'a1-adv-freq',name:'Adverbs of Frequency',desc:'Menyatakan seberapa sering sesuatu terjadi.',learn:["always (100%) > usually > often > sometimes > rarely > never (0%)","Position: BEFORE main verb, AFTER be","She always arrives on time. He is never late.","How often do you...? / Do you ever...?","Expressions: once a week, twice a month, every day"],ex:[{en:"I usually have breakfast at 7. She's never been late. How often do you exercise?",id:""}],res:['Test-English.com']},
+    {id:'a1-pres-cont',name:'Present Continuous',desc:'Aksi yang sedang terjadi sekarang atau sekitar saat ini.',learn:["am/is/are + V-ing","Spelling: run→running, make→making, sit→sitting","Negative: I'm not working. She isn't studying.","Question: Are you studying? What are you doing?","Time signals: now, at the moment, currently, Look!, Listen!"],ex:[{en:"I'm studying English right now. What are you doing? — I'm cooking.",id:""}],res:['British Council Grammar','Test-English.com']},
+    {id:'a1-pres-sc',name:'Present Simple vs Continuous',desc:'Kapan pakai simple (kebiasaan) vs continuous (sekarang) — area yang sering tertukar.',learn:["Simple = habit/routine/fact/general truth","Continuous = happening right now / around now","Stative verbs NEVER in continuous: know, like, want, need, love, hate, believe, own","I'm knowing ✗ → I know ✓ / I'm wanting ✗ → I want ✓","Signals: every day / always → simple | now / at the moment → continuous"],ex:[{en:"I work in a bank (routine) vs I'm working from home today (now).",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-past-simple',name:'Past Simple — Regular & Irregular',desc:'Kejadian yang sudah selesai di masa lalu — tense cerita.',learn:["Regular: -ed (worked, played, visited, stopped, studied)","Irregular (wajib hafal): go→went, eat→ate, see→saw, have→had, do→did, take→took, make→made, come→came, get→got, say→said","Negative: didn't + V1 (base): She didn't go.","Question: Did + subject + V1?: Did you eat?","Time signals: yesterday, last week/year/night, ago, in 2019, when I was young"],ex:[{en:"I went to Bali last weekend. Did you eat breakfast? — No, I didn't.",id:""}],res:['British Council Grammar','Test-English.com','Cambridge Grammar in Use']},
+  ]},
+  {name:'Future & Modal Verbs',topics:[
+    {id:'a1-will',name:'Will & Shall — Future',desc:'Keputusan spontan, prediksi, janji, dan penawaran.',learn:["will + V1 (no conjugation): I will, he will, they will","Contraction: I'll, she'll, they'll, won't","Use 1 — Spontaneous decisions: I'll get it! (hearing phone ring)","Use 2 — Predictions: It will rain tomorrow.","Use 3 — Promises/offers: I'll help you.","Shall I/we...? = offer/suggestion: Shall I open the window?"],ex:[{en:"A: The phone's ringing! B: I'll get it! / It will be cold tomorrow. / Shall I help?",id:""}],res:['British Council Grammar','Test-English.com']},
+    {id:'a1-going-to',name:'Be Going To — Plans & Predictions',desc:'Rencana yang sudah diputuskan dan prediksi berdasarkan bukti nyata.',learn:["am/is/are + going to + V1","Use 1 — Plans/intentions already decided: I'm going to study medicine.","Use 2 — Predictions with evidence: Look at those clouds — it's going to rain!","Negative: I'm not going to..., she's not going to...","Question: Are you going to...? Is he going to...?"],ex:[{en:"She's going to visit Tokyo next month. Look — it's going to fall!",id:""}],res:['British Council Grammar','Test-English.com']},
+    {id:'a1-can',name:'Can & Can\'t — Ability, Permission, Possibility',desc:'Modal verb paling dasar — kemampuan, izin, dan kemungkinan.',learn:["Can + V1 (ability): I can swim. She can speak French.","Can't: inability: He can't drive. I can't understand.","Can I...? (asking permission): Can I go to the toilet?","Can you...? (request): Can you help me?","Could (polite version): Could you help me, please?"],ex:[{en:"Can you speak Spanish? — A little. Can I sit here? — Of course!",id:""}],res:['British Council Grammar','Test-English.com']},
+    {id:'a1-would-like',name:'Would Like — Offers & Requests',desc:'Menawarkan dan meminta sesuatu dengan sopan.',learn:["I'd like... = I want... (polite)","Would you like...? = offering something","Would you like to + V1? = invitation","vs. Do you like + V-ing/noun (general preference, not request)","Common at restaurants, shops: I'd like a coffee, please."],ex:[{en:"I'd like a glass of water, please. Would you like some cake? Would you like to come?",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Nouns, Articles & Determiners',topics:[
+    {id:'a1-articles',name:'A / An / The / Ø (No Article)',desc:'Salah satu area tersulit untuk penutur Indonesia — tidak ada padanannya.',learn:["a + consonant sound: a car, a university, a European","an + vowel sound: an apple, an hour, an umbrella","the = specific / already mentioned / unique: the sun, the president","Ø (no article): plural general (cats are independent), uncountable general (I love music)","First mention: I saw a dog. The dog was barking."],ex:[{en:"I have a cat. The cat is grey. Cats are independent animals. I love music.",id:"Perhatikan perubahan dari a → the."}],res:['British Council Grammar','Test-English.com','Cambridge Grammar in Use']},
+    {id:'a1-plurals',name:'A/An + Plurals & Countable/Uncountable',desc:'Kata benda tunggal/jamak dan benda tak terhitung.',learn:["Regular: -s (books), -es (boxes, watches), -ies (babies)","Irregular: man→men, woman→women, child→children, tooth→teeth, foot→feet, mouse→mice","Uncountable nouns (no plural): water, money, information, advice, news, homework","Always plural: scissors, trousers, glasses","Some uncountable: a piece of advice, a glass of water, a loaf of bread"],ex:[{en:"Three children are playing. Do you have any information? I need advice.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-this-that',name:'This / That / These / Those',desc:'Kata tunjuk — benda dekat dan jauh, tunggal dan jamak.',learn:["This (dekat, tunggal): This is my book.","That (jauh, tunggal): That car is expensive.","These (dekat, jamak): These are my keys.","Those (jauh, jamak): Those people are my friends.","As pronoun: This is great! / That was fun! / These are new."],ex:[{en:"Is this your bag? — No, that's mine. These shoes are new. Those buildings are beautiful.",id:""}],res:['Test-English.com']},
+    {id:'a1-some-any',name:'A / Some / Any — Countable & Uncountable',desc:'Quantifier dasar — sangat sering dipakai setiap hari.',learn:["a/an: singular countable: a book, an idea","some: plural/uncountable in POSITIVE sentences: some books, some water","any: plural/uncountable in NEGATIVE & QUESTIONS: any books? / I don't have any money","Some in questions (offering/expecting yes): Would you like some tea?","No = not any: There's no milk. / There isn't any milk."],ex:[{en:"I need some help. Do you have any questions? There aren't any seats. Would you like some water?",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-much-many',name:'Much / Many / A lot / A little / A few',desc:'Menyatakan jumlah — salah satu yang paling sering salah.',learn:["Much + uncountable (neg/question): not much money, how much time?","Many + countable plural (neg/question): not many people, how many books?","A lot of / lots of: both types in positive: a lot of money, a lot of friends","A little + uncountable (small, but some): I have a little time.","A few + countable plural (small number, but some): I have a few friends.","Little/few (without 'a') = hardly any (negative meaning)"],ex:[{en:"There's a little milk left but not many biscuits. I don't have much time.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-possessive',name:'Possessive Adjectives, Pronouns & Whose',desc:'Kepunyaan — my/mine, your/yours, his, her/hers, dll.',learn:["Possessive adjectives (before noun): my, your, his, her, its, our, their","Possessive pronouns (stand alone): mine, yours, his, hers, ours, theirs","Whose = pertanyaan kepunyaan: Whose pen is this?","Possessive 's: John's book, the dog's collar, the children's toys","Plural possessive: the students' books (apostrophe after s)"],ex:[{en:"Whose bag is this? — It's Maria's. This is my book and that's hers.",id:""}],res:['Test-English.com']},
+    {id:'a1-pronouns',name:'Subject & Object Pronouns',desc:'Kata ganti orang sebagai subjek dan objek kalimat.',learn:["Subject (do the action): I, you, he, she, it, we, they","Object (receive the action): me, you, him, her, it, us, them","Pronoun replaces noun to avoid repetition","She likes him but he doesn't like her.","Common errors: Me and John went ✗ → John and I went ✓"],ex:[{en:"She likes him but he doesn't like her. Can you help me? They told us the news.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-have-got',name:'Have Got — Kepemilikan',desc:'Sangat umum di British English untuk menyatakan kepemilikan.',learn:["I/You/We/They have got, He/She/It has got","Contraction: I've got, she's got, they've got","Negative: haven't got, hasn't got","Question: Have you got...? Has she got...?","Same meaning as 'have' for possession (but NOT for actions)"],ex:[{en:"I've got a dog. Has she got a car? — No, she hasn't. Have you got any brothers?",id:""}],res:['British Council Grammar','Test-English.com']},
+  ]},
+  {name:'Adjectives, Adverbs & Prepositions',topics:[
+    {id:'a1-adj',name:'Adjectives: Position & Use',desc:'Kata sifat — posisi sebelum noun atau setelah linking verb.',learn:["Before noun: a beautiful day, an old house, the tall man","After linking verbs (be, seem, look, feel): She is tall. It seems strange.","Adjective order (when multiple adj): opinion → size → age → colour → origin → material","Not: a Chinese nice small bag ✗ → a nice small Chinese bag ✓","No plural form: two tall men (NOT: two talls men)"],ex:[{en:"It's a beautiful old Italian car. She seems tired. The tall handsome man.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-comp-sup',name:'Comparative & Superlative Adjectives',desc:'Membandingkan orang atau benda.',learn:["Short (1 syl): -er/-est: taller/the tallest, older/the oldest","Long (2+ syl): more/most: more interesting/the most interesting","Spelling: big→bigger, happy→happier","Irregular: good→better→best, bad→worse→worst, far→further→furthest","as...as (equal): She's as tall as me. / not as...as: He's not as old as her.","Comparative + than: She's taller than me."],ex:[{en:"This film is more interesting than that one. She's the best student in the class.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-adv-manner',name:'Adverbs of Manner vs Adjectives',desc:'Menerangkan CARA kerja suatu aksi — jangan tertukar dengan adjective.',learn:["Mostly adj + -ly: slow→slowly, quick→quickly, careful→carefully","Irregular: good→well, fast→fast, hard→hard, early→early","Adjective describes NOUN: She is a quick runner.","Adverb describes VERB: She runs quickly.","Common error: She sings good ✗ → She sings well ✓","Position: usually after verb + object"],ex:[{en:"He speaks English well. She works very hard. Drive carefully! You did really well.",id:""}],res:['Test-English.com']},
+    {id:'a1-prep-time',name:'Prepositions of Time: at / in / on',desc:'Salah satu area paling sering salah — tidak ada terjemahan langsung ke bahasa Indonesia.',learn:["At: specific time (at 3pm, at noon, at night, at the weekend, at Christmas)","On: days and dates (on Monday, on 5 March, on my birthday, on New Year's Day)","In: months, years, seasons, longer periods (in June, in 2020, in summer, in the morning/afternoon/evening)","No prep: this morning, last night, next week, yesterday"],ex:[{en:"The meeting is at 3pm on Tuesday in March. I was born in 1998 on a Thursday.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-prep-place',name:'Prepositions of Place',desc:'Menyatakan lokasi — at/in/on dan preposisi posisi lainnya.',learn:["At: specific point/location (at home, at school, at the bus stop, at the top)","In: enclosed space/area (in the room, in Jakarta, in my bag, in the sea)","On: surface/transport (on the table, on the wall, on the bus, on the left/right)","Other: next to, beside, between, in front of, behind, above, below, under, over, opposite, near"],ex:[{en:"She's at home. The keys are on the table in the kitchen, next to the coffee machine.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a1-conj',name:'Basic Conjunctions',desc:'Menghubungkan kata dan klausa — fondasi membuat kalimat yang lebih kompleks.',learn:["And (addition): I like tea and coffee.","But (contrast): It's small but comfortable.","Or (alternative): Tea or coffee? / She'll call or send a message.","So (result): I was tired so I went to bed.","Because (reason): I left because it was late.","When (time): When I arrived, she was eating."],ex:[{en:"I was tired and hungry, so I ate quickly but still felt unwell because I was ill.",id:""}],res:['Test-English.com']},
+    {id:'a1-verbs-inf-ing',name:'Verbs + to-infinitive / -ing',desc:'Kata kerja yang diikuti kata kerja lain — bentuknya berbeda-beda.',learn:["Verbs + to-inf: want to, need to, hope to, decide to, plan to, would like to","Verbs + -ing: enjoy, finish, mind, avoid, suggest","Some verbs take both (same/similar meaning): like, love, hate, start, begin, continue","Common error: I want going ✗ → I want to go ✓","I enjoy to read ✗ → I enjoy reading ✓"],ex:[{en:"I want to learn English. She enjoys reading. They love swimming. He started to laugh / laughing.",id:""}],res:['Test-English.com']},
+    {id:'a1-phonics',name:'Phonics & Pronunciation Basics',desc:'44 bunyi bahasa Inggris — fondasi reading dan speaking yang benar.',learn:["26 huruf ≠ 44 fonem — English bukan bahasa fonetis!","Short vowels: /ɪ/ sit, /e/ bed, /æ/ cat, /ɒ/ hot, /ʌ/ cup, /ʊ/ put","Long vowels: /iː/ see, /ɑː/ car, /ɔː/ door, /uː/ food, /ɜː/ bird","Diphthongs: /eɪ/ say, /aɪ/ my, /ɔɪ/ boy, /aʊ/ now, /əʊ/ go","Silent letters: knife, write, hour, island, thumb, could","The schwa /ə/ — most common sound in English"],ex:[{en:"though / through / thought / thorough — ejaan mirip, bunyi SANGAT berbeda!",id:"Ini kenapa phonics penting banget."}],res:['BBC Learning English','Sounds App']},
+  ]},
+]},
+
+{lv:'A2',title:'A2 — Elementary',sub:'Cambridge Key (KET) · Setara SD Kelas 4–6',cats:[
+  {name:'Questions & Sentence Patterns',topics:[
+    {id:'a2-questions',name:'Asking Questions: All Forms',desc:'Semua tipe pertanyaan bahasa Inggris — lebih lengkap dari A1.',learn:["Yes/No questions dengan semua auxiliary verbs","Wh- questions: what, who, where, when, why, how, which, whose","How + adjective/adverb: how long, how often, how much, how far","Subject questions: Who called you? (bukan: Who did call you?)","Questions with prepositions: Who are you talking to? What are you looking at?"],ex:[{en:"Who invented the telephone? (subject Q) vs Who did you call? (object Q)",id:"Subject question vs Object question — perbedaan penting!"}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-purpose',name:'Expressing Purpose: to / for',desc:'Menyatakan tujuan suatu aksi.',learn:["to + infinitive (purpose): I went to the shop to buy milk.","for + noun (purpose/use): This knife is for cutting bread.","for + -ing (purpose/use of object): This room is for sleeping.","in order to (formal): She studied hard in order to pass.","so as to (formal): He spoke quietly so as not to wake her."],ex:[{en:"I'm learning English to get a better job. This machine is for making coffee.",id:""}],res:['Test-English.com']},
+    {id:'a2-conj2',name:'Connectors: however, although, because, so + time',desc:'Menghubungkan klausa dengan relasi logis yang benar.',learn:["However (contrast, new sentence): I was tired. However, I couldn't sleep.","Although/Even though + clause: Although it was raining, we went out.","Because + reason clause: I left because it was late.","So + result: I was tired, so I went to bed.","Time: when, while, before, after, as soon as, until, by the time"],ex:[{en:"Although it was expensive, I bought it. I waited until she arrived.",id:""}],res:['Test-English.com']},
+    {id:'a2-verb-go',name:'Verb "Go" — Different Uses',desc:'"Go" punya banyak makna dan pola — lebih dari sekadar "pergi".',learn:["go + to + place: go to school, go to the cinema","go + -ing (activities): go swimming, go shopping, go hiking, go camping","go + adj (become): go wrong, go bad, go red, go crazy","go home / go there (no 'to' with home/there)","go on holiday / on a trip / on a diet"],ex:[{en:"Let's go swimming! She goes to the gym every day. The milk has gone bad.",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Tenses',topics:[
+    {id:'a2-past-cont',name:'Past Continuous + Past Simple',desc:'Latar belakang (berlangsung) vs aksi utama (selesai) di masa lalu.',learn:["Past continuous: was/were + -ing (background/interrupted action)","Past simple: completed main event","When + past simple (interruption): When I arrived, she was cooking.","While + past continuous (background): While she was cooking, I arrived.","Both continuous (parallel): While I was reading, she was watching TV."],ex:[{en:"I was walking home when it started to rain. What were you doing at 8pm last night?",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-pres-perf',name:'Present Perfect: Form & Use',desc:'Tense paling tricky — menghubungkan masa lalu ke sekarang.',learn:["have/has + past participle","Use 1 — Experience (ever/never): Have you ever been to Paris?","Use 2 — Recent past (just/already/yet): I've just finished. Have you eaten yet?","Use 3 — Unfinished (for/since): I've lived here for 5 years / since 2019.","Irregular past participles: gone, been, eaten, seen, written, made, taken"],ex:[{en:"Have you ever tried sushi? I've just finished my homework. She's lived here for years.",id:""}],res:['Test-English.com','British Council Grammar','Cambridge Grammar in Use']},
+    {id:'a2-pp-ps',name:'Present Perfect vs Past Simple',desc:'Kapan pakai masing-masing — area yang paling sering salah.',learn:["Past simple: specific finished time (I went yesterday, In 2019 I...)","Present perfect: unspecified time / result relevant now","Triggers past simple: yesterday, last week, in 2019, ago, when...","Triggers present perfect: ever, never, just, already, yet, recently, for, since","Did you eat? (general past) vs Have you eaten? (result now relevant)"],ex:[{en:"I saw her yesterday. (simple) / I've seen that film. (perfect — result: I know the story)",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-fut-forms',name:'Will vs Be Going To — Future',desc:'Dua bentuk future utama — perbedaannya sangat penting.',learn:["Will: spontaneous decisions, predictions (general), promises, offers","Going to: plans/intentions already decided, predictions based on visible evidence","Present continuous: fixed arrangements (meeting someone)","Future time clauses: when/as soon as/before/after + present simple (NOT will)","I'll have a coffee. (spontaneous) / I'm going to call her later. (planned)"],ex:[{en:"A: The phone's ringing! B: I'll get it! / I'm going to visit Bali next month. (planned)",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-pres-cont-fut',name:'Present Continuous for Future',desc:'Menggunakan present continuous untuk future arrangements yang sudah diatur.',learn:["Fixed future arrangements (usually with another person)","Needs a future time expression","I'm meeting the doctor tomorrow. We're having dinner on Friday.","More certain/fixed than 'going to'","Common with: meeting, seeing, flying, leaving, starting"],ex:[{en:"We're having dinner with my parents on Friday. Are you coming to the party tonight?",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Modal Verbs',topics:[
+    {id:'a2-have-to-must',name:'Have to / Don\'t have to / Must / Mustn\'t',desc:'Kewajiban dan larangan — perbedaan harus vs tidak boleh vs tidak harus.',learn:["Must: strong personal obligation / deduction","Have to: external obligation (rules, law, situation)","Don't have to: NO obligation — optional (very different from mustn't!)","Mustn't: prohibition — NOT allowed","Need to / needn't: necessity / no necessity","Key: don't have to ≠ mustn't (sering salah!)"],ex:[{en:"You must wear a seatbelt. You don't have to come (it's optional). You mustn't smoke here.",id:"don't have to ≠ mustn't — perbedaan kritis!"}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-should',name:'Should / Shouldn\'t — Advice',desc:'Menyatakan saran dan rekomendasi.',learn:["Should + V1: advice/recommendation: You should see a doctor.","Shouldn't + V1: advice against: You shouldn't eat so much sugar.","Should = it's a good idea (weaker than must/have to)","I think you should... / You really should...","For advice, suggestions, or mild obligation"],ex:[{en:"You should drink more water. She shouldn't work so hard. I think you should apologise.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-might',name:'Might / Might not — Possibility',desc:'Menyatakan kemungkinan yang tidak pasti.',learn:["Might + V1: possibility (~50% or less): It might rain.","Might not: possibility of NOT: She might not come.","May + V1 (slightly more formal): It may rain.","vs Will: certain / Might: uncertain","Might for future possibility: I might go to the party — not sure yet."],ex:[{en:"It might rain later. She might not be at home. I might buy it — I'm not sure.",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Pronouns, Determiners & Quantifiers',topics:[
+    {id:'a2-pronouns2',name:'Subject, Object & Possessive Pronouns',desc:'Review lengkap semua kata ganti — sering tertukar.',learn:["Subject: I, you, he, she, it, we, they","Object: me, you, him, her, it, us, them","Possessive adjective (before noun): my, your, his, her, its, our, their","Possessive pronoun (stands alone): mine, yours, his, hers, its, ours, theirs","Reflexive: myself, yourself, himself, herself, itself, ourselves, themselves"],ex:[{en:"This is my book and that's hers. She told him about it. I hurt myself.",id:""}],res:['Test-English.com']},
+    {id:'a2-indef-pron',name:'Indefinite Pronouns: some- / any- / no- / every-',desc:'Someone, anyone, no one, everyone dan variasinya.',learn:["some-: somebody/someone, something, somewhere (positive)","any-: anybody/anyone, anything, anywhere (neg/question)","no-: nobody/no one, nothing, nowhere (negative meaning, positive verb)","every-: everybody/everyone, everything, everywhere (all, positive)","Singular verb: Everyone is here. Nobody knows."],ex:[{en:"Is there anything I can do? Nobody came. Something is wrong. Everyone loves her.",id:""}],res:['Test-English.com']},
+    {id:'a2-quantifiers',name:'Quantifiers: too / enough / most',desc:'Terlalu banyak, cukup, dan terbanyak.',learn:["Too + adj/adv: negative (more than wanted): It's too hot to eat.","Too much + uncountable: too much noise","Too many + countable plural: too many people","Not + adj + enough: It's not warm enough.","Enough + noun (before): I don't have enough money.","Most (of) + noun for majority: Most people like music. Most of the students passed."],ex:[{en:"This coffee is too hot and too strong. I don't have enough time. Most people agree.",id:""}],res:['Test-English.com']},
+    {id:'a2-quantifiers2',name:'Much / Many / Little / Few / Some / Any / No',desc:'Review kuantifier lengkap di level A2.',learn:["Much + uncountable, Many + countable plural","A lot of / lots of: both (usually positive)","Little (=hardly any, uncountable), A little (=some, uncountable)","Few (=hardly any, countable plural), A few (=some, countable plural)","Some (positive), Any (neg/question), No (negative meaning)"],ex:[{en:"There's little hope. A few friends came. I don't have any time. There's no coffee.",id:""}],res:['Test-English.com']},
+    {id:'a2-most',name:'Most / Most of / The Most',desc:'Tiga bentuk yang berbeda — sering tertukar.',learn:["Most + noun (general, no article): Most children like playing.","Most of + the/my/this + noun: Most of the students passed. Most of my friends are students.","The most + adj = superlative: She's the most intelligent person I know.","Most = the majority of (not all)","Most of + pronoun: Most of us, Most of them"],ex:[{en:"Most people agree. Most of the food was gone. She's the most talented singer.",id:""}],res:['Test-English.com']},
+    {id:'a2-rel-basic',name:'Defining Relative Clauses',desc:'Menambahkan informasi untuk mengidentifikasi noun.',learn:["who: for people: The man who lives next door","which: for things: The book which I read","that: for both: The car that I drive","where: for places: The restaurant where we met","Can omit that/which/who when it's the OBJECT: The book I read. (= that I read)","Never omit when it's the SUBJECT: The man who called was John."],ex:[{en:"The teacher who taught me English was great. The book that I read was brilliant.",id:""}],res:['Test-English.com','British Council Grammar']},
+  ]},
+  {name:'Conditionals, Passive & Reported Speech',topics:[
+    {id:'a2-cond1',name:'First Conditional & Future Time Clauses',desc:'Kondisi nyata dan kemungkinan di masa depan.',learn:["If + present simple, will + V1 (real/possible future)","Future time clauses: when/as soon as/before/after/until + present simple (NOT will)","Unless = if not: Unless you hurry, you'll be late.","I'll call you when I arrive. (NOT: when I will arrive)","Result clause can also use: can, might, must, should"],ex:[{en:"If it rains tomorrow, I'll stay home. / I'll call you as soon as I arrive.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-cond2',name:'Second Conditional',desc:'Kondisi hipotetis / tidak nyata di present atau future.',learn:["If + past simple, would + V1","Unreal present/future: If I had a car, I would drive. (but I don't have one)","If I were you... (NOT If I was you — formal English: were for all persons)","Wish + past simple = present regret: I wish I had a car.","vs First conditional: If I have time (I might) vs If I had time (I don't)"],ex:[{en:"If I were the president, I would change many things. I wish I had more free time.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'a2-passive',name:'Present & Past Simple Passive',desc:'Fokus pada aksi, bukan pelakunya — penting untuk semua konteks formal.',learn:["Present passive: am/is/are + past participle","Past passive: was/were + past participle","Active → Passive: She wrote the letter. → The letter was written by her.","By + agent: when important/interesting to mention who did it","No by-agent: when unknown/unimportant/obvious"],ex:[{en:"English is spoken in 50+ countries. The building was designed in 1920.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-used-to',name:'Used to — Past Habits & States',desc:'Kebiasaan atau keadaan di masa lalu yang tidak lagi berlaku.',learn:["used to + V1: past habit or state no longer true","I used to smoke. (I don't now) / She used to be shy. (she's not now)","Negative: I didn't use to... (NOT: I used not to / I used to not)","Question: Did you use to...?","No present equivalent — use 'usually' for present habits"],ex:[{en:"I used to live in Bandung. She didn't use to like vegetables, but now she loves them.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'a2-reported',name:'Reported Speech — Basics',desc:'Melaporkan apa yang dikatakan orang lain.',learn:["said (+ that): She said that she was tired. (backshift: is→was)","told + object: She told me (that) she was tired.","Tense backshift: present→past, will→would, can→could","Time shifts: today→that day, tomorrow→the next day","Reported questions: word order changes (no inversion): He asked where I lived."],ex:[{en:"\"I'm tired.\" → She said she was tired. / \"Where do you live?\" → He asked where I lived.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'a2-so-neither',name:'So do I / Neither do I — Agreement',desc:'Menyatakan persetujuan dengan cara yang natural.',learn:["So + aux + subject: A: I like coffee. B: So do I.","Neither + aux + subject: A: I don't smoke. B: Neither do I.","Match the tense and auxiliary exactly: So am I / So was I / So have I","Me too (informal alternative to So do I)","I don't either (informal alternative to Neither do I)"],ex:[{en:"\"I'm hungry.\" — \"So am I!\" / \"I can't swim.\" — \"Neither can I.\"",id:""}],res:['Test-English.com']},
+    {id:'a2-get',name:'Verb "Get" — Multiple Meanings',desc:'Get adalah salah satu kata kerja paling sering dipakai dalam bahasa Inggris.',learn:["Receive/obtain: I got a letter. / Can you get me some milk?","Become: It's getting dark. She got angry. He got better.","Arrive at: When did you get home? / I got to the station at 7.","Understand: I don't get it. Do you get what I mean?","Causative: I got my hair cut. (someone did it for me)"],ex:[{en:"I got up late, got the bus, and got to school just in time.",id:""}],res:['Test-English.com']},
+  ]},
+]},
+
+{lv:'B1',title:'B1 — Intermediate',sub:'Cambridge Preliminary (PET) · Setara SMP',cats:[
+  {name:'Tenses — Review & Consolidation',topics:[
+    {id:'b1-pres-sc',name:'Present Simple vs Continuous — B1 Review',desc:'Review mendalam dengan nuance yang lebih subtle di level intermediate.',learn:["Simple for: facts, habits, timetables, instructions (recipes, directions)","Continuous for: temporary situations, changing/developing situations","She's living in Bali at the moment. (temporary) vs She lives in Bali. (permanent)","State verbs review: think, have, see, taste, smell (dual use with different meanings)","I think she's right. (opinion) vs I'm thinking about it. (mental process)"],ex:[{en:"The train leaves at 7. I'm staying with a friend this week. What are you thinking about?",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'b1-fut-forms',name:'Future Forms: will / going to / present continuous',desc:'Review dan perbandingan semua bentuk future di B1.',learn:["Will: predictions (no evidence), spontaneous decisions, promises","Going to: plans already decided, predictions with clear evidence","Present continuous: fixed arrangements (diary events)","Present simple: scheduled events (timetables): The bus leaves at 3.","Will vs going to for predictions: I think it'll rain (opinion) vs Look! It's going to fall! (evidence)"],ex:[{en:"The concert starts at 8. I'm meeting Sara at 7. I think it'll be great. It's going to sell out.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'b1-pp-ps',name:'Past Simple vs Present Perfect — B1',desc:'Konsolidasi dan nuance yang lebih dalam.',learn:["Past simple: specific finished time always mentioned or implied","Present perfect: time unspecified OR result still relevant now","Ever/never in PP: Have you ever eaten frog? — Yes, once! (then Past Simple for details)","Just/already/yet: present perfect ONLY","Been vs gone: She's been to Paris. (and is back) / She's gone to Paris. (she's still there)"],ex:[{en:"Have you ever been to Japan? — Yes, I went there in 2019. / She's just arrived!",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'b1-pp-cont',name:'Present Perfect Simple vs Continuous',desc:'Perbedaan nuance yang penting antara dua aspek present perfect.',learn:["Simple: completed action / how many times: I've written 3 emails.","Continuous: ongoing action / how long: I've been writing emails all morning.","Simple with: ever, never, many times, three times","Continuous with: for, since, all morning/day/week, lately, recently","State verbs (know, want, etc.) only in Simple even with for/since"],ex:[{en:"I've been waiting for an hour. (ongoing) / I've already eaten. (completed, result now)",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1-narrative',name:'Past Simple / Continuous / Perfect — Narrative',desc:'Menggabungkan semua past tenses untuk bercerita dengan baik.',learn:["Past simple: main events in sequence (then, next, after that)","Past continuous: background / setting the scene (was/were + -ing)","Past perfect: events that happened BEFORE the main story (had + pp)","When / while / as + past continuous for background","By the time + past perfect: By the time I arrived, she had left."],ex:[{en:"I was walking to school when I saw an accident. Someone had already called the police.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'b1-review-tenses',name:'Review: All Intermediate Tenses',desc:'Konsolidasi semua tenses yang perlu dikuasai di level B1.',learn:["Present: simple, continuous, perfect, perfect continuous","Past: simple, continuous, perfect","Future: will, going to, present continuous, present simple","Choosing the right tense: meaning + time expression + context","Avoiding common mistakes: mixing tenses incorrectly"],ex:[{en:"She has been working here since 2018. By tomorrow, I'll have finished. — Review semua.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1-dur-for-while',name:'During / For / While',desc:'Tiga kata yang sama-sama berarti "selama" tapi cara pakainya berbeda.',learn:["During + noun phrase: during the film, during my holiday, during the meeting","For + time period: for three hours, for a week, for a long time","While + clause: While I was sleeping, the phone rang.","For is also used in present perfect: I've known him for 10 years.","During can't be used with time expressions: during three hours ✗"],ex:[{en:"During the meeting, she took notes. I waited for two hours while he was stuck in traffic.",id:""}],res:['Test-English.com']},
+    {id:'b1-for-since',name:'For / Since / Ago',desc:'Tiga ekspresi waktu yang sering tertukar.',learn:["For + period of time: for three years, for a long time (used with perfect tenses)","Since + point in time: since 2015, since Monday, since I was young","Ago + past simple: I moved here 5 years ago.","I've lived here for 5 years. / I've lived here since 2019. / I moved here 5 years ago.","How long have you...? (for/since) vs When did you...? (ago)"],ex:[{en:"She's worked here for 10 years, since 2014. She started working here 10 years ago.",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Modal Verbs',topics:[
+    {id:'b1-can-could-able',name:'Can / Could / Be Able To — Ability',desc:'Kemampuan di waktu yang berbeda-beda — perbedaan yang subtle tapi penting.',learn:["Can (present ability): I can swim.","Could (past GENERAL ability): When I was 5, I could read.","Couldn't: past inability: I couldn't sleep last night.","Was/were able to (specific past success): We were able to escape.","Won't be able to (future inability)","Could NOT = specific past achievement (I could finish it ✗ → I was able to finish it ✓)"],ex:[{en:"When I was young, I could speak Japanese. Yesterday I was able to get a refund.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'b1-must-should',name:'Have to / Must / Should — Obligation, Advice',desc:'Nuance antara kewajiban kuat, aturan eksternal, dan saran.',learn:["Must: personal strong obligation / deduction: I must remember.","Have to: external obligation (rules/law): I have to wear uniform.","Should/ought to: advice or recommendation","Don't have to: no obligation (optional)","Mustn't: prohibition","Needn't: no necessity (British English): You needn't worry."],ex:[{en:"You don't have to come (optional) vs You mustn't come (forbidden). You should see a doctor.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1-deduction',name:'Modal Verbs of Deduction (Present)',desc:'Menyimpulkan kemungkinan tentang situasi saat ini.',learn:["Must be: very logical/certain: She must be tired — she worked 12 hours.","Can't be: logically impossible: He can't be 40 — he looks 25!","Could/might/may be: possible but uncertain: It might be raining.","Probability scale: must (95%) > should (80%) > may/might/could (50%) > can't (5%)","These are DEDUCTIONS not facts — speaker doesn't know for sure"],ex:[{en:"She must be at home — the lights are on. That can't be right! It might be a mistake.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1-had-better',name:'Had better / It\'s time / Would rather',desc:'Ekspresi modal untuk saran kuat, saat yang tepat, dan preferensi.',learn:["Had better + V1: strong advice with implied negative consequence: You'd better see a doctor.","Had better not: warning: You'd better not be late.","It's time + past simple: It's time you went to bed. (you should but haven't)","Would rather + V1: personal preference: I'd rather stay home.","Would rather + past simple: I'd rather you didn't do that."],ex:[{en:"You'd better apologise or you'll lose her trust. It's time we left. I'd rather take the train.",id:""}],res:['Test-English.com']},
+    {id:'b1-used-to-2',name:'Usually / Used to / Be used to / Get used to',desc:'Empat ekspresi "biasanya/terbiasa" yang sering tertukar.',learn:["Usually + present simple: current habit: I usually drink coffee.","Used to + V1: past habit/state (no longer true): I used to drink coffee. (now I don't)","Be used to + noun/-ing: accustomed NOW: I'm used to waking up early.","Get used to + noun/-ing: becoming accustomed: I'm getting used to the cold.","I used to hate it BUT I'm used to it now."],ex:[{en:"I used to hate coffee but now I'm used to drinking it every day.",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Conditionals, Passive & Reported Speech',topics:[
+    {id:'b1-cond1',name:'First Conditional — Review',desc:'Review first conditional dengan variasi yang lebih luas.',learn:["If + present simple, will + V1","Unless, as long as, provided that (alternatives to if)","Result clause can use: can, might, should, must (not just will)","Unless you hurry, you'll miss the bus.","Future time clauses: when/as soon as + present simple (NOT will)"],ex:[{en:"If you study, you'll pass. Unless it rains, we'll have the barbecue outside.",id:""}],res:['Test-English.com']},
+    {id:'b1-cond2',name:'Second Conditional — Review',desc:'Review second conditional dengan semua variasi.',learn:["If + past simple, would + V1 (unreal present/future)","Were for all persons in formal/written English: If I were you...","If I were you, I'd apologise. (advice using second conditional)","Could/might instead of would in result clause","Wish + past simple for present regrets"],ex:[{en:"If I were taller, I could reach that shelf. I wish I spoke better English!",id:""}],res:['Test-English.com']},
+    {id:'b1-cond3',name:'Third Conditional',desc:'Kondisi tidak nyata di masa lalu — menyesal tentang masa lalu.',learn:["If + past perfect, would have + past participle","Meaning: imagining a different past (it didn't happen this way)","Result: you're talking about what WOULD HAVE happened","If I had studied harder, I would have passed. (but I didn't study / I failed)","I wish + past perfect: I wish I had saved more money.","If only: If only I had listened to her!"],ex:[{en:"If I had studied harder, I would have passed the exam. If only I'd saved more money!",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1-cond-all',name:'First / Second / Third Conditionals — Review',desc:'Membandingkan semua tipe conditional secara berdampingan.',learn:["Type 0: If + present, present (always true fact)","Type 1: If + present, will (real future possibility)","Type 2: If + past, would (unreal present/future)","Type 3: If + past perfect, would have (unreal past)","Spotting the difference: time + reality"],ex:[{en:"If water boils, it evaporates. / If I see her, I'll tell her. / If I were you... / If I had known...",id:""}],res:['Test-English.com']},
+    {id:'b1-passive',name:'Passive Voice — All Forms',desc:'Semua tense dalam bentuk pasif, bukan hanya present dan past.',learn:["Present simple: is/are + pp: English is spoken worldwide.","Past simple: was/were + pp: The bridge was built in 1890.","Present continuous: is/are being + pp: The road is being repaired.","Present perfect: has/have been + pp: The form has been completed.","Future: will be + pp: The results will be announced tomorrow.","Modal passive: must be completed, should be sent"],ex:[{en:"The new hospital is being built. The winner will be announced. The report must be submitted.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'b1-reported2',name:'Reported Speech — All Types',desc:'Melaporkan semua jenis kalimat — pernyataan, pertanyaan, perintah.',learn:["Statements: said/told me (that) + backshift","Questions (yes/no): asked if/whether: He asked if I was coming.","Questions (wh-): asked what/where/when + statement word order: She asked where I lived.","Commands: told/ordered/asked me to + V1: She told me to sit down.","Negative commands: warned/told me not to + V1"],ex:[{en:"\"Don't touch it!\" → She warned me not to touch it. / \"Are you coming?\" → He asked if I was coming.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+  ]},
+  {name:'Nouns, Pronouns & Determiners',topics:[
+    {id:'b1-articles2',name:'Articles — A/An/The/No Article',desc:'Penggunaan artikel yang lebih kompleks dan nuanced di level B1.',learn:["the + unique things: the sun, the internet, the environment, the government","the + superlatives & ordinals: the best, the first, the 21st century","the + musical instruments: play the piano (but: play football — no article)","No article + sports, subjects, languages, meals (generally)","the + geographical: the Amazon, the UK, the Alps, the Pacific"],ex:[{en:"She plays the violin beautifully. The Amazon is the longest river in South America.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1-another-other',name:'Another / Other / Others / The other(s)',desc:'Kata-kata ini sering tertukar — masing-masing berbeda.',learn:["Another (singular): one more/different: I need another pen. Another day!","Other + plural noun: different ones: Other students went home.","Others (pronoun, plural): Some stayed, others left.","The other (singular): the remaining one of two: One hand and the other.","The others (plural): the remaining ones: I'll take these, you take the others."],ex:[{en:"I need another pen. Some students passed, others failed. One sister is a doctor, the other is a teacher.",id:""}],res:['Test-English.com']},
+    {id:'b1-refl',name:'Reflexive Pronouns',desc:'Kata ganti diri sendiri untuk menekankan atau menyatakan aksi pada diri sendiri.',learn:["myself, yourself, himself, herself, itself, ourselves, yourselves, themselves","Use 1 — action on oneself: She cut herself. Be careful, you might hurt yourself!","Use 2 — emphasis (did it alone/personally): I did it myself. She cleaned it herself.","By + reflexive = alone: I live by myself. He went there by himself.","Each other (2 people) / one another (2+): They help each other."],ex:[{en:"He taught himself to play guitar. We organised the party ourselves. They love each other.",id:""}],res:['Test-English.com']},
+    {id:'b1-quantifiers2',name:'Quantifiers: All / Both / Either / Neither / None',desc:'Quantifier untuk menyatakan keseluruhan, dua hal, dan tidak satupun.',learn:["All + plural noun: All students must attend.","All (of) + the/my/this...: All of the food was eaten. / All the students...","Both: two specific things (both were good)","Either: one of two choices: Either day works for me.","Neither: not one and not the other: Neither answer is correct. (singular verb)","None (of): not one of a group: None of the students passed."],ex:[{en:"Both parents were there. Neither choice is easy. None of the food was left. All the tickets sold out.",id:""}],res:['Test-English.com']},
+    {id:'b1-any-no-none',name:'Any / No / None',desc:'Tiga cara menyatakan "tidak ada" — berbeda konteks.',learn:["Any + noun (negative/question): I don't have any money. Do you have any?","No + noun (subject or object, more emphatic): There is no money. No problem!","None (pronoun, no noun after it): There are none left.","Any of / none of + plural: None of them came. Any of you can help.","No one, nobody (pronoun): Nobody came."],ex:[{en:"There's no time. / There isn't any time. / None of us knew. / I have no idea.",id:""}],res:['Test-English.com']},
+    {id:'b1-rel-clauses',name:'Defining & Non-defining Relative Clauses',desc:'Dua tipe relative clause dengan punctuation dan fungsi berbeda.',learn:["Defining (no commas): essential info: The man who stole my bag was arrested.","Non-defining (with commas): extra info: My sister, who lives in London, is a nurse.","Which (not that) for non-defining: London, which is the capital, is expensive.","Can omit relative pronoun in DEFINING clause when it's the OBJECT: The book I read was good.","Whose (possession), where (place), when (time)"],ex:[{en:"The hotel where we stayed was wonderful. My father, whose job is teaching, loves his work.",id:""}],res:['Test-English.com','British Council Grammar']},
+  ]},
+  {name:'Adjectives, Adverbs & Linking',topics:[
+    {id:'b1-ed-ing',name:'-ed / -ing Adjectives',desc:'Adjective dari kata kerja — perbedaan makna yang sangat kritis.',learn:["-ing = causes the feeling (about a thing/situation): boring, exciting, tiring, frightening","-ed = has the feeling (about a person): bored, excited, tired, frightened","Common pairs: boring/bored, interesting/interested, surprising/surprised, disappointing/disappointed","Common error: I'm boring ✗ (means: you bore other people!) → I'm bored ✓","Test: ask 'is this the cause or the feeling?'"],ex:[{en:"The film was boring (cause), so I was bored (feeling). The news was surprising — I was surprised!",id:""}],res:['Test-English.com']},
+    {id:'b1-comp-adv',name:'Comparative & Superlative — Adverbs',desc:'Membandingkan cara melakukan sesuatu, bukan hanya hal-hal.',learn:["Regular adv comp: more/most: more carefully, most quickly","Irregular: well→better→best, badly→worse→worst, far→further→furthest","As...as with adverbs: He runs as fast as she does.","Modifiers: a bit, slightly, much, far, a lot + comparative: much more carefully","Double comparative: She runs faster and faster."],ex:[{en:"She works more efficiently than anyone else. He speaks English better than he used to.",id:""}],res:['Test-English.com']},
+    {id:'b1-so-such',name:'So / Such (a) / So much / So many',desc:'Memperkuat ekspresi dengan intensifier.',learn:["So + adj/adv: It's so beautiful! She speaks so quickly!","Such + (a/an) + adj + noun: It was such a beautiful day! / They have such talent!","Such a/an + singular countable noun: such a good idea","So much + uncountable: so much traffic, so much money","So many + plural countable: so many people, so many opportunities"],ex:[{en:"It was such a wonderful holiday! I had so much fun and met so many interesting people.",id:""}],res:['Test-English.com']},
+    {id:'b1-contrast-purpose',name:'Clauses of Contrast, Purpose & Reason',desc:'Menghubungkan ide dengan relasi logis yang tepat.',learn:["Contrast: although/even though + clause, despite/in spite of + noun/-ing","Purpose: to-infinitive, in order to, so that + clause","Reason: because + clause, because of + noun, due to + noun, as/since + clause","Result: so...that, such...that: The film was so long that I fell asleep.","Concession: however, nevertheless, yet (new sentence/clause)"],ex:[{en:"Despite the rain, we enjoyed the trip. She studied hard so that she could get a scholarship.",id:""}],res:['Test-English.com','British Council Grammar']},
+    {id:'b1-question-tags',name:'Question Tags',desc:'Menambahkan pertanyaan pendek di akhir kalimat untuk konfirmasi.',learn:["Positive statement → negative tag: You're coming, aren't you?","Negative statement → positive tag: She can't drive, can she?","Auxiliary must match: He's been here, hasn't he? / They didn't go, did they?","Irregular: I am right, aren't I? / Let's go, shall we? / Nothing happened, did it?","Intonation: falling (expecting agreement) vs rising (genuine question)"],ex:[{en:"It's beautiful, isn't it? You didn't forget, did you? Let's go, shall we?",id:""}],res:['Test-English.com']},
+    {id:'b1-verb-prep',name:'Verb + Preposition Collocations',desc:'Kata kerja yang selalu diikuti preposisi tertentu — tidak bisa diganti sembarangan.',learn:["+ in: believe in, result in, succeed in, specialise in","+ for: apply for, apologise for, pay for, wait for, look for, hope for","+ on: depend on, concentrate on, insist on, rely on, comment on","+ about: worry about, think about, complain about, dream about, care about","+ to: belong to, listen to, object to, refer to, respond to"],ex:[{en:"I applied for the job. Please apologise for your behaviour. Don't worry about it.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1-adj-prep',name:'Adjective + Preposition Collocations',desc:'Adjektif yang selalu diikuti preposisi tertentu.',learn:["+ of: afraid of, aware of, capable of, fond of, proud of, tired of, ashamed of","+ in: interested in, involved in, experienced in","+ about: worried about, excited about, enthusiastic about, serious about","+ with: bored with, pleased with, satisfied with, familiar with, fed up with","+ to: addicted to, similar to, opposed to, related to, used to"],ex:[{en:"She's afraid of spiders. I'm not familiar with this area. Are you satisfied with the results?",id:""}],res:['Test-English.com']},
+  ]},
+]},
+
+{lv:'B1+',title:'B1+ — Upper-Intermediate',sub:'Cambridge B1+ / Pre-FCE · Transisi ke B2',cats:[
+  {name:'Grammar: Questions & Auxiliaries',topics:[
+    {id:'b1p-questions',name:'Questions: Different Types',desc:'Semua tipe pertanyaan termasuk yang paling kompleks.',learn:["Echo questions: She left? Really? (expressing surprise)","Rhetorical questions: What's the point? (not expecting answer)","Tag questions review: embedded questions","Negative questions: Isn't it beautiful? (expecting agreement)","Why don't...? / Why not...? (suggestions)"],ex:[{en:"You're not coming, are you? / Isn't it lovely? / Why don't we go for a walk?",id:""}],res:['Test-English.com']},
+    {id:'b1p-indirect',name:'Indirect Questions',desc:'Pertanyaan yang lebih sopan — wajib untuk register formal.',learn:["Direct → Indirect: word order becomes statement order","Where is he? → Do you know where he is?","Yes/No indirect: Can you tell me if/whether the shop is open?","Polite openings: Could you tell me...? / Do you know...? / Would you mind telling me...?","No auxiliary inversion! No question mark (statement structure)"],ex:[{en:"Could you tell me where the nearest ATM is? (NOT: where is the nearest ATM?)",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1p-aux',name:'Auxiliary Verbs: Different Uses',desc:'Semua fungsi auxiliary verbs — emphasis, substitution, agreement.',learn:["Emphasis: I DO like it! She DID come. I HAVE told him!","Substitution (avoiding repetition): A: Did you call? B: Yes, I did.","So/Neither agreement: So do I. / Neither can she.","Short answers: Have you eaten? — Yes, I have.","Question tags: She's coming, isn't she?"],ex:[{en:"\"You don't like it.\" \"I DO like it!\" / She works harder than I do. / \"Did she go?\" \"Yes, she did.\"",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Grammar: Comparison & Adverbs',topics:[
+    {id:'b1p-the-the',name:'"The more... the more..." Comparatives',desc:'Ekspresi perbandingan yang saling terkait — sangat expressive.',learn:["The + comparative, the + comparative","The more you practice, the better you get.","The sooner we leave, the earlier we arrive.","The harder she worked, the more tired she became.","Can use adjectives, adverbs, or nouns: The more money, the more problems."],ex:[{en:"The more I learn, the less I feel I know. The longer you wait, the worse it gets.",id:""}],res:['Test-English.com']},
+    {id:'b1p-adj-order',name:'Adjective Order',desc:'Urutan adjective yang benar sebelum noun.',learn:["Order: opinion → size → age → shape → colour → origin → material → purpose","a lovely little old rectangular green French silver whittling knife","Most adjective strings in real speech: 2-3 adjectives max","Commas between adjectives of same category: a tall, dark, handsome man","Compound adjectives: a well-known actor, a good-looking man, a five-year-old child"],ex:[{en:"A beautiful old Italian wooden chair. A tiny red Chinese lantern.",id:""}],res:['Test-English.com']},
+    {id:'b1p-adj-no-noun',name:'Adjectives without Noun (Used as Noun)',desc:'Menggunakan adjective sebagai noun dengan the — penting untuk writing dan reading.',learn:["The + adj = refers to group of people: the rich, the poor, the elderly, the unemployed","The + adj = abstract concept: the beautiful, the unknown, the impossible","We must do more for the homeless. (= homeless people)","This refers to a GROUP — always plural verb","Also: the best, the worst as nouns: Do your best."],ex:[{en:"We should help the elderly. The rich get richer. The unknown can be frightening.",id:""}],res:['Test-English.com']},
+    {id:'b1p-adv-pos',name:'Position of Adverbs & Adverb Phrases',desc:'Di mana meletakkan adverb — ada aturannya!',learn:["Adverbs of frequency: before main verb, after be/auxiliary","Adverbs of manner: after verb + object (NOT between verb and object)","Adverbs of time: usually end of sentence","Adverbs of degree (quite, very, extremely, rather): before adjective/adverb","Mid-position: He has never been late. She will probably come.","Fronting for emphasis: Slowly, she opened the door. Fortunately, nobody was hurt."],ex:[{en:"She completely forgot the appointment. (not: she forgot completely the appointment)",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Grammar: Tenses & Special Verbs',topics:[
+    {id:'b1p-pp-sc',name:'Present Perfect Simple vs Continuous',desc:'Nuance penting antara dua aspek present perfect.',learn:["Simple: result / completion / how many: I've written 5 emails.","Continuous: process / duration / how long: I've been writing emails all day.","Some verbs (stative): only simple even with duration: I've known him for years.","With for/since: both possible with different nuance","Continuous often implies: I'm tired, I haven't finished yet"],ex:[{en:"I've been reading this book for weeks. (still reading) / I've read this book. (finished, I know the story)",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1p-fut-cont-perf',name:'Future Continuous & Future Perfect',desc:'Dua bentuk future yang lebih advanced.',learn:["Future continuous: will be + -ing (action in progress at future time)","Future perfect: will have + pp (action completed before a future time)","I'll be working at 9pm. (in progress)","By Friday, I'll have finished the report. (completed before Friday)","By the time you arrive, she'll have gone. (completed before arrival)"],ex:[{en:"At 8pm tonight, I'll be watching the match. By Sunday, I'll have read the whole book.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b1p-stative',name:'Stative vs Dynamic Verbs',desc:'Mengapa beberapa kata kerja TIDAK boleh continuous — aturan yang sangat penting.',learn:["Stative verbs describe states, NOT actions — never in continuous","States of mind: know, believe, understand, remember, think (opinion), suppose","Preferences: like, love, hate, prefer, want, need, wish","Perception: see, hear, smell, taste, feel (involuntary)","Possession: own, belong, have (possession)","Some verbs have both: I think she's right. (opinion=stative) / I'm thinking about it. (process=dynamic)"],ex:[{en:"I know the answer. ✓ / I'm knowing the answer. ✗ / I'm thinking about going. ✓",id:""}],res:['Test-English.com']},
+    {id:'b1p-do-make',name:'Do vs Make — Collocations',desc:'Dua kata kerja yang tidak bisa ditukar — harus hafal collocationsnya.',learn:["Do: activities/tasks/work: do homework, do the dishes, do exercise, do business","Make: creating/producing/causing: make a cake, make a mistake, make money, make noise","Do: do a course, do damage, do your best, do research, do a test","Make: make a decision, make a plan, make progress, make friends, make an effort","Memory tip: do = process/activity, make = result/product"],ex:[{en:"She made a mistake while doing her homework. He does research to make progress.",id:""}],res:['Test-English.com']},
+    {id:'b1p-two-obj',name:'Verbs with Two Objects',desc:'Kata kerja yang membutuhkan dua objek — indirect dan direct.',learn:["Pattern 1: give/send/show/tell/lend/bring + indirect obj + direct obj","She gave me a book.","Pattern 2: give/send/show/tell/lend/bring + direct obj + to/for + indirect obj","She gave a book to me.","Verbs only with to: explain, describe, suggest, mention (never: explain me ✗)","Explain the problem to me. ✓ / Explain me the problem. ✗"],ex:[{en:"She sent him a message. / She sent a message to him. / Please explain the rules to me.",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Grammar: Linking & Clauses',topics:[
+    {id:'b1p-so-such',name:'So / Such (a) / So much / So many — B1+',desc:'Review dan extension dari so/such.',learn:["So + adj/adv: so clever, so quickly","Such + noun: such talent, such nonsense (uncountable/plural)","Such a/an + adj + singular countable noun: such a good idea, such an interesting place","So much + uncountable noun: so much noise","So many + plural noun: so many problems","Result clause: It was so dark that I couldn't see. / Such a mess that nobody wanted to help."],ex:[{en:"There was such traffic that we were an hour late. It was so complicated that I gave up.",id:""}],res:['Test-English.com']},
+    {id:'b1p-narr-all',name:'Narrative Tenses — Full Review',desc:'Semua past tenses dalam konteks narasi yang panjang.',learn:["Past simple: main events (sequence: first, then, next, finally)","Past continuous: background/setting (was/were + -ing)","Past perfect: earlier actions (had + pp)","Past perfect continuous: longer earlier actions (had been + -ing)","Would for past habit in narrative: Every morning she would wake up and..."],ex:[{en:"By the time I arrived, he had been waiting for an hour. He looked exhausted. I apologised immediately.",id:""}],res:['Test-English.com']},
+  ]},
+]},
+
+{lv:'B2',title:'B2 — Pre-Advanced',sub:'Cambridge First (FCE) · Setara SMA — Level Lo Sekarang',cats:[
+  {name:'Grammar: Tenses & Future',topics:[
+    {id:'b2-narrative',name:'Narrative Tenses + Would for Past Habits',desc:'Penggunaan would untuk past habitual actions dalam narasi.',learn:["Would + V1: past habits in narrative (same as used to but more literary)","Used to for states AND habits. Would for habits ONLY (NOT states)","She lived there. She would wake up at 7, make coffee, and walk to work.","NOT: She would be tall. ✗ (state) → She was tall. ✓","Combining all past tenses for sophisticated storytelling"],ex:[{en:"We used to have a cottage by the sea. Every summer we would swim before breakfast.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-fut-all',name:'Future Forms — All Types',desc:'Semua cara menyatakan masa depan — termasuk bentuk advanced.',learn:["Will, going to, present continuous, present simple (timetable) — review","Future continuous: will be + -ing: I'll be working at 9pm.","Future perfect: will have + pp: By Friday, I'll have finished.","Future perfect continuous: will have been + -ing","Be about to: immediate future: The show is about to start!","Be due to: scheduled: The train is due at 3. / Be on the verge of"],ex:[{en:"By the time you read this, I'll have left. The meeting is about to begin. It's due to start at 3.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-fut-in-past',name:'Future in the Past',desc:'Membicarakan masa depan dari perspektif masa lalu.',learn:["Was/were going to: unfulfilled past intention: I was going to call but forgot.","Was/were supposed to: failed expectation: He was supposed to be here at 7.","Was/were about to: action about to happen then: I was about to leave when she called.","Would: future from past perspective in reported speech","Was due to: scheduled (past): The train was due at 3."],ex:[{en:"She was going to come but felt ill. He was supposed to arrive hours ago. Where is he?",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Grammar: Conditionals & Unreal',topics:[
+    {id:'b2-cond-adv',name:'Conditionals: Unless / Even if / Provided / As Long As',desc:'Alternatif untuk if dalam conditional sentences — expressive dan formal.',learn:["Unless = if not: Unless you hurry, you'll be late. (same as: If you don't hurry...)","Even if: the result is same regardless: Even if it rains, we'll go.","Provided (that) / Providing (that): stricter condition: I'll help, provided you pay me.","As long as / So long as: condition must be maintained: You can go as long as you're back by 10.","In case: precaution: Take an umbrella in case it rains."],ex:[{en:"I'll lend you money, provided you pay me back. Even if he apologises, I won't forgive him.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-mixed-cond',name:'Mixed Conditionals',desc:'Mencampur waktu dalam conditional — past cause + present result dll.',learn:["Mixed 1 (past cause → present result): If + past perfect, would + V1","If I had studied medicine, I would be a doctor now.","Mixed 2 (present cause → past result): If + past simple, would have + pp","If she weren't so stubborn, she would have listened.","Mixing shows sophisticated grasp of time and condition","Only mix when the logical time frames genuinely differ"],ex:[{en:"If I had taken that job, I would be living in New York now. If she were smarter, she wouldn't have done that.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-cond-inv',name:'All Conditionals: Inversion & Alternatives to If',desc:'Conditional dengan inversion — formal dan literary.',learn:["Inversion instead of if (formal/literary): Had I known, I would have come.","Were + subject: Were she to arrive, tell her. = If she were to arrive","Should + subject: Should you need help, call me. = If you should need help","Without if, without inversion: alternatives like provided, unless, as long as, in case","Combining all conditional types in one answer"],ex:[{en:"Had I been warned, I would have acted differently. Were I in your position, I'd refuse.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-wish-unreal',name:'Wish / If only / Would rather / It\'s time',desc:'Semua ekspresi unreal uses of past tenses.',learn:["Wish + past simple = present regret/desire: I wish I lived in London. (I don't)","Wish + past perfect = past regret: I wish I had studied harder.","Wish + would = complaint or wish for change: I wish you would listen!","If only (stronger/more emotional than wish): If only I had more time!","Would rather + past simple: I'd rather you didn't do that. (preference about others)","It's time + past simple: It's time we left. / It's high time you apologised."],ex:[{en:"I wish I could fly. If only I hadn't said that! I'd rather you didn't tell anyone. It's time we left.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+  ]},
+  {name:'Grammar: Passive, Reported & Special',topics:[
+    {id:'b2-passive-adv',name:'Passive Voice — Advanced Forms',desc:'Semua bentuk passive termasuk causative, reporting passive.',learn:["All tense passives: perfect passive (has been done), continuous passive (is being done)","Causative have/get: I had my hair cut. / She got her car fixed. (someone else does it for you)","Reporting passive: It is said that... / He is thought to be...","Passive infinitive: I don't want to be ignored.","Passive gerund: I don't like being interrupted.","Passive verbs with two objects: She was given a prize / A prize was given to her."],ex:[{en:"I'm having my flat repainted. It is believed the economy will recover. She was given an award.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-reported-adv',name:'Reported Speech — Advanced Reporting Verbs',desc:'Reporting verbs dengan berbagai pola yang berbeda.',learn:["+ to-inf: promise, agree, refuse, offer, threaten, decide, claim: He promised to help.","+ -ing: admit, deny, suggest, recommend, mention: She denied stealing it.","+ that clause: claim, insist, explain, warn, announce","+ obj + to-inf: told, advised, encouraged, reminded, warned: She told me to go.","+ obj + not to: She warned him not to touch it."],ex:[{en:"She denied having stolen the money. He threatened to leave if conditions didn't improve.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-inversion',name:'Inversion with Negative Adverbials',desc:'Struktur untuk menekankan informasi — sangat common di writing formal.',learn:["Negative adverbials trigger subject-auxiliary inversion","Never have I seen such beauty. (never + have + I + seen)","Not only did he forget, but he was also late.","Hardly/Scarcely...when: Hardly had I arrived when it started raining.","No sooner...than: No sooner had I sat down than the phone rang.","Under no circumstances, On no account, In no way, At no time"],ex:[{en:"Not only did she win, but she also broke the world record. Rarely have I felt so moved.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-distancing',name:'Distancing — Impersonal Passive of Reporting Verbs',desc:'Menyatakan informasi secara tidak langsung untuk writing formal.',learn:["It is said / thought / believed / reported / claimed / alleged + that...","Subject + is said / thought / believed + to be / to have...","It appears / seems that... / Apparently...","These structures distance writer from the claim","Common in: news writing, academic writing, formal reports"],ex:[{en:"It is believed that the economy will recover. Crime is thought to be decreasing. He is alleged to have...",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-ellipsis',name:'Ellipsis & Substitution',desc:'Menghindari repetisi dengan menghilangkan atau mengganti kata.',learn:["Ellipsis: omitting understood words: She can play piano and (play) guitar too.","Substitution with do so: She wanted to help and she did so.","Substitution with one/ones: I like the red shirt but not the blue one.","So: I think so. / I hope so. / He told me so.","Not: I hope not. / I think not. (formal) / I don't think so. (informal)"],ex:[{en:"She wanted to resign, and she did so the next day. I like the large ones, not the small.",id:""}],res:['Test-English.com']},
+    {id:'b2-have',name:'Have: Auxiliary vs Main Verb',desc:'Dua fungsi have yang berbeda — confusing untuk banyak learners.',learn:["Have as auxiliary (perfect tenses): I have seen it. She has finished.","Have as main verb (possession): I have a car.","Have as main verb (experience/activity): have breakfast, have a shower, have fun","Causative have: I had my photo taken. / I need to have the boiler fixed.","Have got (possession, British): I've got a problem. (can't use have got for activities)"],ex:[{en:"Have you had lunch? (main verb - activity) / Have you had any messages? (auxiliary)",id:""}],res:['Test-English.com']},
+    {id:'b2-generic-pron',name:'Generic & Impersonal Pronouns',desc:'Merujuk pada orang secara umum — bukan orang tertentu.',learn:["They/them/their (singular generic): When someone calls, tell them I'm busy.","You as generic (advice/general truth): You need a visa to enter.","One (formal/literary): One should be careful. One never knows.","People (general): People often underestimate...","Everyone, anybody, nobody (indefinite)"],ex:[{en:"They say it's going to snow. You need to be careful here. One never knows what will happen.",id:""}],res:['Test-English.com']},
+    {id:'b2-reflexive2',name:'Reflexive & Reciprocal Pronouns — B2',desc:'Review advanced dan nuance tambahan.',learn:["Reflexive for emphasis: I spoke to the manager herself.","By + reflexive = alone/without help: He did it by himself.","Reflexive as object: She blamed herself. They hurt themselves.","Reciprocal: each other (2), one another (2 or more)","Each other's: They borrowed each other's notes."],ex:[{en:"She organised everything herself. They borrowed each other's notes. We blamed ourselves.",id:""}],res:['Test-English.com']},
+  ]},
+  {name:'Grammar: Nouns, Adjectives & Clauses',topics:[
+    {id:'b2-compound-nouns',name:'Compound Nouns & Possessive Forms',desc:'Membentuk dan menggunakan compound nouns — sangat produktif dalam bahasa Inggris.',learn:["Noun + noun: car park, credit card, football, breakfast time","Adj + noun: greenhouse, blackboard, full moon","Verb + noun: runway, playground, swimming pool","Stress: usually on FIRST element: CAR park, CREDIT card","Possessive 's vs compound: the car's engine vs the car engine","Possessive 's with time: yesterday's news, a week's holiday, two hours' work"],ex:[{en:"The car park was full. I need a week's notice. Yesterday's meeting was cancelled.",id:""}],res:['Test-English.com']},
+    {id:'b2-compound-adj',name:'Compound Adjectives',desc:'Adjective yang terbentuk dari dua kata atau lebih.',learn:["Noun + adj: world-famous, sugar-free, smoke-free, trouble-free","Adj/adv + past participle: well-known, hard-boiled, long-awaited, newly-discovered","Adj/adv + present participle: good-looking, fast-moving, thought-provoking","Number + noun: a five-year-old child, a two-hour film","Hyphen: used when before noun: a well-known actor / He is well known. (no hyphen)"],ex:[{en:"A well-known author. A thought-provoking documentary. A five-year contract. Sugar-free drinks.",id:""}],res:['Test-English.com']},
+    {id:'b2-rel-clauses',name:'Relative Clauses — B2 Complete',desc:'Semua tipe relative clause termasuk yang paling complex.',learn:["Defining vs non-defining (with/without commas)","Which referring to whole clause: She was late, which annoyed everyone.","Omitting relative pronoun (contact clause): The book I read was great.","Preposition at end: The chair she was sitting on was broken.","Formal: The chair on which she was sitting... (preposition fronted)","Where (place), when (time), why (reason): That's the reason why I left."],ex:[{en:"The reason why he left is unclear. She was late, which caused problems. The house where I grew up...",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-participle',name:'Participle Clauses',desc:'Mengurangi relative/adverbial clause menggunakan participle — membuat teks lebih concise.',learn:["Present participle (active): The man standing by the door is my boss.","Past participle (passive): The report written by the team is excellent.","Perfect participle: Having finished, she left. (earlier action)","Replacing relative clause: The car parked outside (= which is parked)","Replacing adverbial clause: Arriving late, I missed the start. (= Because I arrived late)","The subject of participle must be same as main clause subject"],ex:[{en:"Having studied law, she found the contract easy. Built in 1920, the house needs work.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-cleft',name:'Cleft Sentences — Adding Emphasis',desc:'Teknik untuk menekankan bagian tertentu dari kalimat.',learn:["It-cleft: It was John who called. / It's the price that bothers me.","What-cleft: What I need is a long holiday. / What surprised me was her reaction.","All-cleft: All I want is the truth. / All she said was sorry.","Negative cleft: It's not the cost, it's the quality.","Using clefts to shift focus and emphasis in speech and writing"],ex:[{en:"\"What really impressed me was how quickly they responded.\" / \"It's the detail that matters.\"",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-noun-prep',name:'Noun + Preposition Collocations',desc:'Kata benda yang selalu diikuti preposisi tertentu — penting untuk Use of English.',learn:["+ in: interest in, increase in, decrease in, difficulty in, belief in","+ of: advantage of, lack of, risk of, sign of, possibility of","+ to: alternative to, attitude to/towards, damage to, exception to, reaction to","+ for: demand for, need for, reason for, respect for, search for","+ with: connection with, contact with, relationship with, problem with"],ex:[{en:"There's a lack of evidence. The demand for housing is growing. She has a great attitude towards work.",id:""}],res:['Test-English.com']},
+    {id:'b2-discourse',name:'Discourse Markers & Linking Words',desc:'Koneksi antar kalimat dan klausa untuk teks yang benar-benar kohesif.',learn:["Contrast: however, nevertheless, on the other hand, whereas, while, yet, in contrast","Addition: furthermore, moreover, in addition, besides, what is more","Cause/result: consequently, therefore, as a result, hence, thus, accordingly","Concession: although, despite, in spite of, even though, granted that","Clarification: in other words, that is to say, namely, i.e.","Conclusion: to sum up, in conclusion, all in all, on balance"],ex:[{en:"The product is expensive; nevertheless, demand remains high. Furthermore, quality has improved.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-gerund-complex',name:'Gerunds & Infinitives — Complex Forms',desc:'Bentuk gerund dan infinitive yang lebih canggih dan nuanced.',learn:["Perfect infinitive: to have done — I'm glad to have met you.","Perfect gerund: having done — Having finished, she left.","Passive infinitive: to be done — It needs to be fixed. / It's important to be heard.","Passive gerund: being done — I don't like being ignored. / She hates being watched.","Verb + obj + inf vs + obj + -ing: I saw him leave (complete action) / I saw him leaving (in progress)"],ex:[{en:"He appears to have forgotten. She regrets not having studied harder. I don't like being told what to do.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'b2-verb-obj',name:'Verb + Object + Infinitive / Gerund',desc:'Patterns verb dengan objek yang sangat penting untuk FCE.',learn:["+ obj + to-inf: want, ask, tell, advise, encourage, remind, allow, force, expect, invite","She told me to sit down. I expected him to be early.","Causative make/let/have + obj + bare infinitive: She made me apologise. Let me go.","See/hear/watch/feel + obj + bare inf (complete) or -ing (in progress)","I watched him play. (whole match) / I watched him playing. (part of it)"],ex:[{en:"She made me apologise. I watched them playing in the garden. He let us leave early.",id:""}],res:['Test-English.com']},
+    {id:'b2-senses',name:'Verbs of the Senses',desc:'See, look, watch, hear, listen, smell, taste, feel — semua perbedaannya.',learn:["See vs look (at) vs watch: involuntary / directed / extended observation","Hear vs listen (to): involuntary / intentional","Smell/taste/feel as linking verbs + adj: It smells wonderful. It tastes sweet.","Sense verbs + obj + bare inf: I saw him leave. I heard her sing.","Sense verbs + obj + -ing: I saw him leaving. I heard her singing. (ongoing)"],ex:[{en:"I heard someone scream. / I was listening to music. / The soup tastes amazing! I saw her leave.",id:""}],res:['Test-English.com']},
+    {id:'b2-adv-pos',name:'Position of Adverbs — B2',desc:'Lebih detail dan nuanced tentang posisi adverb.',learn:["Mid-position (most common for attitude adverbs): She probably knows. / He clearly forgot.","Front position (for emphasis/contrast): Fortunately, nobody was hurt.","End position (manner, place, time — usually in that order): She sang beautifully in Vienna last night.","Never between verb and direct object: She ate slowly the cake. ✗","Comment adverbs (whole sentence): Honestly, I don't care. / Apparently, he quit."],ex:[{en:"She almost certainly knows. / Apparently, the meeting was cancelled. / He sang beautifully.",id:""}],res:['Test-English.com']},
+  ]},
+]},
+
+{lv:'C1',title:'C1 — Advanced',sub:'Cambridge Advanced (CAE) · Level Profesional',cats:[
+  {name:'Grammar: Advanced Structures',topics:[
+    {id:'c1-pres-adv',name:'Advanced Present Simple & Continuous',desc:'Penggunaan present tenses yang sophisticated dan jarang diajarkan.',learn:["Historic present in storytelling: So I walk in and he looks at me and says...","Running commentary: She shoots, she scores! He passes to Johnson, who heads it in!","Present continuous for irritation: You're always losing things! (annoyance marker)","Dynamic vs stative use of same verb: I see what you mean. / I'm seeing her tomorrow.","Performative verbs (simple, never continuous): I promise, I admit, I swear, I apologise"],ex:[{en:"\"You're always complaining!\" / \"I promise I'll be there.\" / So then she turns to me and says...",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'c1-past-adv',name:'Advanced Past Tenses',desc:'Penggunaan past tenses yang lebih nuanced.',learn:["Past perfect continuous: had been + -ing (duration before another past event)","She had been working all night when he called — no wonder she was tired.","Was going to: unfulfilled past intention (stronger than was going to do anyway)","Was supposed to: expectation that wasn't met","Was to: formal for scheduled or destined: He was to become president.","Would for past habit (nuance with used to and narrative)"],ex:[{en:"He had been waiting for hours. She was supposed to present, but she was ill. He was to become famous.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'c1-modals-adv',name:'Advanced Modal Verbs: will, would, should',desc:'Nuance advanced untuk will, would, dan should.',learn:["Will/would for characteristic behaviour: She'll talk for hours if you let her. / He would never admit he was wrong.","Will for present deduction: That'll be the postman. / That will be John calling.","Should for logical expectation: She should be here by now. (I expect her to be)","Ought to for moral obligation (formal): We ought to help.","Should for surprise: Why should he care? / I don't know why it should matter."],ex:[{en:"\"That'll be Maria at the door.\" / \"She should have arrived by now.\" / \"He would say that!\"",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'c1-modals-can-may',name:'Advanced Modal Verbs: can, may, might',desc:'Penggunaan advanced untuk can, may, dan might.',learn:["Can for theoretical/general possibility: Iron can rust if exposed to moisture.","May for formal permission: You may proceed. / May I have your attention?","Might for tentative suggestion: You might want to consider...","Could for past ability AND hypothetical present possibility","May well / might just / could very well: degrees of uncertain possibility","Can't have vs couldn't have: logical impossibility vs past inability"],ex:[{en:"Iron can rust in humid conditions. (general truth) / You might want to reconsider that decision.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'c1-complex-sent',name:'Complex Sentences: Participles, Absolutes & Subjunctive',desc:'Struktur kalimat tingkat advanced yang membuat teks sangat sophisticated.',learn:["Participle clauses: Having finished, she left. / Built in 1990, the house...","Absolute clauses (independent): Weather permitting, we'll go. / All things considered,...","Formal subjunctive: It's vital that he attend. (NOT attends) / I suggest she be given...","Present subjunctive: were (not was) for all persons in formal conditionals","Ellipsis and fronting for stylistic effect: That I cannot accept. / Into the room walked the queen."],ex:[{en:"Having studied law, she found the contract straightforward. It's essential that every student attend.",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'c1-fronting',name:'Fronting, Cleft & Emphasis Structures',desc:'Semua teknik emphasis dan focus yang dipakai di level C1.',learn:["Fronting object/complement: This I cannot accept. / Ridiculous it certainly is.","Cleft sentences: It was John who... / What I need is...","Inversion review: Rarely have I... / Under no circumstances should...","Pseudo-cleft: What happened was... / What she did was (to) call the police.","All-cleft: All I want is honesty. / All she did was cry."],ex:[{en:"What really matters is the quality. This kind of behaviour I will not tolerate. Rarely have I been so impressed.",id:""}],res:['Cambridge Grammar in Use','Test-English.com']},
+    {id:'c1-discourse',name:'Discourse & Cohesion at C1 Level',desc:'Membangun teks yang kohesif dan sophisticated.',learn:["Reference and substitution: use of this, such, so, do so to avoid repetition","Lexical cohesion: repetition, synonyms, superordinates, general words","Parallelism: Not only A but also B / Both X and Y / Either...or","Hedging in academic discourse: It would appear that... / There is reason to believe...","Comment adverbs for stance: Surprisingly, Interestingly, Significantly"],ex:[{en:"Such an approach, while innovative, poses significant risks. Interestingly, no one appeared to notice.",id:""}],res:['Cambridge Grammar in Use','Academic Phrasebank']},
+  ]},
+  {name:'Vocabulary & Style',topics:[
+    {id:'c1-connotation',name:'Connotation, Register & Nuance',desc:'Memilih kata yang tepat berdasarkan konteks, nada, dan makna implisit.',learn:["Positive vs negative connotation: slim/skinny, confident/arrogant, persistent/stubborn","Register spectrum: slangy → informal → neutral → formal → academic → legal","Euphemism: passed away, let go (fired), economically challenged","Understatement: British \"not bad\" = actually very good; \"a bit tricky\" = very difficult","Loaded language: words that carry emotional charge to influence audience"],ex:[{en:"\"She's determined.\" (positive) vs \"She's stubborn.\" (negative) — same trait, different framing.",id:""}],res:['Cambridge Grammar in Use']},
+    {id:'c1-word-form',name:'Advanced Word Formation',desc:'Semua proses pembentukan kata — wajib untuk CAE Use of English.',learn:["Negative prefixes rules: un- (adj/verbs), dis- (verbs/nouns), in-/im-/il-/ir- (adjectives)","Suffixes: -ship (friendship, hardship), -hood (childhood), -dom (freedom, boredom)","Less common: -ness, -ity/-ty, -ance/-ence, -ment, -tion","Verb formation: -ise/-ize, -en (darken, strengthen), -ify (simplify, justify)","Compound words: breathtaking, lifelong, nationwide, soft-spoken","Conversion: to text, to google, to email (nouns becoming verbs)"],ex:[{en:"breathtaking, lifelong, nationwide — common CAE compound adjectives",id:""}],res:['Test-English.com','Cambridge Grammar in Use']},
+    {id:'c1-hedging',name:'Hedging Language & Academic Stance',desc:'Menyatakan kepastian dengan nuance — essential untuk academic dan professional communication.',learn:["Epistemic modals: may, might, could, should (degrees of certainty)","Hedging verbs: appear, seem, suggest, indicate, tend","Hedging adverbs: apparently, presumably, arguably, conceivably, typically","Boosters (strong): clearly, obviously, undoubtedly, certainly, unquestionably","Structures: It would appear that... / There is reason to believe... / Evidence suggests that..."],ex:[{en:"\"The findings suggest a possible correlation, although further research is arguably needed.\"",id:""}],res:['Academic Phrasebank','Cambridge Academic English']},
+    {id:'c1-adv-collocations',name:'Advanced Collocations & Fixed Phrases',desc:'Kombinasi kata yang membuat bahasa terdengar natural dan sophisticated.',learn:["Advanced verb + noun: exert pressure, pose a threat, tackle a problem, raise concerns","Advanced adj + noun: far-reaching implications, mounting pressure, sweeping changes","Adverb intensifiers: deeply flawed, sorely needed, bitterly disappointed, firmly convinced","Fixed phrases: it remains to be seen, needless to say, all things being equal","Proverb-like idioms used in formal contexts: The proof of the pudding..."],ex:[{en:"\"The decision poses a serious threat and has far-reaching implications.\" / \"It remains to be seen.\"",id:""}],res:['Academic Phrasebank']},
+  ]},
+  {name:'Skills: Production & Analysis',topics:[
+    {id:'c1-writing-adv',name:'Writing in Different Styles & Registers',desc:'Menulis untuk berbagai tujuan, audiens, dan register.',learn:["Formal report: executive summary, findings, conclusions, recommendations","Proposal: purpose, plan, outcomes, justification","Review with critical analysis: not just describing but evaluating and recommending","Letter of complaint: polite but assertive; formal register","Creative writing: voice, perspective, atmosphere, showing not telling"],ex:[{en:"A report for a director on expanding to a new market: very different from a creative short story.",id:""}],res:['Test-English.com','Cambridge English']},
+    {id:'c1-critical-reading',name:'Critical Reading & Discourse Analysis',desc:'Menganalisis teks secara kritis.',learn:["Rhetorical devices: ethos (credibility), pathos (emotion), logos (logic)","Identifying implicit assumption, logical fallacy, propaganda technique","Recognising bias, loaded language, and framing","Evaluating argument: evidence quality, counter-arguments addressed?","Intertextuality: allusions and references to other texts/events/culture"],ex:[{en:"Analysing how a political speech uses emotive language to manipulate rather than persuade rationally.",id:""}],res:['The Guardian','The Economist','TED Talks']},
+    {id:'c1-speaking-adv',name:'Fluency, Connected Speech & Pragmatics',desc:'Berbicara seperti fluent speaker — beyond grammar dan vocabulary.',learn:["Connected speech: assimilation (don't you → doncha), elision, linking, weak forms","Sentence stress for information focus and contrast: I didn't say HE did it.","Intonation patterns: certainty, doubt, sarcasm, politeness","Pragmatics: indirect speech acts (Can you pass the salt? = Please do it)","Conversation management: holding floor, interrupting politely, repair strategies"],ex:[{en:"\"Waddya wanna do?\" = \"What do you want to do?\" in fast natural speech.",id:""}],res:["Rachel's English",'Sounds App','BBC Learning English']},
+    {id:'c1-listening-adv',name:'Listening: Inference, Attitude & Implicit Meaning',desc:'Memahami bukan hanya APA yang dikatakan tapi HOW dan WHY.',learn:["Detecting speaker's attitude and emotion from tone, stress, word choice","Understanding indirect refusal: \"That's an interesting idea...\" (= probably no)","Understanding irony, sarcasm, understatement in spoken English","Listening to lectures, debates, complex discussions (TED, BBC Radio 4)","Note-taking strategies for long academic or professional listening tasks"],ex:[{en:"Detecting that a speaker is being evasive even though their words sound cooperative.",id:""}],res:['TED Talks','BBC Learning English','Test-English.com']},
+  ]},
+]},
+];
+
+/* ══════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════ */
+let CUR, done={}, filterLv='ALL', filterF='all', colState={};
+let adminOn=false;
+let viewTopic=null, viewLv=null;
+let editState=null; // {mode:'edit'|'add-topic'|'add-cat'|'add-level', lvIdx, catIdx, topicIdx}
+let deleteState=null;
+
+function loadState(){
+  try{
+    const raw=localStorage.getItem('ec3_cur');
+    CUR=raw?JSON.parse(raw):JSON.parse(JSON.stringify(DEFAULT_CUR));
+    done=JSON.parse(localStorage.getItem('ec3_done')||'{}');
+  }catch(e){CUR=JSON.parse(JSON.stringify(DEFAULT_CUR));done={};}
+}
+function saveCur(){try{localStorage.setItem('ec3_cur',JSON.stringify(CUR));}catch(e){}}
+function saveDone(){try{localStorage.setItem('ec3_done',JSON.stringify(done));}catch(e){}}
+
+function uid(){return 't'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+
+/* ══════════════════════════════════════════════
+   COLOURS
+══════════════════════════════════════════════ */
+const LVC={A1:'var(--gr)',A2:'var(--bl)',B1:'var(--pu)','B1+':'#a8d8a8',B2:'var(--ac)',C1:'var(--co)'};
+const LCC={A1:'lc-A1',A2:'lc-A2',B1:'lc-B1','B1+':'lc-B1P',B2:'lc-B2',C1:'lc-C1'};
+function lvc(lv){return LVC[lv]||'var(--mu)';}
+function lcc(lv){return LCC[lv]||'';}
+
+/* ══════════════════════════════════════════════
+   ADMIN TOGGLE
+══════════════════════════════════════════════ */
+function toggleAdmin(){
+  adminOn=!adminOn;
+  document.body.classList.toggle('admin-on',adminOn);
+  document.getElementById('adminBtn').classList.toggle('active',adminOn);
+  document.getElementById('adminLabel').textContent=adminOn?'Keluar Admin':'Mode Admin';
+  document.getElementById('adminBar').classList.toggle('hidden',!adminOn);
+  render();
+}
+
+/* ══════════════════════════════════════════════
+   STATS & RING
+══════════════════════════════════════════════ */
+function allTopics(){return CUR.flatMap(l=>l.cats.flatMap(c=>c.topics.map(t=>({...t,lv:l.lv}))));}
+function updateStats(){
+  const all=allTopics(), total=all.length;
+  const dc=all.filter(t=>done[t.id]).length;
+  const pct=total?Math.round(dc/total*100):0;
+  document.getElementById('hd').textContent=dc;
+  document.getElementById('ht').textContent=total;
+  document.getElementById('hp').textContent=pct+'%';
+  const circ=207.35;
+  document.getElementById('ringC').style.strokeDashoffset=circ-(pct/100)*circ;
+  document.getElementById('rPct').textContent=pct+'%';
+  const subs=['belum mulai','baru dimulai','sedang berjalan','hampir selesai','selesai! 🎉'];
+  document.getElementById('rSub').textContent=subs[pct===100?4:pct>74?3:pct>49?2:pct>24?1:0];
+  const sb=document.getElementById('sBars'); sb.innerHTML='';
+  CUR.forEach(l=>{
+    const ts=l.cats.flatMap(c=>c.topics);
+    const d=ts.filter(t=>done[t.id]).length;
+    const p=ts.length?Math.round(d/ts.length*100):0;
+    sb.innerHTML+=`<div class="srow"><span class="slbl">${l.lv}</span><div class="strack"><div class="sfill" style="width:${p}%;background:${lvc(l.lv)}"></div></div><span class="spct">${p}%</span></div>`;
+  });
+}
+
+/* ══════════════════════════════════════════════
+   RENDER
+══════════════════════════════════════════════ */
+function render(){
+  const mc=document.getElementById('mc'); mc.innerHTML='';
+  let anyVisible=false;
+  CUR.forEach((l,li)=>{
+    if(filterLv!=='ALL'&&l.lv!==filterLv)return;
+    const allLT=l.cats.flatMap(c=>c.topics);
+    const filteredFlat=allLT.filter(t=>filterF==='done'?done[t.id]:filterF==='undone'?!done[t.id]:true);
+    if(!filteredFlat.length&&!adminOn)return;
+    anyVisible=true;
+    const dc=allLT.filter(t=>done[t.id]).length;
+    const pct=Math.round(dc/allLT.length*100)||0;
+    const isCol=colState[l.lv];
+    const sec=document.createElement('section'); sec.className='lsec';
+    // LEVEL HEADER
+    const hdr=document.createElement('div');
+    hdr.className='lhdr'+(isCol?' is-collapsed':'');
+    hdr.innerHTML=`<span class="ltag ${lcc(l.lv)}">${l.lv}</span><span class="ltitle">${l.title}</span><span class="lmeta">${l.sub}</span><span class="lcount">${dc}/${allLT.length}</span><span class="chev">▾</span>`;
+    hdr.onclick=()=>{colState[l.lv]=!colState[l.lv];render();};
+    // LEVEL ADMIN ACTIONS
+    if(adminOn){
+      const editLvBtn=document.createElement('button');
+      editLvBtn.className='cad-btn'; editLvBtn.textContent='✎ Edit Level';
+      editLvBtn.onclick=(e)=>{e.stopPropagation();openEditLevel(li);};
+      const delLvBtn=document.createElement('button');
+      delLvBtn.className='cad-btn del'; delLvBtn.textContent='✕';
+      delLvBtn.onclick=(e)=>{e.stopPropagation();openDeleteLevel(li);};
+      hdr.appendChild(editLvBtn); hdr.appendChild(delLvBtn);
+    }
+    // PROGRESS BAR
+    const pbar=document.createElement('div'); pbar.className='lpbar';
+    pbar.innerHTML=`<div class="lpfill" style="width:${pct}%;background:${lvc(l.lv)}"></div>`;
+    // BODY
+    const body=document.createElement('div');
+    if(isCol)body.style.display='none';
+    l.cats.forEach((cat,ci)=>{
+      const catTopics=cat.topics.filter(t=>filterF==='done'?done[t.id]:filterF==='undone'?!done[t.id]:true);
+      if(!catTopics.length&&!adminOn)return;
+      const cd=document.createElement('div'); cd.className='catd';
+      const catHdr=document.createElement('div'); catHdr.className='catname';
+      catHdr.textContent=cat.name;
+      if(adminOn){
+        const editCatBtn=document.createElement('button');
+        editCatBtn.className='cad-btn'; editCatBtn.textContent='✎ Rename';
+        editCatBtn.style.cssText='display:inline-flex;margin-left:8px;';
+        editCatBtn.onclick=()=>openEditCat(li,ci);
+        const delCatBtn=document.createElement('button');
+        delCatBtn.className='cad-btn del'; delCatBtn.textContent='✕ Hapus Kategori';
+        delCatBtn.style.cssText='display:inline-flex;margin-left:4px;';
+        delCatBtn.onclick=()=>openDeleteCat(li,ci);
+        catHdr.appendChild(editCatBtn); catHdr.appendChild(delCatBtn);
+      }
+      cd.appendChild(catHdr);
+      const grid=document.createElement('div'); grid.className='grid';
+      catTopics.forEach(t=>{
+        grid.appendChild(buildCard(t,l.lv,li,ci));
+      });
+      cd.appendChild(grid);
+      if(adminOn){
+        const addTBtn=document.createElement('button');
+        addTBtn.className='add-topic-btn';
+        addTBtn.innerHTML='+ Tambah Topik ke "'+cat.name+'"';
+        addTBtn.onclick=()=>openAddTopic(li,ci);
+        cd.appendChild(addTBtn);
+      }
+      body.appendChild(cd);
+    });
+    if(adminOn){
+      const addCBtn=document.createElement('button');
+      addCBtn.className='add-cat-btn';
+      addCBtn.innerHTML='+ Tambah Kategori ke '+l.lv;
+      addCBtn.onclick=()=>openAddCat(li);
+      body.appendChild(addCBtn);
+    }
+    sec.appendChild(hdr); sec.appendChild(pbar); sec.appendChild(body);
+    mc.appendChild(sec);
+  });
+  if(adminOn){
+    const addLBtn=document.createElement('button');
+    addLBtn.className='add-level-btn';
+    addLBtn.innerHTML='+ Tambah Level Baru';
+    addLBtn.onclick=()=>openAddLevel();
+    mc.appendChild(addLBtn);
+  }
+  if(!anyVisible&&!adminOn){
+    mc.innerHTML='<div class="empty"><h3>Tidak ada topik</h3><p>Coba ubah filter di atas.</p></div>';
+  }
+  updateStats();
+}
+
+function buildCard(t,lv,li,ci){
+  const card=document.createElement('div');
+  card.className='card'+(done[t.id]?' done':'');
+  const chips=(t.learn||[]).slice(0,2).map(s=>`<span class="chip">${s.split(':')[0].split('(')[0].replace(/['"✓✗→]/g,'').trim().substring(0,30)}</span>`).join('');
+  const strip=document.createElement('div');
+  strip.className='cstrip'; strip.style.background=lvc(lv);
+  const ck=document.createElement('div');
+  ck.className='ck'; ck.style.cssText=`background:color-mix(in srgb,${lvc(lv)} 20%,transparent);color:${lvc(lv)};`;
+  ck.textContent='✓';
+  card.innerHTML=`<div class="ctop"><div class="cname">${t.name}</div><span class="ctag ${lcc(lv)}">${lv}</span></div><div class="cdesc">${t.desc}</div><div class="chips">${chips}</div>`;
+  card.appendChild(strip); card.appendChild(ck);
+  // ADMIN ROW
+  if(adminOn){
+    const arow=document.createElement('div'); arow.className='card-admin-row';
+    const editBtn=document.createElement('button'); editBtn.className='cad-btn'; editBtn.textContent='✎ Edit';
+    editBtn.onclick=(e)=>{e.stopPropagation();openEditTopic(li,ci,t.id);};
+    const delBtn=document.createElement('button'); delBtn.className='cad-btn del'; delBtn.textContent='✕ Hapus';
+    delBtn.onclick=(e)=>{e.stopPropagation();openDeleteTopic(li,ci,t.id,t.name);};
+    arow.appendChild(editBtn); arow.appendChild(delBtn);
+    card.appendChild(arow);
+    card.onclick=()=>openView(t,lv);
+  } else {
+    card.onclick=()=>openView(t,lv);
+  }
+  return card;
+}
+
+/* ══════════════════════════════════════════════
+   VIEW MODAL
+══════════════════════════════════════════════ */
+function openView(t,lv){
+  viewTopic=t; viewLv=lv;
+  document.getElementById('mCefr').textContent=lv;
+  document.getElementById('mCefr').className='mcefr '+lcc(lv);
+  document.getElementById('mTitle').textContent=t.name;
+  document.getElementById('mDesc').textContent=t.desc;
+  document.getElementById('mLearn').innerHTML=(t.learn||[]).map(l=>`<li>${l}</li>`).join('');
+  document.getElementById('mLearnWrap').style.display=(t.learn&&t.learn.length)?'':'none';
+  const mex=document.getElementById('mEx');
+  mex.innerHTML=(t.ex||[]).map(e=>`<div class="exblock"><div class="ex-en">"${e.en}"</div>${e.id?`<div class="ex-id">${e.id}</div>`:''}</div>`).join('');
+  document.getElementById('mExWrap').style.display=(t.ex&&t.ex.length)?'':'none';
+  const mr=document.getElementById('mRes');
+  mr.innerHTML=(t.res||[]).map(r=>{const u=RU[r]||'#';return`<a class="rlink" href="${u}" target="_blank" rel="noopener">↗ ${r}</a>`;}).join('');
+  document.getElementById('mResWrap').style.display=(t.res&&t.res.length)?'':'none';
+  updateViewBtn();
+  document.getElementById('mOverlay').classList.add('open');
+}
+function updateViewBtn(){
+  const btn=document.getElementById('mBtn'); const d=done[viewTopic.id];
+  btn.className='mbtn '+(d?'mbtn-un':'mbtn-done');
+  btn.textContent=d?'↺ Tandai belum selesai':'✓ Tandai sudah selesai';
+}
+document.getElementById('mBtn').onclick=()=>{
+  done[viewTopic.id]=!done[viewTopic.id]; saveDone(); updateViewBtn(); render();
+};
+function closeView(){document.getElementById('mOverlay').classList.remove('open');}
+document.getElementById('mOverlay').onclick=e=>{if(e.target===document.getElementById('mOverlay'))closeView();};
+
+/* ══════════════════════════════════════════════
+   EDIT / ADD MODAL
+══════════════════════════════════════════════ */
+function openEditTopic(li,ci,tid){
+  const t=CUR[li].cats[ci].topics.find(x=>x.id===tid);
+  editState={mode:'edit-topic',li,ci,tid};
+  document.getElementById('eTitle').textContent='✎ Edit Topik';
+  document.getElementById('eName').value=t.name||'';
+  document.getElementById('eCat').value=CUR[li].cats[ci].name||'';
+  document.getElementById('eCat').disabled=true;
+  document.getElementById('eLv').value=CUR[li].lv;
+  document.getElementById('eLv').disabled=true;
+  document.getElementById('eDesc').value=t.desc||'';
+  document.getElementById('eLearn').value=(t.learn||[]).join('\n');
+  document.getElementById('eEx').value=(t.ex||[]).map(e=>e.id?`${e.en} | ${e.id}`:e.en).join('\n');
+  document.getElementById('eRes').value=(t.res||[]).join('\n');
+  document.getElementById('eOverlay').classList.add('open');
+}
+function openAddTopic(li,ci){
+  editState={mode:'add-topic',li,ci};
+  document.getElementById('eTitle').textContent='+ Tambah Topik Baru';
+  document.getElementById('eName').value='';
+  document.getElementById('eCat').value=CUR[li].cats[ci].name;
+  document.getElementById('eCat').disabled=true;
+  document.getElementById('eLv').value=CUR[li].lv;
+  document.getElementById('eLv').disabled=true;
+  document.getElementById('eDesc').value='';
+  document.getElementById('eLearn').value='';
+  document.getElementById('eEx').value='';
+  document.getElementById('eRes').value='Test-English.com\nBritish Council Grammar';
+  document.getElementById('eOverlay').classList.add('open');
+}
+function openAddCat(li){
+  editState={mode:'add-cat',li};
+  document.getElementById('eTitle').textContent='+ Tambah Kategori Baru';
+  document.getElementById('eName').value='';
+  document.getElementById('eName').placeholder='Nama kategori baru';
+  document.getElementById('eCat').value='(Kategori baru)';
+  document.getElementById('eCat').disabled=true;
+  document.getElementById('eLv').value=CUR[li].lv;
+  document.getElementById('eLv').disabled=true;
+  document.getElementById('eDesc').value='';
+  document.getElementById('eLearn').value='';
+  document.getElementById('eEx').value='';
+  document.getElementById('eRes').value='';
+  document.getElementById('eOverlay').classList.add('open');
+}
+function openEditCat(li,ci){
+  editState={mode:'edit-cat',li,ci};
+  document.getElementById('eTitle').textContent='✎ Rename Kategori';
+  document.getElementById('eName').value=CUR[li].cats[ci].name;
+  document.getElementById('eCat').value='';
+  document.getElementById('eCat').disabled=true;
+  document.getElementById('eLv').value=CUR[li].lv;
+  document.getElementById('eLv').disabled=true;
+  document.getElementById('eDesc').value='';
+  document.getElementById('eLearn').value='';
+  document.getElementById('eEx').value='';
+  document.getElementById('eRes').value='';
+  document.getElementById('eOverlay').classList.add('open');
+}
+function openAddLevel(){
+  editState={mode:'add-level'};
+  document.getElementById('eTitle').textContent='+ Tambah Level Baru';
+  document.getElementById('eName').value='';
+  document.getElementById('eName').placeholder='Nama level (e.g. C2 — Mastery)';
+  document.getElementById('eCat').value='';
+  document.getElementById('eCat').disabled=false;
+  document.getElementById('eLv').value='C1';
+  document.getElementById('eLv').disabled=false;
+  document.getElementById('eDesc').value='';
+  document.getElementById('eLearn').value='';
+  document.getElementById('eEx').value='';
+  document.getElementById('eRes').value='';
+  document.getElementById('eOverlay').classList.add('open');
+}
+function openEditLevel(li){
+  editState={mode:'edit-level',li};
+  document.getElementById('eTitle').textContent='✎ Edit Level';
+  document.getElementById('eName').value=CUR[li].title;
+  document.getElementById('eCat').value=CUR[li].sub;
+  document.getElementById('eCat').disabled=false;
+  document.getElementById('eLv').value=CUR[li].lv;
+  document.getElementById('eLv').disabled=false;
+  document.getElementById('eDesc').value='';
+  document.getElementById('eLearn').value='';
+  document.getElementById('eEx').value='';
+  document.getElementById('eRes').value='';
+  document.getElementById('eOverlay').classList.add('open');
+}
+function closeEdit(){
+  document.getElementById('eOverlay').classList.remove('open');
+  document.getElementById('eCat').disabled=false;
+  document.getElementById('eLv').disabled=false;
+  document.getElementById('eName').placeholder='Contoh: Present Simple Tense';
+  editState=null;
+}
+function saveEdit(){
+  if(!editState)return;
+  const name=document.getElementById('eName').value.trim();
+  if(!name){alert('Nama tidak boleh kosong!');return;}
+  const {mode,li,ci,tid}=editState;
+  if(mode==='edit-topic'){
+    const t=CUR[li].cats[ci].topics.find(x=>x.id===tid);
+    t.name=name;
+    t.desc=document.getElementById('eDesc').value.trim();
+    t.learn=document.getElementById('eLearn').value.split('\n').map(s=>s.trim()).filter(Boolean);
+    t.ex=document.getElementById('eEx').value.split('\n').map(s=>s.trim()).filter(Boolean).map(s=>{const p=s.split('|');return{en:p[0]?.trim()||s,id:p[1]?.trim()||''};});
+    t.res=document.getElementById('eRes').value.split('\n').map(s=>s.trim()).filter(Boolean);
+  } else if(mode==='add-topic'){
+    const newT={
+      id:uid(), name, desc:document.getElementById('eDesc').value.trim(),
+      learn:document.getElementById('eLearn').value.split('\n').map(s=>s.trim()).filter(Boolean),
+      ex:document.getElementById('eEx').value.split('\n').map(s=>s.trim()).filter(Boolean).map(s=>{const p=s.split('|');return{en:p[0]?.trim()||s,id:p[1]?.trim()||''};}),
+      res:document.getElementById('eRes').value.split('\n').map(s=>s.trim()).filter(Boolean)
+    };
+    CUR[li].cats[ci].topics.push(newT);
+  } else if(mode==='add-cat'){
+    CUR[li].cats.push({name, topics:[]});
+  } else if(mode==='edit-cat'){
+    CUR[li].cats[ci].name=name;
+  } else if(mode==='add-level'){
+    const lvCode=document.getElementById('eLv').value;
+    CUR.push({lv:lvCode, title:name, sub:document.getElementById('eCat').value.trim()||'Level baru', cats:[]});
+  } else if(mode==='edit-level'){
+    CUR[li].title=name;
+    CUR[li].sub=document.getElementById('eCat').value.trim();
+    CUR[li].lv=document.getElementById('eLv').value;
+  }
+  saveCur(); closeEdit(); render();
+}
+document.getElementById('eOverlay').onclick=e=>{if(e.target===document.getElementById('eOverlay'))closeEdit();};
+
+/* ══════════════════════════════════════════════
+   DELETE
+══════════════════════════════════════════════ */
+function openDeleteTopic(li,ci,tid,tname){
+  deleteState={type:'topic',li,ci,tid};
+  document.getElementById('dMsg').innerHTML=`Topik "<strong>${tname}</strong>" akan dihapus permanen.<br>Progress yang sudah ditandai juga akan hilang.`;
+  document.getElementById('dOverlay').classList.add('open');
+}
+function openDeleteCat(li,ci){
+  const c=CUR[li].cats[ci];
+  deleteState={type:'cat',li,ci};
+  document.getElementById('dMsg').innerHTML=`Kategori "<strong>${c.name}</strong>" dan semua topik di dalamnya (${c.topics.length} topik) akan dihapus permanen.`;
+  document.getElementById('dOverlay').classList.add('open');
+}
+function openDeleteLevel(li){
+  const l=CUR[li];
+  const total=l.cats.flatMap(c=>c.topics).length;
+  deleteState={type:'level',li};
+  document.getElementById('dMsg').innerHTML=`Level "<strong>${l.title}</strong>" dan semua kontennya (${total} topik) akan dihapus permanen.`;
+  document.getElementById('dOverlay').classList.add('open');
+}
+function closeDelete(){document.getElementById('dOverlay').classList.remove('open');deleteState=null;}
+function confirmDelete(){
+  if(!deleteState)return;
+  const {type,li,ci,tid}=deleteState;
+  if(type==='topic'){
+    const idx=CUR[li].cats[ci].topics.findIndex(x=>x.id===tid);
+    if(idx>-1){delete done[tid];CUR[li].cats[ci].topics.splice(idx,1);}
+  } else if(type==='cat'){
+    CUR[li].cats[ci].topics.forEach(t=>{delete done[t.id];});
+    CUR[li].cats.splice(ci,1);
+  } else if(type==='level'){
+    CUR[li].cats.flatMap(c=>c.topics).forEach(t=>{delete done[t.id];});
+    CUR.splice(li,1);
+  }
+  saveCur(); saveDone(); closeDelete(); render();
+}
+document.getElementById('dOverlay').onclick=e=>{if(e.target===document.getElementById('dOverlay'))closeDelete();};
+
+/* ══════════════════════════════════════════════
+   FILTERS
+══════════════════════════════════════════════ */
+document.querySelectorAll('#cefrFilter .cb').forEach(b=>{
+  b.onclick=()=>{document.querySelectorAll('#cefrFilter .cb').forEach(x=>x.classList.remove('active'));b.classList.add('active');filterLv=b.dataset.lv;render();};
+});
+document.querySelectorAll('.fb').forEach(b=>{
+  b.onclick=()=>{document.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));b.classList.add('active');filterF=b.dataset.f;render();};
+});
+
+/* ══════════════════════════════════════════════
+   PRINT REPORT
+══════════════════════════════════════════════ */
+let printLv='ALL';
+const LVC_PRINT={A1:'#68d391',A2:'#76b7f5',B1:'#b49cf3','B1+':'#a8d8a8',B2:'#e9ca7f',C1:'#ef806e'};
+
+function openPrint(){
+  buildPrintPreview();
+  document.getElementById('printOverlay').classList.add('open');
+}
+function closePrint(){document.getElementById('printOverlay').classList.remove('open');}
+document.getElementById('printOverlay').onclick=e=>{if(e.target===document.getElementById('printOverlay'))closePrint();};
+
+function setPrintFilter(btn,lv){
+  document.querySelectorAll('#printFilterRow .fb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  printLv=lv;
+  buildPrintPreview();
+}
+
+function buildPrintPreview(){
+  const all=allTopics();
+  const total=all.length;
+  const doneCount=all.filter(t=>done[t.id]).length;
+  const pct=total?Math.round(doneCount/total*100):0;
+  const now=new Date();
+  const dateStr=now.toLocaleDateString('id-ID',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+  let html=`<div style="font-family:monospace;">`;
+  html+=`<div style="font-size:14px;font-weight:600;color:#e9ca7f;margin-bottom:4px;">English Mastery — Laporan Progress</div>`;
+  html+=`<div style="color:#6e6b65;font-size:11px;margin-bottom:12px;">${dateStr} · Total: ${doneCount}/${total} topik (${pct}%)</div>`;
+
+  CUR.forEach(l=>{
+    if(printLv!=='ALL'&&l.lv!==printLv)return;
+    const lvTopics=l.cats.flatMap(c=>c.topics);
+    const lvDone=lvTopics.filter(t=>done[t.id]);
+    const lvTotal=lvTopics.length;
+    const lvPct=lvTotal?Math.round(lvDone.length/lvTotal*100):0;
+    const color=LVC_PRINT[l.lv]||'#9a968f';
+    html+=`<div style="margin-bottom:12px;border-left:3px solid ${color};padding-left:10px;">`;
+    html+=`<div style="font-size:13px;font-weight:600;color:${color};">${l.lv} — ${l.title} &nbsp;<span style="font-weight:400;font-size:11px;color:#6e6b65;">${lvDone.length}/${lvTotal} (${lvPct}%)</span></div>`;
+    html+=`<div style="font-size:10px;color:#6e6b65;margin-bottom:6px;">${l.sub}</div>`;
+    if(lvDone.length===0){
+      html+=`<div style="font-size:11px;color:#6e6b65;font-style:italic;">Belum ada topik yang diselesaikan di level ini.</div>`;
+    } else {
+      l.cats.forEach(cat=>{
+        const catDone=cat.topics.filter(t=>done[t.id]);
+        if(!catDone.length)return;
+        html+=`<div style="font-size:10px;color:#9a968f;margin-top:6px;margin-bottom:2px;text-transform:uppercase;letter-spacing:1px;">${cat.name}</div>`;
+        catDone.forEach(t=>{
+          html+=`<div style="font-size:11px;color:#edeae3;padding:1px 0;">✓ ${t.name}</div>`;
+        });
+      });
+    }
+    html+=`</div>`;
+  });
+  html+=`</div>`;
+  document.getElementById('printPreview').innerHTML=html;
+}
+
+function doPrint(){
+  const now=new Date();
+  const dateStr=now.toLocaleDateString('id-ID',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  const all=allTopics();
+  const doneCount=all.filter(t=>done[t.id]).length;
+  const pct=Math.round(doneCount/all.length*100)||0;
+  let body='<html><head><meta charset="UTF-8"><title>English Mastery — Laporan Progress</title>';
+  body+=`<style>
+    *{box-sizing:border-box;}
+    body{font-family:Arial,sans-serif;margin:32px;color:#1a1a1a;font-size:13px;line-height:1.6;}
+    h1{font-size:20px;color:#2a2a2a;margin-bottom:4px;}
+    .sub{color:#777;font-size:12px;margin-bottom:24px;}
+    .summary{display:flex;gap:24px;margin-bottom:24px;padding:12px 16px;background:#f8f8f8;border-radius:8px;}
+    .sitem{text-align:center;} .snum{font-size:22px;font-weight:700;color:#2a2a2a;} .slbl{font-size:10px;color:#777;text-transform:uppercase;}
+    .level{margin-bottom:20px;border-left:4px solid;padding-left:12px;}
+    .lvtitle{font-size:14px;font-weight:700;margin-bottom:2px;}
+    .lvsub{font-size:11px;color:#777;margin-bottom:8px;}
+    .catname{font-size:10px;color:#999;text-transform:uppercase;letter-spacing:1px;margin-top:8px;margin-bottom:4px;}
+    .topic{font-size:12px;padding:1px 0;} .tick{color:#22c55e;margin-right:4px;}
+    .empty{font-size:11px;color:#aaa;font-style:italic;}
+    .progress-bar{height:6px;background:#eee;border-radius:3px;margin-bottom:6px;overflow:hidden;}
+    .progress-fill{height:6px;border-radius:3px;}
+    @media print{body{margin:16px;}@page{margin:1.5cm;}}
+  </style></head><body>`;
+  body+=`<h1>📚 English Mastery — Laporan Progress Belajar</h1>`;
+  body+=`<div class="sub">Dicetak: ${dateStr}</div>`;
+  body+=`<div class="summary"><div class="sitem"><div class="snum">${doneCount}</div><div class="slbl">Selesai</div></div><div class="sitem"><div class="snum">${all.length}</div><div class="slbl">Total</div></div><div class="sitem"><div class="snum">${pct}%</div><div class="slbl">Progress</div></div></div>`;
+  const colors={A1:'#22c55e',A2:'#3b82f6',B1:'#8b5cf6','B1+':'#16a34a',B2:'#d97706',C1:'#ef4444'};
+  CUR.forEach(l=>{
+    if(printLv!=='ALL'&&l.lv!==printLv)return;
+    const lvTopics=l.cats.flatMap(c=>c.topics);
+    const lvDone=lvTopics.filter(t=>done[t.id]);
+    const lvPct=lvTopics.length?Math.round(lvDone.length/lvTopics.length*100):0;
+    const color=colors[l.lv]||'#777';
+    body+=`<div class="level" style="border-color:${color};">`;
+    body+=`<div class="lvtitle" style="color:${color};">${l.lv} — ${l.title} <span style="font-weight:400;font-size:12px;color:#777;">${lvDone.length}/${lvTopics.length} (${lvPct}%)</span></div>`;
+    body+=`<div class="lvsub">${l.sub}</div>`;
+    body+=`<div class="progress-bar"><div class="progress-fill" style="width:${lvPct}%;background:${color};"></div></div>`;
+    if(lvDone.length===0){
+      body+=`<div class="empty">Belum ada topik yang diselesaikan.</div>`;
+    } else {
+      l.cats.forEach(cat=>{
+        const catDone=cat.topics.filter(t=>done[t.id]);
+        if(!catDone.length)return;
+        body+=`<div class="catname">${cat.name}</div>`;
+        catDone.forEach(t=>{body+=`<div class="topic"><span class="tick">✓</span>${t.name}</div>`;});
+      });
+    }
+    body+=`</div>`;
+  });
+  body+=`</body></html>`;
+  const win=window.open('','_blank');
+  win.document.write(body);
+  win.document.close();
+  win.focus();
+  setTimeout(()=>win.print(),600);
+}
+
+function copyReport(){
+  const now=new Date();
+  const dateStr=now.toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'numeric'});
+  const all=allTopics();
+  const doneCount=all.filter(t=>done[t.id]).length;
+  const pct=Math.round(doneCount/all.length*100)||0;
+  let text=`📚 ENGLISH MASTERY — LAPORAN PROGRESS\n${dateStr}\nTotal: ${doneCount}/${all.length} topik (${pct}%)\n\n`;
+  CUR.forEach(l=>{
+    if(printLv!=='ALL'&&l.lv!==printLv)return;
+    const lvTopics=l.cats.flatMap(c=>c.topics);
+    const lvDone=lvTopics.filter(t=>done[t.id]);
+    const lvPct=lvTopics.length?Math.round(lvDone.length/lvTopics.length*100):0;
+    text+=`━━━ ${l.lv} — ${l.title} (${lvDone.length}/${lvTopics.length}, ${lvPct}%)\n`;
+    if(lvDone.length===0){text+='  (belum ada yang selesai)\n';}
+    else{l.cats.forEach(cat=>{
+      const catDone=cat.topics.filter(t=>done[t.id]);
+      if(!catDone.length)return;
+      text+=`  [${cat.name}]\n`;
+      catDone.forEach(t=>{text+=`  ✓ ${t.name}\n`;});
+    });}
+    text+='\n';
+  });
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=document.querySelector('#printOverlay .mbtn-un');
+    const orig=btn.textContent; btn.textContent='✓ Tersalin!';
+    setTimeout(()=>{btn.textContent=orig;},2000);
+  }).catch(()=>alert('Gagal copy. Coba select manual.'));
+}
+
+/* ══════════════════════════════════════════════
+   OXFORD 3000/5000 WORD LIST BY CEFR LEVEL
+   Source: Oxford University Press official lists
+══════════════════════════════════════════════ */
+const OXFORD={
+  A1:['able','about','above','across','act','add','adult','after','again','age','ago','agree','all','allow','almost','alone','along','already','also','always','animal','another','answer','any','anyone','anything','area','arm','around','ask','at','away','baby','back','bad','bag','ball','bank','be','because','become','before','begin','behind','believe','best','better','between','big','body','book','both','box','boy','break','bring','build','but','buy','call','can','car','care','carry','change','check','child','city','class','clean','clear','close','come','computer','contain','continue','cook','cost','country','course','create','cut','dark','day','dead','different','difficult','dinner','do','door','down','draw','drive','early','easy','eat','end','even','every','example','fact','fall','family','far','fast','feel','find','first','floor','fly','follow','food','for','forget','form','free','friend','from','full','fun','game','get','girl','give','go','good','great','group','grow','hand','happen','hard','have','head','hear','help','here','high','hold','home','hope','how','idea','important','include','increase','into','job','keep','kind','know','large','last','late','learn','leave','let','life','like','listen','live','long','look','lot','love','low','make','man','many','mean','meet','might','mind','money','more','most','move','much','must','name','near','need','never','next','night','nothing','now','often','old','once','only','open','other','our','out','over','own','part','past','pay','people','phone','place','plan','play','point','possible','put','read','ready','real','really','remember','rest','right','same','say','see','seem','send','set','short','show','side','small','so','some','something','soon','start','stay','still','stop','study','such','sure','take','talk','tell','that','thing','think','time','today','together','too','top','turn','under','until','up','use','very','wait','walk','want','water','way','well','when','where','while','who','why','will','with','woman','word','work','world','write','year','young'],
+  A2:['able','across','activity','add','address','advantage','afraid','afternoon','age','agree','ahead','allow','alone','already','although','always','amazing','angry','another','anyone','anything','anywhere','appointment','area','argue','arrive','article','ask','attention','awful','back','bag','basic','bath','become','begin','behind','believe','belong','better','borrow','both','bottom','break','breakfast','bridge','bring','building','business','busy','camera','chance','character','check','choice','choose','cinema','clean','clear','clever','climb','clock','close','clothes','coffee','collect','college','comfortable','communication','compare','complete','connect','conversation','correct','couple','cover','culture','damage','dance','dangerous','decide','deep','develop','difference','difficult','direction','discover','distance','dream','drink','drop','during','either','enjoy','enough','enter','environment','especially','event','everybody','everyone','everywhere','exactly','excellent','exercise','explain','face','fail','favourite','feel','feeling','fill','finally','finish','flower','future','general','happen','happy','health','heard','heavy','holiday','hospital','hotel','hour','however','hurt','imagine','important','interest','internet','introduce','invite','island','journey','jump','keep','language','laugh','lay','lesson','letter','lift','likely','list','lose','lunch','map','market','maybe','meeting','message','middle','minute','miss','moment','morning','mountain','music','necessary','neither','nervous','news','nice','noise','normally','notice','nowhere','number','offer','often','once','order','pass','perfect','perhaps','person','photograph','picture','plan','police','popular','positive','problem','produce','program','promise','quickly','quite','reason','receive','recently','relax','repeat','return','road','safe','school','search','season','share','should','similar','sing','situation','sleep','slowly','sometime','somewhere','sort','sound','special','spend','star','strange','suggest','swim','system','teach','their','themselves','therefore','through','throw','together','tomorrow','towards','town','track','travel','trouble','true','turn','twice','typical','understand','usually','valley','various','village','visit','voice','wait','wake','watch','whatever','when','which','while','whose','wide','wife','window','within','without','wonder','worry','worst','write'],
+  B1:['ability','absence','acceptable','access','accident','according','account','accurate','achieve','action','actual','additional','admire','advantage','advertise','affect','afford','agent','aggressive','aim','alternative','ambitious','amount','amusing','ancient','angry','announcement','anxiety','apologise','appeal','apply','appropriate','approve','argument','arrange','arrive','assessment','assist','assume','attitude','attract','available','average','avoid','award','background','basis','behaviour','benefit','breathe','career','cause','challenge','change','charity','choice','citizen','claim','collect','communicate','community','compare','compete','complain','complex','conclude','confidence','confirm','consider','consist','contain','convenient','cooperate','courage','current','custom','deal','debate','decision','decline','defend','definition','deliver','demonstrate','department','depend','desire','despite','detail','dialogue','direct','direction','discuss','divide','document','doubt','dramatic','during','duty','earn','economic','efficient','encourage','enough','establish','evaluate','evidence','exactly','examine','expect','experience','express','failure','familiar','feature','focus','formal','forward','friendly','general','generous','global','government','grateful','group','growth','guide','handle','honest','however','identify','ignore','impact','important','improve','indeed','independent','indirect','inform','involve','issue','judge','knowledge','lack','leader','leadership','legal','limit','manage','measure','media','mention','method','mistake','moderate','monitor','natural','necessary','negative','nevertheless','normal','notice','obvious','occur','opportunity','organisation','original','otherwise','outside','overall','overcome','particular','patient','perform','period','personal','physical','plenty','positive','potential','practice','preparation','prevent','principle','priority','probably','process','progress','provide','purpose','quality','reality','reason','recognise','recommend','reduce','regular','relation','release','rely','reputation','research','responsibility','result','risk','role','satisfy','serious','solution','statement','stress','structure','succeed','support','survive','technology','theory','throughout','total','tradition','typical','unique','various','value','wide'],
+  B2:['abstract','academic','accommodate','acquire','adequate','administration','adolescent','advocate','aesthetic','allocate','analysis','assert','assess','assume','authority','autonomous','bias','budget','capable','capacity','circumstance','coincide','collaborate','commitment','commodity','compensation','competent','component','concentrate','conflict','consequence','considerable','considerable','consistent','contemporary','contrary','contrast','controversial','convert','coordinate','core','create','criterion','crucial','cultural','data','decade','define','despite','devote','dimension','distribute','dominate','draft','dynamic','eliminate','emphasise','establish','ethical','evaluate','explicit','expose','extent','facilitate','factor','feature','foundation','framework','function','fundamental','generate','global','grant','hypothesis','identify','ignore','implement','implicit','indicate','interpret','investigate','justify','maintain','mature','methodology','module','motivation','network','nevertheless','notion','objective','obtain','occur','perspective','phenomenon','philosophy','policy','pose','predict','previous','primary','promote','proportion','psychology','qualify','recommend','reliable','represent','resource','restrict','reveal','revise','sector','sequence','significant','simulate','specific','strategy','structure','submit','subsequently','sufficient','summary','supplement','technology','tension','terminate','theory','transfer','trend','ultimate','undertake','valid','variable','whereas'],
+  C1:['aberrant','abolish','abstain','abundant','ambiguous','ambivalent','anomaly','apprehensive','arbitrary','articulate','assert','assimilate','attenuate','augment','austere','autonomy','circumvent','cogent','coherent','commensurate','compelling','concede','concur','conjecture','conspicuous','contemplate','contentious','contradict','convey','convict','covert','cynical','debilitating','delineate','denounce','depict','deride','devoid','discreet','disparity','dissent','distinguish','diverse','elicit','eloquent','emulate','encompass','engender','ephemeral','exacerbate','exemplify','exhaustive','explicit','exploit','exquisite','formidable','fragile','futile','indispensable','inevitable','inherent','innate','innovative','insight','intangible','integrity','intrinsic','marginalise','meticulous','nuanced','obsolete','ominous','paradox','paramount','pervasive','pragmatic','precarious','predominant','profound','proliferate','provocative','radical','rationalise','reciprocal','resilient','rigorous','scrutinise','skeptical','sophisticated','subjective','substantial','subtle','succumb','superficial','susceptible','tangible','tenacious','ubiquitous','undermine','unprecedented','volatile','vulnerable']
+};
+
+/* ── Translation hints for Indonesian (offline fallback) ── */
+const ID_HINTS={
+  // common words users will likely see
+  'achieve':'mencapai','acquire':'mendapatkan','adequate':'memadai','analyse':'menganalisis','assert':'menegaskan','assess':'menilai','assume':'mengasumsikan','attitude':'sikap','avoid':'menghindari','benefit':'manfaat','capable':'mampu','challenge':'tantangan','coherent':'koheren','commitment':'komitmen','communicate':'berkomunikasi','community':'komunitas','complex':'kompleks','confidence':'kepercayaan diri','consider':'mempertimbangkan','context':'konteks','contribute':'berkontribusi','controversial':'kontroversial','courage':'keberanian','current':'saat ini/arus','data':'data','debate':'debat','define':'mendefinisikan','demonstrate':'mendemonstrasikan','despite':'meskipun','develop':'mengembangkan','distinct':'berbeda','diverse':'beragam','dynamic':'dinamis','efficient':'efisien','emphasise':'menekankan','establish':'mendirikan','evaluate':'mengevaluasi','evidence':'bukti','explicit':'eksplisit','factor':'faktor','feature':'fitur/ciri','fundamental':'fundamental','generate':'menghasilkan','global':'global','identify':'mengidentifikasi','implement':'mengimplementasikan','indicate':'menunjukkan','interpret':'menafsirkan','involve':'melibatkan','issue':'masalah/isu','justify':'membenarkan','knowledge':'pengetahuan','maintain':'mempertahankan','methodology':'metodologi','monitor':'memantau','motivation':'motivasi','network':'jaringan','notion':'gagasan','objective':'objektif/tujuan','obtain':'mendapatkan','occur':'terjadi','opportunity':'kesempatan','overall':'keseluruhan','overcome':'mengatasi','particular':'khusus','perform':'melakukan/tampil','perspective':'perspektif','phenomenon':'fenomena','policy':'kebijakan','positive':'positif','potential':'potensi','practice':'praktik','prevent':'mencegah','principle':'prinsip','process':'proses','progress':'kemajuan','promote':'mempromosikan','provide':'menyediakan','purpose':'tujuan','quality':'kualitas','recognise':'mengenali','recommend':'merekomendasikan','reduce':'mengurangi','reliable':'andal','represent':'mewakili','research':'penelitian','resource':'sumber daya','responsibility':'tanggung jawab','result':'hasil','reveal':'mengungkapkan','significant':'signifikan','solution':'solusi','specific':'spesifik','strategy':'strategi','structure':'struktur','support':'mendukung','survive':'bertahan','theory':'teori','tradition':'tradisi','transfer':'mentransfer','trend':'tren','unique':'unik','valid':'valid','value':'nilai','various':'berbagai','vulnerable':'rentan','ambiguous':'ambigu','articulate':'mengartikulasikan','assert':'menegaskan','coherent':'koheren','compelling':'menarik','contemporary':'kontemporer','context':'konteks','critical':'kritis','crucial':'krusial','eloquent':'fasih','emphasise':'menekankan','facilitate':'memfasilitasi','fundamental':'fundamental','innovative':'inovatif','integrity':'integritas','intrinsic':'intrinsik','meticulous':'teliti','nuanced':'bernuansa','paradigm':'paradigma','pragmatic':'pragmatis','profound':'mendalam','resilient':'tangguh','rigorous':'ketat','sophisticated':'canggih','substantial':'substansial','ubiquitous':'ada di mana-mana','unprecedented':'belum pernah terjadi'
+};
+
+/* ══════════════════════════════════════════════
+   VOCAB STATE
+══════════════════════════════════════════════ */
+let currentVocabData=[];
+let savedVocabList=[];
+let currentVocabTab='gen';
+try{savedVocabList=JSON.parse(localStorage.getItem('ec3_vocab')||'[]');}catch(e){}
+function saveSavedList(){try{localStorage.setItem('ec3_vocab',JSON.stringify(savedVocabList));}catch(e){}}
+
+function openVocab(){
+  updateSavedBadge();
+  document.getElementById('vocabOverlay').classList.add('open');
+  if(currentVocabData.length===0)generateVocab();
+}
+function closeVocab(){document.getElementById('vocabOverlay').classList.remove('open');}
+document.getElementById('vocabOverlay').onclick=e=>{if(e.target===document.getElementById('vocabOverlay'))closeVocab();};
+
+function switchVocabTab(tab){
+  currentVocabTab=tab;
+  ['gen','saved'].forEach(t=>{
+    const btn=document.getElementById('vtab-'+t);
+    if(btn){btn.style.background=t===tab?'var(--s1)':'transparent';btn.style.color=t===tab?'var(--tx)':'var(--mu)';}
+    const content=document.getElementById('vtab-'+t+'-content');
+    if(content)content.classList.toggle('hidden',t!==tab);
+  });
+  if(tab==='saved')renderSavedList();
+}
+function updateSavedBadge(){
+  const b=document.getElementById('savedCountBadge');
+  if(b)b.textContent=savedVocabList.length?` (${savedVocabList.length})`:'';
+}
+
+/* ── Pick 10 random words from the list, not already in savedVocabList ── */
+function pickWords(lv,n=10){
+  const pool=(OXFORD[lv]||OXFORD.B2).slice();
+  // Shuffle Fisher-Yates
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+  return pool.slice(0,Math.min(n*3,pool.length)); // pick 30 candidates, we'll take first 10 that fetch ok
+}
+
+/* ── Fetch single word from Free Dictionary API ── */
+async function fetchWord(word){
+  const res=await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+  if(!res.ok)throw new Error('not found');
+  const data=await res.json();
+  if(!Array.isArray(data)||!data[0])throw new Error('empty');
+  const entry=data[0];
+  const meanings=entry.meanings||[];
+  const firstMeaning=meanings[0]||{};
+  const pos=firstMeaning.partOfSpeech||'word';
+  const defs=firstMeaning.definitions||[];
+  const def=defs[0]||{};
+  const phonetics=entry.phonetics||[];
+  const phonetic=(phonetics.find(p=>p.text)||{}).text||entry.phonetic||'';
+  // Collect example from any meaning/definition
+  let example='';
+  for(const m of meanings){for(const d of m.definitions||[]){if(d.example){example=d.example;break;}}}
+  // Synonyms from all meanings
+  const syns=[...new Set(meanings.flatMap(m=>(m.synonyms||[]).concat((m.definitions||[]).flatMap(d=>d.synonyms||[]))))].slice(0,3);
+  const antonyms=[...new Set(meanings.flatMap(m=>(m.antonyms||[]).concat((m.definitions||[]).flatMap(d=>d.antonyms||[]))))].slice(0,2);
+  return{word,phonetic,pos,meaning:def.definition||'',example:example||def.example||'',synonyms:syns,antonyms,audio:(phonetics.find(p=>p.audio)||{}).audio||''};
+}
+
+/* ── Main generate function ── */
+async function generateVocab(){
+  const lv=document.getElementById('vocabLvSel').value;
+  const grid=document.getElementById('vocabGrid');
+  const errEl=document.getElementById('vocabError');
+  const prog=document.getElementById('vocabProgress');
+  const progFill=document.getElementById('vocabProgressFill');
+  const progTxt=document.getElementById('vocabProgressTxt');
+  const genBtn=document.getElementById('genBtn');
+  grid.innerHTML=''; errEl.classList.add('hidden');
+  prog.classList.remove('hidden');
+  if(genBtn){genBtn.disabled=true;genBtn.style.opacity='.5';}
+  currentVocabData=[];
+
+  const candidates=pickWords(lv,10);
+  const results=[];
+  let fetched=0;
+
+  for(const word of candidates){
+    if(results.length>=10)break;
+    try{
+      const w=await fetchWord(word);
+      w.level=lv;
+      w.meaning_id=ID_HINTS[word]||'';
+      results.push(w);
+      fetched++;
+      progTxt.textContent=`${results.length}/10`;
+      progFill.style.width=`${(results.length/10)*100}%`;
+      // Render card immediately as it comes in (streaming UX)
+      renderOneCard(w,results.length-1,grid,lv);
+    }catch(e){
+      // word not in dictionary — skip silently, try next
+    }
+    // small delay to be polite to the free API
+    await new Promise(r=>setTimeout(r,80));
+  }
+
+  prog.classList.add('hidden');
+  if(genBtn){genBtn.disabled=false;genBtn.style.opacity='1';}
+
+  if(results.length===0){
+    errEl.classList.remove('hidden');
+    errEl.innerHTML=`<div style="font-size:20px;margin-bottom:.5rem;">⚠️</div>Gagal memuat vocabulary.<br><span style="font-size:11px;color:var(--mu);">Periksa koneksi internet dan coba lagi.</span><br><br><button onclick="generateVocab()" style="background:rgba(104,211,145,.08);border:1px solid rgba(104,211,145,.25);border-radius:7px;padding:6px 14px;color:var(--gr);font-size:12px;font-family:var(--sans);cursor:pointer;">🔀 Coba Lagi</button>`;
+    return;
+  }
+  currentVocabData=results;
+  updateSavedBadge();
+}
+
+/* ── Render a single card (called one by one for streaming effect) ── */
+const POS_COLOR={noun:'var(--bl)',verb:'var(--gr)',adjective:'var(--pu)',adverb:'var(--co)',phrase:'var(--ac)',exclamation:'var(--pi)',other:'var(--mu2)'};
+function posColor(pos){return POS_COLOR[(pos||'').toLowerCase()]||'var(--mu2)';}
+
+function renderOneCard(w,i,grid,lv){
+  const isSaved=savedVocabList.some(s=>s.word===w.word);
+  const pc=posColor(w.pos);
+  const lvColor=LVC[lv]||'var(--ac)';
+  const syns=w.synonyms?.length?`<div style="margin-top:5px;font-size:9px;color:var(--mu);">≈ ${w.synonyms.join(', ')}</div>`:'';
+  const ants=w.antonyms?.length?`<div style="font-size:9px;color:var(--mu);">≠ ${w.antonyms.join(', ')}</div>`:'';
+  const audioBtn=w.audio?`<button onclick="playAudio('${w.audio.startsWith('//')?'https:'+w.audio:w.audio}')" style="background:transparent;border:none;cursor:pointer;font-size:13px;padding:0;color:var(--mu);margin-left:4px;" title="Dengarkan">🔊</button>`:'';
+  const card=document.createElement('div');
+  card.id=`vc-${i}`;
+  card.style.cssText=`background:var(--s2);border:1px solid ${isSaved?'rgba(233,202,127,.3)':'var(--b1)'};border-radius:10px;padding:.85rem;position:relative;animation:fadeInUp .25s ease both;animation-delay:${i*40}ms;`;
+  card.innerHTML=`
+    <style>@keyframes fadeInUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}</style>
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px;">
+      <div style="flex:1;min-width:0;">
+        <span style="font-family:var(--serif);font-size:15px;color:var(--tx);">${w.word}</span>
+        ${audioBtn}
+        <span style="display:inline-block;font-size:8px;font-family:var(--mono);color:${pc};background:color-mix(in srgb,${pc} 12%,transparent);padding:2px 5px;border-radius:4px;margin-left:5px;">${w.pos}</span>
+        <span style="display:inline-block;font-size:8px;font-family:var(--mono);color:${lvColor};background:color-mix(in srgb,${lvColor} 10%,transparent);padding:2px 5px;border-radius:4px;margin-left:3px;">${lv}</span>
+      </div>
+      <button onclick="toggleSaveWord(${i})" id="vsave-${i}" style="background:transparent;border:none;cursor:pointer;font-size:16px;color:${isSaved?'var(--ac)':'var(--mu)'};flex-shrink:0;padding:0 0 0 6px;transition:color .15s;" title="${isSaved?'Hapus simpanan':'Simpan'}">
+        ${isSaved?'★':'☆'}
+      </button>
+    </div>
+    <div style="font-family:var(--mono);font-size:10px;color:var(--mu);margin-bottom:5px;">${w.phonetic||''}</div>
+    <div style="font-size:11px;color:var(--tx);line-height:1.5;margin-bottom:${w.meaning_id?'2px':'7px'};">${w.meaning||''}</div>
+    ${w.meaning_id?`<div style="font-size:10px;color:var(--mu2);margin-bottom:7px;">${w.meaning_id}</div>`:''}
+    ${w.example?`<div style="font-size:11px;color:var(--mu2);font-style:italic;line-height:1.5;margin-bottom:5px;">"${w.example}"</div>`:''}
+    ${syns}${ants}
+  `;
+  grid.appendChild(card);
+}
+
+function playAudio(url){
+  try{new Audio(url).play();}catch(e){}
+}
+
+function toggleSaveWord(idx){
+  const w=currentVocabData[idx];
+  if(!w)return;
+  const existing=savedVocabList.findIndex(s=>s.word===w.word);
+  if(existing>-1){savedVocabList.splice(existing,1);}
+  else{savedVocabList.push({...w,savedAt:new Date().toISOString()});}
+  saveSavedList(); updateSavedBadge();
+  const card=document.getElementById('vc-'+idx);
+  const btn=document.getElementById('vsave-'+idx);
+  const isSaved=savedVocabList.some(s=>s.word===w.word);
+  if(card)card.style.borderColor=isSaved?'rgba(233,202,127,.3)':'var(--b1)';
+  if(btn){btn.textContent=isSaved?'★':'☆';btn.style.color=isSaved?'var(--ac)':'var(--mu)';}
+}
+
+function saveAllCurrentVocab(){
+  if(!currentVocabData.length)return;
+  let added=0;
+  currentVocabData.forEach(w=>{if(!savedVocabList.some(s=>s.word===w.word)){savedVocabList.push({...w,savedAt:new Date().toISOString()});added++;}});
+  saveSavedList(); updateSavedBadge();
+  // Refresh star buttons
+  currentVocabData.forEach((_,i)=>{
+    const btn=document.getElementById('vsave-'+i);
+    const card=document.getElementById('vc-'+i);
+    if(btn){btn.textContent='★';btn.style.color='var(--ac)';}
+    if(card)card.style.borderColor='rgba(233,202,127,.3)';
+  });
+  const btn=document.getElementById('saveAllBtn');
+  if(btn){const o=btn.textContent;btn.textContent=added>0?`✓ ${added} kata disimpan`:'✓ Semua tersimpan';setTimeout(()=>{btn.textContent=o;},2200);}
+}
+
+/* ── SAVED LIST ── */
+function renderSavedList(){
+  const list=document.getElementById('savedList');
+  const empty=document.getElementById('savedEmpty');
+  const filterLv=document.getElementById('savedFilterLv').value;
+  const search=(document.getElementById('savedSearch').value||'').toLowerCase().trim();
+  let filtered=savedVocabList.filter(w=>{
+    const lvOk=filterLv==='ALL'||(w.level||'')===filterLv;
+    const searchOk=!search||w.word.toLowerCase().includes(search)||(w.meaning||'').toLowerCase().includes(search)||(w.meaning_id||'').toLowerCase().includes(search);
+    return lvOk&&searchOk;
+  }).sort((a,b)=>new Date(b.savedAt||0)-new Date(a.savedAt||0));
+
+  if(!filtered.length){list.innerHTML='';empty.classList.remove('hidden');return;}
+  empty.classList.add('hidden');
+  list.innerHTML='';
+  filtered.forEach(w=>{
+    const pc=posColor(w.pos);
+    const lvColor=LVC[w.level||'B2']||'var(--mu)';
+    const dateStr=w.savedAt?new Date(w.savedAt).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}):'';
+    const syns=w.synonyms?.length?`<span style="font-size:9px;color:var(--mu);">≈ ${w.synonyms.join(', ')}</span>`:'';
+    const audioBtn=w.audio?`<button onclick="playAudio('${(w.audio||'').startsWith('//')?'https:'+w.audio:w.audio}')" style="background:transparent;border:none;cursor:pointer;font-size:12px;color:var(--mu);" title="Dengarkan">🔊</button>`:'';
+    const row=document.createElement('div');
+    row.style.cssText=`background:var(--s2);border:1px solid var(--b1);border-radius:10px;padding:.8rem 1rem;transition:border-color .15s;`;
+    row.innerHTML=`
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;">
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-bottom:3px;">
+            <span style="font-family:var(--serif);font-size:14px;color:var(--tx);">${w.word}</span>
+            ${audioBtn}
+            <span style="font-size:8px;font-family:var(--mono);color:${pc};background:color-mix(in srgb,${pc} 12%,transparent);padding:2px 5px;border-radius:4px;">${w.pos||'word'}</span>
+            ${w.level?`<span style="font-size:8px;font-family:var(--mono);color:${lvColor};background:color-mix(in srgb,${lvColor} 10%,transparent);padding:2px 5px;border-radius:4px;">${w.level}</span>`:''}
+            <span style="font-family:var(--mono);font-size:9px;color:var(--mu);">${w.phonetic||''}</span>
+          </div>
+          <div style="font-size:11px;color:var(--tx);margin-bottom:2px;line-height:1.5;">${w.meaning||''} ${w.meaning_id?`<span style="color:var(--mu);">— ${w.meaning_id}</span>`:''}
+          </div>
+          ${w.example?`<div style="font-size:10px;color:var(--mu2);font-style:italic;margin-bottom:4px;">"${w.example}"</div>`:''}
+          ${syns}
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
+          <button onclick="deleteSavedWord('${w.word.replace(/'/g,"\\'")}',this)" style="background:transparent;border:1px solid rgba(248,113,113,.2);border-radius:6px;padding:3px 8px;color:rgba(248,113,113,.6);font-size:10px;font-family:var(--sans);cursor:pointer;white-space:nowrap;" onmouseover="this.style.color='var(--rd)';this.style.borderColor='var(--rd)'" onmouseout="this.style.color='rgba(248,113,113,.6)';this.style.borderColor='rgba(248,113,113,.2)'">✕ Hapus</button>
+          <span style="font-size:9px;color:var(--mu);white-space:nowrap;">${dateStr}</span>
+        </div>
+      </div>
+    `;
+    list.appendChild(row);
+  });
+}
+
+function deleteSavedWord(word,btn){
+  const idx=savedVocabList.findIndex(w=>w.word===word);
+  if(idx>-1){savedVocabList.splice(idx,1);saveSavedList();updateSavedBadge();}
+  const row=btn?.closest('div[style]');
+  if(row){row.style.transition='opacity .2s,transform .2s';row.style.opacity='0';row.style.transform='translateX(16px)';setTimeout(()=>renderSavedList(),200);}
+  else renderSavedList();
+  // Also update star in current grid if visible
+  currentVocabData.forEach((w,i)=>{
+    if(w.word===word){
+      const b=document.getElementById('vsave-'+i);
+      const c=document.getElementById('vc-'+i);
+      if(b){b.textContent='☆';b.style.color='var(--mu)';}
+      if(c)c.style.borderColor='var(--b1)';
+    }
+  });
+}
+
+function clearAllSaved(){
+  const filterLv=document.getElementById('savedFilterLv').value;
+  const cnt=filterLv==='ALL'?savedVocabList.length:savedVocabList.filter(w=>(w.level||'')===filterLv).length;
+  if(!cnt){alert('Tidak ada kata untuk dihapus.');return;}
+  if(!confirm(filterLv==='ALL'?`Hapus semua ${cnt} kata dari Vocab List?`:`Hapus ${cnt} kata level ${filterLv}?`))return;
+  if(filterLv==='ALL')savedVocabList=[];
+  else savedVocabList=savedVocabList.filter(w=>(w.level||'')!==filterLv);
+  saveSavedList();updateSavedBadge();renderSavedList();
+  // Refresh current grid star buttons
+  currentVocabData.forEach((_,i)=>{
+    const b=document.getElementById('vsave-'+i);const c=document.getElementById('vc-'+i);
+    if(b){b.textContent='☆';b.style.color='var(--mu)';}if(c)c.style.borderColor='var(--b1)';
+  });
+}
+
+/* ══════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════ */
+loadState();
+render();
+</script>
+</body>
+</html>
