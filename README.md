@@ -1,7 +1,7 @@
 # English-Mastery
 # 📚 English Mastery
 
-**Roadmap belajar bahasa Inggris berbasis kurikulum internasional (CEFR & Cambridge English) — dari A1 Beginner sampai C1 Advanced. Satu file HTML, langsung jalan di browser, tanpa server, tanpa instalasi.**
+**Roadmap belajar bahasa Inggris berbasis kurikulum internasional (CEFR & Cambridge English) untuk pribadi — dari A1 Beginner sampai C1 Advanced. Satu file HTML, langsung jalan di browser, tanpa server, tanpa instalasi.**
 
 ![English Mastery Screenshot](https://img.shields.io/badge/version-3.0-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![No Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen) ![CEFR](https://img.shields.io/badge/standard-CEFR%20%2F%20Cambridge-orange)
 
