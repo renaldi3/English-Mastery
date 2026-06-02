@@ -5507,19 +5507,6 @@ scrollTopBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll > 300 && currentScroll > lastScroll) {
-    scrollTopBtn.classList.add('show');
-  } else {
-    scrollTopBtn.classList.remove('show');
-  }
-
-  lastScroll = currentScroll;
-});
 </script>
 </body>
 </html>
