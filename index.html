@@ -220,6 +220,18 @@ body.admin-on .card-admin-row{display:flex;}
     flex-wrap:wrap;
     align-items:flex-start;
   }
+  @media(max-width:639px){
+  /* Tambahan optimasi tap target */
+  .header-right .admin-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    }
+  }
   .logo{
     font-size:14px;
     width:100%;
@@ -3921,6 +3933,10 @@ function doPrint(){
     .topic{font-size:12px;padding:1px 0;} .tick{color:#22c55e;margin-right:4px;}
     .empty{font-size:11px;color:#aaa;font-style:italic;}
     .progress-bar{height:6px;background:#eee;border-radius:3px;margin-bottom:6px;overflow:hidden;}
+    body {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
     .progress-fill{height:6px;border-radius:3px;}
     @media print{body{margin:16px;}@page{margin:1.5cm;}}
   </style></head><body>`;
@@ -4173,74 +4189,111 @@ function pickWords(lv,n=10){
 }
 
 /* ── Fetch single word from Free Dictionary API ── */
-async function fetchWord(word){
-  const res=await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
-  if(!res.ok)throw new Error('not found');
-  const data=await res.json();
-  if(!Array.isArray(data)||!data[0])throw new Error('empty');
-  const entry=data[0];
-  const meanings=entry.meanings||[];
-  const firstMeaning=meanings[0]||{};
-  const pos=firstMeaning.partOfSpeech||'word';
-  const defs=firstMeaning.definitions||[];
-  const def=defs[0]||{};
-  const phonetics=entry.phonetics||[];
-  const phonetic=(phonetics.find(p=>p.text)||{}).text||entry.phonetic||'';
-  // Collect example from any meaning/definition
-  let example='';
-  for(const m of meanings){for(const d of m.definitions||[]){if(d.example){example=d.example;break;}}}
-  // Synonyms from all meanings
-  const syns=[...new Set(meanings.flatMap(m=>(m.synonyms||[]).concat((m.definitions||[]).flatMap(d=>d.synonyms||[]))))].slice(0,3);
-  const antonyms=[...new Set(meanings.flatMap(m=>(m.antonyms||[]).concat((m.definitions||[]).flatMap(d=>d.antonyms||[]))))].slice(0,2);
-  return{word,phonetic,pos,meaning:def.definition||'',example:example||def.example||'',synonyms:syns,antonyms,audio:(phonetics.find(p=>p.audio)||{}).audio||''};
+/* ── Fetch single word dengan proteksi Timeout (AbortController) ── */
+async function fetchWord(word) {
+  const controller = new AbortController();
+  // Batasi waktu tunggu maksimal 2.5 detik per kata sebelum di-skip
+  const id = setTimeout(() => controller.abort(), 2500);
+
+  try {
+    const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`, {
+      signal: controller.signal
+    });
+    clearTimeout(id); 
+
+    if (!res.ok) throw new Error('not found');
+    const data = await res.json();
+    if (!Array.isArray(data) || !data[0]) throw new Error('empty');
+    
+    const entry = data[0];
+    const meanings = entry.meanings || [];
+    const firstMeaning = meanings[0] || {};
+    const pos = firstMeaning.partOfSpeech || 'word';
+    const defs = firstMeaning.definitions || [];
+    const def = defs[0] || {};
+    const phonetics = entry.phonetics || [];
+    const phonetic = (phonetics.find(p => p.text) || {}).text || entry.phonetic || '';
+    
+    let example = '';
+    for (const m of meanings) {
+      for (const d of m.definitions || []) {
+        if (d.example) { example = d.example; break; }
+      }
+    }
+    
+    const syns = [...new Set(meanings.flatMap(m => (m.synonyms || []).concat((m.definitions || []).flatMap(d => d.synonyms || []))))].slice(0, 3);
+    const antonyms = [...new Set(meanings.flatMap(m => (m.antonyms || []).concat((m.definitions || []).flatMap(d => d.antonyms || []))))].slice(0, 2);
+    
+    return {
+      word, phonetic, pos,
+      meaning: def.definition || '',
+      example: example || def.example || '',
+      synonyms: syns, antonyms,
+      audio: (phonetics.find(p => p.audio) || {}).audio || ''
+    };
+  } catch (error) {
+    clearTimeout(id); 
+    throw error; 
+  }
 }
 
-/* ── Main generate function ── */
+/* ── Main generate function yang sudah diperbaiki & aman dari macet ── */
 async function generateVocab(){
-  const lv=document.getElementById('vocabLvSel').value;
-  const grid=document.getElementById('vocabGrid');
-  const errEl=document.getElementById('vocabError');
-  const prog=document.getElementById('vocabProgress');
-  const progFill=document.getElementById('vocabProgressFill');
-  const progTxt=document.getElementById('vocabProgressTxt');
-  const genBtn=document.getElementById('genBtn');
-  grid.innerHTML=''; errEl.classList.add('hidden');
-  prog.classList.remove('hidden');
-  if(genBtn){genBtn.disabled=true;genBtn.style.opacity='.5';}
-  currentVocabData=[];
+  const lv = document.getElementById('vocabLvSel').value;
+  const grid = document.getElementById('vocabGrid');
+  const errEl = document.getElementById('vocabError');
+  const prog = document.getElementById('vocabProgress');
+  const progFill = document.getElementById('vocabProgressFill');
+  const progTxt = document.getElementById('vocabProgressTxt');
+  const genBtn = document.getElementById('genBtn');
+  
+  grid.innerHTML = ''; 
+  if (errEl) errEl.classList.add('hidden');
+  if (prog) prog.classList.remove('hidden');
+  
+  if(genBtn){ genBtn.disabled = true; genBtn.style.opacity = '.5'; }
+  currentVocabData = [];
 
-  const candidates=pickWords(lv,10);
-  const results=[];
-  let fetched=0;
+  // Menggunakan fungsi bawaan Anda yang otomatis menghasilkan banyak kata cadangan
+  const candidates = pickWords(lv, 10);
+  const results = [];
 
-  for(const word of candidates){
-    if(results.length>=10)break;
-    try{
-      const w=await fetchWord(word);
-      w.level=lv;
-      w.meaning_id=ID_HINTS[word]||'';
+  for (const word of candidates) {
+    if (results.length >= 10) break; // Berhenti tepat jika sudah terkumpul 10 kata sukses
+    
+    try {
+      // Panggil fungsi fetchWord (nama disamakan dengan arsitektur kode asli Anda)
+      const w = await fetchWord(word);
+      w.level = lv;
+      w.meaning_id = ID_HINTS[word] || '';
+      
       results.push(w);
-      fetched++;
-      progTxt.textContent=`${results.length}/10`;
-      progFill.style.width=`${(results.length/10)*100}%`;
-      // Render card immediately as it comes in (streaming UX)
-      renderOneCard(w,results.length-1,grid,lv);
-    }catch(e){
-      // word not in dictionary — skip silently, try next
+      if (progTxt) progTxt.textContent = `${results.length}/10`;
+      if (progFill) progFill.style.width = `${(results.length / 10) * 100}%`;
+      
+      // Render kartu streaming langsung ke UI
+      renderOneCard(w, results.length - 1, grid, lv);
+    } catch (e) {
+      // Jika timeout atau kata tidak ditemukan di kamus, skip dan lanjut ke kata berikutnya
+      console.warn(`Skipping word "${word}" due to error/timeout:`, e.message);
     }
-    // small delay to be polite to the free API
-    await new Promise(r=>setTimeout(r,80));
+    
+    // Jeda aman anti-spam API
+    await new Promise(r => setTimeout(r, 80));
   }
 
-  prog.classList.add('hidden');
-  if(genBtn){genBtn.disabled=false;genBtn.style.opacity='1';}
+  if (prog) prog.classList.add('hidden');
+  if(genBtn){ genBtn.disabled = false; genBtn.style.opacity = '1'; }
 
-  if(results.length===0){
-    errEl.classList.remove('hidden');
-    errEl.innerHTML=`<div style="font-size:20px;margin-bottom:.5rem;">⚠️</div>Gagal memuat vocabulary.<br><span style="font-size:11px;color:var(--mu);">Periksa koneksi internet dan coba lagi.</span><br><br><button onclick="generateVocab()" style="background:rgba(104,211,145,.08);border:1px solid rgba(104,211,145,.25);border-radius:7px;padding:6px 14px;color:var(--gr);font-size:12px;font-family:var(--sans);cursor:pointer;">🔀 Coba Lagi</button>`;
+  if(results.length === 0){
+    if (errEl) {
+      errEl.classList.remove('hidden');
+      errEl.innerHTML = `<div style="font-size:20px;margin-bottom:.5rem;">⚠️</div>Gagal memuat kosa kata.<br><span style="font-size:11px;color:var(--mu);">API sedang sibuk atau koneksi terputus.</span><br><br><button onclick="generateVocab()" style="background:rgba(104,211,145,.08);border:1px solid rgba(104,211,145,.25);border-radius:7px;padding:6px 14px;color:var(--gr);font-size:12px;font-family:var(--sans);cursor:pointer;">🔀 Coba Lagi</button>`;
+    }
     return;
   }
-  currentVocabData=results;
+  
+  currentVocabData = results;
   updateSavedBadge();
 }
 
@@ -4515,7 +4568,7 @@ function bnavGo(tab){
 }
 
 /* ══════════════════════════════════════════════
-   PWA MANIFEST (inline JSON blob)
+   PWA MANIFEST (inline JSON blob) — FIX MEMORY LEAK
 ══════════════════════════════════════════════ */
 (function(){
   const manifest={
@@ -4531,11 +4584,20 @@ function bnavGo(tab){
       {src:'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%230c0c0e"/><text y=".9em" font-size="80">📚</text></svg>',sizes:'512x512',type:'image/svg+xml'}
     ]
   };
-  const blob=new Blob([JSON.stringify(manifest)],{type:'application/manifest+json'});
-  const url=URL.createObjectURL(blob);
-  const link=document.getElementById('manifest-placeholder')||document.createElement('link');
-  link.rel='manifest';link.href=url;
-  if(!link.parentNode)document.head.appendChild(link);
+  
+  const blob = new Blob([JSON.stringify(manifest)], {type: 'application/manifest+json'});
+  const url = URL.createObjectURL(blob);
+  
+  const link = document.getElementById('manifest-placeholder') || document.createElement('link');
+  link.rel = 'manifest';
+  link.href = url;
+  
+  if(!link.parentNode) document.head.appendChild(link);
+  
+  // SOLUSI: Revoke URL setelah browser selesai memuatnya ke DOM
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 100);
 })();
 
 /* ══════════════════════════════════════════════
