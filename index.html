@@ -340,6 +340,12 @@ body.admin-on .card-admin-row{display:flex;}
     <button class="admin-btn" id="adminBtn" onclick="toggleAdmin()">
       <span class="admin-dot"></span><span id="adminLabel">Mode Admin</span>
     </button>
+    <button class="admin-btn" onclick="exportData()">
+      <span style="font-size:13px;">📤</span><span>Ekspor Kurikulum</span>
+    </button>
+    <button class="admin-btn" onclick="importData()">
+      <span style="font-size:13px;">📥</span><span>Impor Kurikulum</span>
+    </button>
   </div>
 </header>
 
@@ -4557,6 +4563,37 @@ scrollTopBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+// export data / import
+function exportData() {
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({cur: CUR, done: done}));
+  const dlAnchorElem = document.createElement('a');
+  dlAnchorElem.setAttribute("href", dataStr);
+  dlAnchorElem.setAttribute("download", `english_mastery_backup_${Date.now()}.json`);
+  dlAnchorElem.click();
+}
+
+function importData() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+  input.onchange = e => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsText(file,'UTF-8');
+    reader.onload = readerEvent => {
+      try {
+        const parsed = JSON.parse(readerEvent.target.result);
+        if(parsed.cur && parsed.done) {
+          CUR = parsed.cur; done = parsed.done;
+          saveCur(); saveDone(); render();
+          alert("Data berhasil di-restore!");
+        } else { alert("Format file cadangan tidak valid."); }
+      } catch(err) { alert("Gagal membaca file JSON."); }
+    }
+  }
+  input.click();
+}
 </script>
 </body>
 </html>
