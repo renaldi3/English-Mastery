@@ -467,6 +467,11 @@ body.admin-on .card-admin-row{display:flex;}
       <small>Pisahkan dengan baris baru. Setiap baris = satu poin belajar.</small>
     </div>
     <div class="efield">
+      <label>Capaian pembelajaran (satu per baris)</label>
+      <textarea id="eGoals" style="min-height:80px" placeholder="Bisa membuat kalimat dengan...&#10;Tidak salah lagi membedakan..."></textarea>
+      <small>Pisahkan dengan baris baru. Setiap baris = satu capaian/goal setelah belajar topik ini.</small>
+    </div>
+    <div class="efield">
       <label>Contoh kalimat (Inggris | Terjemahan — pisah dengan baris baru)</label>
       <textarea id="eEx" style="min-height:80px" placeholder="She goes to school every day. | Dia pergi ke sekolah setiap hari.&#10;Do you like coffee? | Apakah kamu suka kopi?"></textarea>
       <small>Format: Kalimat Inggris | Terjemahan Indonesia</small>
@@ -1282,6 +1287,25 @@ const DEFAULT_CUR=[
      ex:[{en:"Would you like something to eat? — Yes, I'd like a sandwich, please.",id:""}],
      res:['Test-English.com','British Council Grammar']},
 
+    {id:'a1-verbs-inf-ing',name:"Verbs + to + infinitive and verbs + -ing",
+     desc:"Pola kata kerja yang diikuti kata kerja lain — pilihan bentuknya wajib benar, tidak bisa sembarangan.",
+     learn:[
+       "Verbs + TO + Kata Kerja V1 (Infinitive): want to, need to, hope to, decide to, plan to, would like to",
+       "Contoh: I want to learn English. / She decided to stay.",
+       "Verbs + Kata Kerja -ING (Gerund): enjoy, finish, mind, avoid, suggest",
+       "Contoh: I enjoy reading. / She finished eating.",
+       "Verbs yang BISA pakai kedua bentuk dengan arti SAMA: like, love, hate, start, begin, continue",
+       "I like swimming. = I like to swim. (Artinya identik)",
+       "Kesalahan Umum Fatal: I want going ✗ → Benar: I want to go ✓",
+       "Kesalahan Umum Fatal: I enjoy to read ✗ → Benar: I enjoy reading ✓"
+     ],
+     goals:[
+       "Bisa menyusun kalimat dengan dua kata kerja berurutan tanpa salah bentuk",
+       "Hafal pola verb + to-infinitive vs verb + -ing untuk kata kerja paling umum dipakai sehari-hari"
+     ],
+     ex:[{en:"I want to learn English. She enjoys reading. They love swimming (or: to swim).",id:""}],
+     res:['Test-English.com','British Council Grammar']},
+
     {id:'a1-questions',name:"Questions: Tata urutan susunan kata tanya bahasa Inggris",
      desc:"Rumus mutlak menyusun kalimat tanya interaktif (Yes/No & Wh- Questions) agar susunan kata tidak hancur.",
      learn:[
@@ -1358,7 +1382,24 @@ const DEFAULT_CUR=[
   ]},
 
   {name:'2. Hubungan Masa Lalu ke Masa Kini (Perfect)',topics:[
-    {id:'a2-pres-pref',name:"Present perfect: Form and use",
+    {id:'a2-pres-sc',name:"Present simple vs Present continuous: Review",
+     desc:"Pendalaman lanjutan kontras dua tenses present paling sering tertukar, termasuk kata kerja yang punya dua makna berbeda.",
+     learn:[
+       "Present SIMPLE: Kebiasaan, rutinitas, fakta umum, jadwal tetap (She works every day / The train leaves at 7).",
+       "Present CONTINUOUS: Sedang berlangsung sekarang, situasi sementara, atau hal yang sedang berubah/berkembang.",
+       "Contoh situasi sementara: She's staying with her sister this week (bukan rumahnya sendiri, sifatnya sementara).",
+       "Contoh perubahan/perkembangan: Prices are rising. / My English is getting better.",
+       "STATIVE VERBS dilarang dipakai continuous: know, believe, understand, want, need, love, hate, own.",
+       "Kata kerja dengan DUA MAKNA: think (opini=stative: I think she's right / proses=dynamic: I'm thinking about it), have (kepunyaan=stative / aktivitas=dynamic: I'm having lunch), see (melihat=stative / bertemu=dynamic: I'm seeing my doctor)."
+     ],
+     goals:[
+       "Tidak salah lagi memilih simple vs continuous untuk situasi permanen vs sementara",
+       "Paham kata kerja yang punya dua makna berbeda (stative dan dynamic) sesuai konteksnya"
+     ],
+     ex:[{en:"I work in a bank (rutin). I'm working from home this week (sementara).",id:"Kontras kebiasaan vs situasi sementara."}],
+     res:['Test-English.com','British Council Grammar']},
+
+    {id:'a2-pres-perf',name:"Present perfect: Form and use",
      desc:"Tense penting penghubung waktu: Menyatakan aksi masa lalu yang masih memiliki efek, hasil, atau relevansi erat dengan kondisi sekarang.",
      learn:[
        "Form: have / has + Past Participle (V3).",
@@ -1421,6 +1462,22 @@ const DEFAULT_CUR=[
        "Paham perbedaan nuansa antara niat pribadi (going to) dengan janji temu terstruktur (Present Continuous)"
      ],
      ex:[{en:"We're having dinner with my parents on Friday. Are you coming to the party tonight?",id:""}],
+     res:['Test-English.com']},
+
+    {id:'a2-tense-review',name:"Review semua tenses level A2",
+     desc:"Peta besar konsolidasi seluruh tenses yang sudah dipelajari dari A1 sampai A2 — present, past, dan future.",
+     learn:[
+       "PRESENT: Simple (kebiasaan/fakta) — Continuous (sekarang/sementara) — Perfect (masa lalu yang berhubungan ke sekarang).",
+       "PAST: Simple (selesai di waktu spesifik) — Continuous (latar belakang/diselingi) — Perfect (lebih dulu dari past lain).",
+       "FUTURE: Will (spontan/prediksi/janji) — Going to (rencana/bukti) — Present continuous (sudah diatur dengan orang lain).",
+       "Cara memilih tense yang tepat: tanyakan KAPAN terjadinya, apakah SELESAI atau BERLANGSUNG, dan apakah ADA HUBUNGAN ke waktu lain.",
+       "Kesalahan paling umum di level A2: memakai present simple untuk hal yang sedang terjadi sekarang, atau memakai present perfect dengan keterangan waktu spesifik (yesterday, in 2019)."
+     ],
+     goals:[
+       "Bisa memilih tense yang tepat secara cepat tanpa ragu di antara sembilan kemungkinan yang sudah dipelajari",
+       "Mengenali kesalahan tense paling umum dan menghindarinya secara otomatis"
+     ],
+     ex:[{en:"She works every day (simple), is working now (continuous), has worked here 3 years (perfect), worked yesterday (past simple).",id:"Empat tenses sekaligus dalam satu konteks."}],
      res:['Test-English.com']}
   ]},
 
@@ -1853,6 +1910,129 @@ const DEFAULT_CUR=[
      ],
      ex:[{en:"I don't live there anymore. / She no longer comes to class. / He isn't here any longer.",id:""}],
      res:['Test-English.com']}
+  ]},
+
+  {name:'7. Auxiliary Verbs, Perbandingan & Hubungan Logis Lanjutan',topics:[
+    {id:'a2-aux-verbs',name:"Auxiliary verbs: do, be, dan have",
+     desc:"Tiga kata kerja bantu utama dan fungsinya dalam pertanyaan, kalimat negatif, penegasan, dan jawaban singkat.",
+     learn:[
+       "DO (do/does/did): Dipakai untuk present simple dan past simple — Do you like it? / She doesn't drive. / Did they go?",
+       "BE (am/is/are/was/were): Dipakai untuk continuous tenses dan passive — She IS working. / It WAS made in France.",
+       "HAVE (have/has/had): Dipakai untuk perfect tenses — I HAVE seen it. / They HAD left.",
+       "EMPHASIS: Tambahkan tekanan pada DO/DID untuk menegaskan sesuatu yang diragukan: 'You don't like it.' → 'I DO like it!'",
+       "SHORT ANSWERS: Selalu pakai auxiliary yang sesuai — Did she go? — Yes, she DID. / Have you eaten? — Yes, I HAVE.",
+       "Menghindari pengulangan: She works harder than I DO. (do menggantikan 'work')"
+     ],
+     goals:[
+       "Bisa membentuk pertanyaan, kalimat negatif, dan jawaban singkat dengan auxiliary yang tepat sesuai tense",
+       "Mampu menegaskan pernyataan dengan stress pada DO/DID saat berdebat atau meyakinkan lawan bicara"
+     ],
+     ex:[{en:'"You don\'t like it." — "I DO like it!" / "Did you go?" — "Yes, I did."',id:""}],
+     res:['Test-English.com']},
+
+    {id:'a2-comp-sup',name:"Comparative dan superlative adjectives & adverbs",
+     desc:"Review menyeluruh perbandingan kata sifat dan kata keterangan, termasuk bentuk irregular dan modifier penguat.",
+     learn:[
+       "Comparative adjective: 1 suku kata + -er (taller), 2 suku kata -y + -ier (happier), 2+ suku kata pakai more (more interesting).",
+       "Superlative adjective: the + -est (the tallest), the + -iest (the happiest), the most + adj (the most interesting).",
+       "Comparative adverb: more + adverb + than — She works MORE CAREFULLY THAN me.",
+       "Superlative adverb: the most + adverb — She works THE MOST EFFICIENTLY.",
+       "Irregular: good→better→best, bad→worse→worst, far→further→furthest, well→better→best, badly→worse→worst.",
+       "Modifier penguat: much, far, a lot, considerably (perbedaan besar) vs a bit, a little, slightly (perbedaan kecil).",
+       "As...as (kesetaraan): He's AS TALL AS me. / She doesn't work AS HARD AS him."
+     ],
+     goals:[
+       "Bisa membandingkan dua hal atau lebih dengan adjective maupun adverb secara akurat",
+       "Hafal bentuk irregular comparative/superlative yang paling umum dipakai sehari-hari"
+     ],
+     ex:[{en:"She works more efficiently than anyone else. He speaks English better than he used to.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'a2-conjunctions',name:"However, although, because, so, dan time connectors",
+     desc:"Menghubungkan klausa dengan hubungan logis yang tepat — kontras, alasan, hasil, dan urutan waktu.",
+     learn:[
+       "HOWEVER (kontras, kalimat/klausa baru, lebih formal dari 'but'): I was tired. However, I couldn't sleep.",
+       "ALTHOUGH / EVEN THOUGH + klausa (kontras dalam satu kalimat): Although it was raining, we went out.",
+       "BECAUSE + klausa (alasan): I left because it was late.",
+       "SO + klausa (hasil/akibat): I was tired, so I went to bed.",
+       "Time connectors: WHEN (I'll call when I arrive), WHILE (latar belakang), BEFORE/AFTER (urutan), AS SOON AS, UNTIL, ONCE.",
+       "Perbedaan ALTHOUGH vs HOWEVER: although diikuti klausa di kalimat yang sama, however dipakai untuk kalimat baru yang terpisah."
+     ],
+     goals:[
+       "Bisa menghubungkan ide dengan kontras, alasan, dan hasil secara natural dalam satu kalimat panjang",
+       "Tidak tertukar antara although (dalam kalimat) dan however (kalimat terpisah)"
+     ],
+     ex:[{en:"Although it was cold, we went out. However, we came back early because it started snowing.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'a2-prep-movement',name:"Prepositions of movement: Along, across, over, etc.",
+     desc:"Menyatakan arah dan cara bergerak — berbeda dari preposisi tempat (static) yang sudah dipelajari di A1.",
+     learn:[
+       "ALONG (mengikuti garis/rute): walk along the road / sail along the coast.",
+       "ACROSS (dari satu sisi ke sisi lain): swim across the river / walk across the park.",
+       "THROUGH (melewati bagian dalam): walk through the tunnel / drive through the forest.",
+       "PAST (melewati titik tanpa berhenti): walk past the school / drive past the café.",
+       "AROUND/ROUND (mengelilingi): run around the park / travel around the world.",
+       "OVER/UNDER (melewati di atas/bawah): jump over the fence / crawl under the table.",
+       "INTO/OUT OF (masuk/keluar ruang tertutup): go into the room / come out of the house.",
+       "TOWARDS (ke arah, belum sampai): She walked towards the door."
+     ],
+     goals:[
+       "Bisa mendeskripsikan rute perjalanan atau gerakan fisik dengan preposisi yang tepat",
+       "Tidak tertukar antara preposisi tempat (static) dan preposisi gerak (dynamic)"
+     ],
+     ex:[{en:"She walked through the park, across the bridge, past the shops, and around the lake.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'a2-on-time-in-time',name:"On time vs In time, At the end vs In the end",
+     desc:"Ekspresi idiomatik yang sering tertukar — perbedaan makna penting walau secara harfiah terlihat serupa.",
+     learn:[
+       "ON TIME = tepat waktu sesuai jadwal yang ditentukan: The train arrived on time. (= pukul yang dijadwalkan)",
+       "IN TIME = sempat, tidak terlambat, sebelum sesuatu terjadi: We arrived in time for the show. (= sebelum acara mulai)",
+       "AT THE END = titik spesifik di akhir sesuatu: at the end of the film / at the end of the road.",
+       "IN THE END = akhirnya, setelah proses atau pergulatan panjang: We argued for hours. In the end, she agreed.",
+       "Cara membedakan: on time fokus pada KEPATUHAN jadwal, in time fokus pada KESEMPATAN sebelum terlambat."
+     ],
+     goals:[
+       "Tidak tertukar lagi antara on time (sesuai jadwal) dan in time (sempat sebelum terlambat)",
+       "Bisa menceritakan hasil akhir suatu proses panjang dengan ekspresi 'in the end' secara natural"
+     ],
+     ex:[{en:"The train arrived on time. We got there in time. In the end, everything worked out well.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'a2-questions',name:"Asking questions in English: Review lengkap question forms",
+     desc:"Semua tipe pertanyaan bahasa Inggris secara comprehensive — yes/no, wh-, dan pertanyaan dengan preposisi.",
+     learn:[
+       "YES/NO questions: Auxiliary + Subject + V1 — Do you like coffee? / Is she coming? / Have you eaten?",
+       "WH- questions: Wh-word + Auxiliary + Subject + V1 — Where does she live? / What did you do?",
+       "Kata tanya: what, who, where, when, why, how, which, whose, how much, how many, how long, how often, how far.",
+       "Larangan keras: jangan pakai do/does/did bersama 'be' — Do you are? ✗ → Are you? ✓",
+       "Pertanyaan negatif (kejutan/konfirmasi): Isn't it beautiful? / Don't you agree?",
+       "Pertanyaan dengan preposisi di akhir: Who are you talking to? / What are you looking at?"
+     ],
+     goals:[
+       "Bisa membentuk semua jenis pertanyaan secara otomatis dan akurat tanpa ragu strukturnya",
+       "Menguasai pertanyaan dengan preposisi di akhir kalimat yang sangat umum dalam percakapan natural"
+     ],
+     ex:[{en:"What time does the film start? Where does she work? Why isn't she coming?",id:""}],
+     res:['Test-English.com','British Council Grammar']},
+
+    {id:'a2-subject-questions',name:"Subject questions vs Object questions",
+     desc:"Pertanyaan di mana wh-word adalah subjek (tidak perlu auxiliary) vs di mana wh-word adalah objek (perlu auxiliary).",
+     learn:[
+       "OBJECT QUESTION: wh-word = objek, WAJIB pakai auxiliary do/does/did — Who did you call? (kamu menelepon siapa?)",
+       "SUBJECT QUESTION: wh-word = subjek, TIDAK PAKAI auxiliary — Who called you? (siapa yang menelepon kamu?)",
+       "Rumus subject question: Wh-word + Verb (langsung, seperti kalimat biasa, tanpa do/does/did).",
+       "Perbandingan: Who painted this? (who=subjek, tanpa did) vs Who did she paint? (who=objek, pakai did).",
+       "Tes mudah: coba jawab pertanyaannya — jika wh-word ADA dalam jawaban sebagai pelaku, berarti subject question.",
+       "Pertanyaan dengan preposisi di akhir tetap berlaku: Who are you talking to? What does it smell like?"
+     ],
+     goals:[
+       "Bisa membedakan subject question dan object question tanpa salah menambahkan auxiliary",
+       "Spontan membentuk pertanyaan 'Who called?' vs 'Who did you call?' sesuai konteks yang dimaksud"
+     ],
+     ex:[{en:"Who painted this? (subject Q — no did) vs Who did she paint? (object Q — did needed)",id:""}],
+     res:['Test-English.com']}
   ]}
 ]},
 /* ══════ B1 ══════ */
@@ -1924,7 +2104,40 @@ const DEFAULT_CUR=[
        "Bisa menyeimbangkan penempatan latar belakang suasana dengan aksi inti di dalam sebuah narasi"
      ],
      ex:[{en:"I was walking to school when I saw an accident. Someone had already called the police.",id:"Kombinasi tiga tenses narasi sekaligus: latar belakang berjalan (was walking) → kejadian mendadak (saw) → peristiwa yang beres duluan (had called)."}],
-     res:['Test-English.com','British Council Grammar']}
+     res:['Test-English.com','British Council Grammar']},
+
+    {id:'b1-future-forms',name:"Future forms: Will, be going to, present continuous — Review komprehensif",
+     desc:"Membandingkan semua bentuk future secara sistematis di level Intermediate — kapan masing-masing paling tepat dipakai.",
+     learn:[
+       "WILL: keputusan spontan saat berbicara, prediksi opini tanpa bukti, janji, dan tawaran bantuan.",
+       "GOING TO: rencana yang sudah diputuskan sebelum berbicara, prediksi berdasarkan bukti yang terlihat.",
+       "PRESENT CONTINUOUS: rencana masa depan yang sudah diatur tetap dengan orang lain (fixed arrangement).",
+       "PRESENT SIMPLE: jadwal resmi/timetable — The train leaves at 8. / The film starts at 8.",
+       "Perbandingan langsung: The train leaves at 8 (jadwal). I'm meeting Sara at 7 (sudah diatur). I think it'll be great (prediksi opini).",
+       "Future time clauses tetap pakai present simple, tidak pernah will: I'll call you when I arrive."
+     ],
+     goals:[
+       "Bisa memilih salah satu dari empat bentuk future secara cepat sesuai derajat kepastian dan formalitas konteksnya",
+       "Menggunakan future time clause dengan benar tanpa pernah menyelipkan 'will' setelah when/as soon as"
+     ],
+     ex:[{en:"The train leaves at 8. I'm meeting Sara at 7. I think it'll be great.",id:""}],
+     res:['Test-English.com','British Council Grammar']},
+
+    {id:'b1-tense-review',name:"Review semua tenses level B1",
+     desc:"Konsolidasi besar seluruh tenses dari A1 sampai B1 — present, past, dan future secara menyeluruh.",
+     learn:[
+       "PRESENT: simple, continuous, perfect, perfect continuous — empat bentuk dengan fungsi berbeda.",
+       "PAST: simple, continuous, perfect — tiga bentuk untuk menyusun narasi yang akurat.",
+       "FUTURE: will, going to, present continuous, present simple (timetable) — empat cara menyatakan masa depan.",
+       "Strategi memilih tense: tentukan dulu TIME (kapan), lalu ASPECT (selesai/berlangsung/berhubungan ke waktu lain).",
+       "Latihan praktis: ceritakan satu kejadian lengkap menggunakan minimal lima tenses berbeda secara koheren."
+     ],
+     goals:[
+       "Menguasai pemilihan tense secara otomatis tanpa perlu berpikir lama saat berbicara spontan",
+       "Bisa menyusun narasi panjang yang menggabungkan banyak tenses secara koheren dan logis"
+     ],
+     ex:[{en:"She has been working here since 2018. By tomorrow, I'll have finished the report.",id:""}],
+     res:['Test-English.com']}
   ]},
 
   {name:'2. Kemampuan Berbahasa, Spekulasi Opini & Preferensi (Modals)',topics:[
@@ -2009,6 +2222,23 @@ const DEFAULT_CUR=[
        "Mampu membatasi atau mengarahkan tindakan orang lain secara sopan menggunakan pola 'would rather + subject + V2'"
      ],
      ex:[{en:"I'd rather stay home tonight. I'd rather you didn't tell anyone about this.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1-used-to-etc',name:"Usually, used to, be used to, get used to",
+     desc:"Empat ekspresi tentang kebiasaan yang sering tertukar — penting dibedakan dengan tepat di level Intermediate.",
+     learn:[
+       "USUALLY + present simple: kebiasaan SAAT INI yang berlangsung teratur — I usually drink coffee in the morning.",
+       "USED TO + V1: kebiasaan atau keadaan MASA LALU yang sudah TIDAK BERLAKU lagi — I used to drink coffee. (dulu, sekarang tidak)",
+       "BE USED TO + noun/-ing: terbiasa dengan sesuatu SEKARANG, terasa normal — I'm used to waking up early.",
+       "GET USED TO + noun/-ing: PROSES menjadi terbiasa, masih berlangsung — I'm getting used to the cold.",
+       "Perbedaan kunci: USED TO + V1 (kebiasaan lampau) ≠ BE USED TO + -ing (terbiasa sekarang) — bentuknya berbeda total!",
+       "Contoh kontras lengkap: I used to hate it (dulu benci) BUT now I'm used to it (sekarang terbiasa)."
+     ],
+     goals:[
+       "Tidak tertukar lagi antara used to (kebiasaan lampau) dan be used to (terbiasa sekarang)",
+       "Bisa menjelaskan proses adaptasi diri terhadap situasi baru menggunakan get used to secara natural"
+     ],
+     ex:[{en:"I used to hate coffee but now I'm used to drinking it every morning.",id:""}],
      res:['Test-English.com']}
   ]},
 
@@ -2076,7 +2306,7 @@ const DEFAULT_CUR=[
        "TURN DOWN: Menolak mentah-mentah tawaran kerja/undangan (He turned down the offer) / Mengecilkan volume.",
        "TURN OUT: Hasil akhirnya terbukti menjadi suatu kondisi di luar dugaan semula (It turned out to be a great film)."
      ],
-     learn:[
+     goals:[
        "Bisa mendeskripsikan aktivitas operasional kantor (seperti set up, take over) secara lugas",
        "Fasih mengeluhkan kondisi kehabisan stok persediaan barang memakai phrasal verb 'run out of'"
      ],
@@ -2085,6 +2315,54 @@ const DEFAULT_CUR=[
   ]},
 
   {name:'4. Pengandaian Kompleks, Kalimat Pasif & Pengalihan Waktu',topics:[
+    {id:'b1-first-cond',name:"First conditional: Review tingkat Intermediate",
+     desc:"Mendalami kondisi nyata/mungkin terjadi di masa depan dengan variasi struktur yang lebih luas dari level A2.",
+     learn:[
+       "Struktur dasar: If + present simple, WILL/WON'T + V1 — If it rains tomorrow, I'll stay home.",
+       "Variasi klausa hasil (bukan hanya will): might, can, could, must, should — If you study, you might pass.",
+       "UNLESS = if not: Unless you hurry, you'll be late. (= If you don't hurry...)",
+       "Future time clauses tetap pakai present simple, bukan will: as soon as, before, after, until, once.",
+       "Penggunaan luas: memberi peringatan, membuat rencana kontinjensi, atau menawarkan kesepakatan bersyarat."
+     ],
+     goals:[
+       "Bisa menyusun kesepakatan bersyarat atau peringatan formal dengan variasi modal di klausa hasil",
+       "Lancar menggunakan unless sebagai alternatif if not dalam percakapan natural"
+     ],
+     ex:[{en:"If you study hard, you might pass. As soon as I arrive, I'll call you.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1-second-cond',name:"Second conditional: Situasi tidak nyata",
+     desc:"Membayangkan situasi hipotetis di masa kini atau masa depan yang tidak mungkin atau tidak nyata terjadi.",
+     learn:[
+       "Struktur: If + past simple, WOULD/WOULDN'T + V1 — If I had a car, I'd drive.",
+       "Pembicara TAHU kondisi ini tidak benar saat ini — situasi imajiner, bukan kemungkinan nyata.",
+       "IF I WERE (bukan was): formal/written English — If I were you, I'd apologise.",
+       "Variasi klausa hasil: could, might — If I had time, I could visit.",
+       "WISH + past simple = second conditional tanpa 'if': I wish I had a car. (= If I had a car, I'd be happy)"
+     ],
+     goals:[
+       "Bisa memberi nasihat dengan sudut pandang hipotetis 'if I were you'",
+       "Mampu membayangkan dan mendiskusikan skenario tidak nyata secara fasih"
+     ],
+     ex:[{en:"If I were the president, I'd change many things. What would you do if you won the lottery?",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
+    {id:'b1-first-second-both',name:"First vs Second conditional: Perbandingan langsung",
+     desc:"Membedakan kapan situasi dianggap mungkin terjadi (first) vs kapan dianggap tidak mungkin/imajiner (second).",
+     learn:[
+       "First conditional: situasi REAL/MUNGKIN terjadi — If it rains, I'll stay home. (mungkin benar-benar hujan)",
+       "Second conditional: situasi IMAJINER/TIDAK MUNGKIN — If it rained, I'd stay home. (tidak diharapkan terjadi)",
+       "Time frame-nya SAMA (present/future), yang berbeda adalah tingkat REALITAS menurut pembicara.",
+       "Tes praktis: If I find her number, I'll call her (realistis) vs If I found her number, I'd call her (tidak yakin akan ketemu).",
+       "Kedua tipe bisa pakai modal di klausa hasil: might/could di first, could/might di second."
+     ],
+     goals:[
+       "Tidak ragu lagi memilih antara first dan second conditional sesuai tingkat keyakinan pembicara",
+       "Bisa menjelaskan perbedaan nuance ini kepada orang lain dengan contoh yang jelas"
+     ],
+     ex:[{en:"If I see her (possible), I'll tell her. If I saw her (unlikely), I'd tell her.",id:""}],
+     res:['Test-English.com']},
+
     {id:'b1-third-cond',name:"Third conditional: Penyesalan masa lalu",
      desc:"Menyusun kalimat pengandaian tipe 3 untuk berandai-andai tentang skenario masa lalu yang kenyataannya sudah selesai terjadi dan mustahil diubah, sering memicu penyesalan atau kritik.",
      learn:[
@@ -2271,6 +2549,56 @@ const DEFAULT_CUR=[
        "Akurat menuliskan kata sifat berbasis angka tanpa terjebak menambahkan huruf s jamak"
      ],
      ex:[{en:"It's a two-hour drive. She's a six-year-old girl. This is a world-famous restaurant.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1-articles',name:"A(n), the, no article: Penggunaan lanjutan",
+     desc:"Aturan artikel yang lebih kompleks di level Intermediate — benda unik, superlatif, instrumen musik, dan generalisasi.",
+     learn:[
+       "THE dengan benda UNIK (hanya satu di dunia): the sun, the moon, the internet, the government.",
+       "THE dengan SUPERLATIF dan ORDINAL: the best, the first, the 21st century.",
+       "THE dengan ALAT MUSIK: play the piano, play the guitar (BUKAN dengan olahraga: play football tanpa 'the').",
+       "TANPA ARTIKEL untuk: olahraga, mata pelajaran sekolah, bahasa, dan waktu makan secara umum.",
+       "GENERALISASI tanpa artikel: Ø + jamak (Dogs are loyal) / Ø + uncountable (I love music).",
+       "Geografis: THE Amazon, THE UK, THE Pacific (tapi TANPA the: Asia, France, London)."
+     ],
+     goals:[
+       "Bisa menggunakan artikel dengan akurat dalam konteks formal dan akademik",
+       "Tidak salah lagi membedakan kapan harus pakai 'the' dengan alat musik vs olahraga"
+     ],
+     ex:[{en:"She plays the violin every day. He studied medicine at university. The Amazon is the longest river.",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
+    {id:'b1-reflexive',name:"Reflexive pronouns: Myself, yourself",
+     desc:"Kata ganti diri sendiri untuk menekankan tindakan yang kembali ke pelaku, atau memberi penegasan personal.",
+     learn:[
+       "Reflexive pronouns: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves.",
+       "Fungsi 1 — aksi yang mengenai diri sendiri: She cut herself. / He hurt himself.",
+       "Fungsi 2 — penegasan (melakukan tanpa bantuan orang lain): I did it myself. / She built it herself.",
+       "BY + reflexive = sendirian: I live by myself. / He travelled by himself.",
+       "Reciprocal pronouns (BUKAN reflexive): each other (2 orang) — They love each other. / one another (2+ orang, formal)."
+     ],
+     goals:[
+       "Bisa menekankan bahwa suatu tindakan dilakukan sendiri tanpa bantuan orang lain",
+       "Tidak tertukar antara reflexive (myself) dan reciprocal (each other)"
+     ],
+     ex:[{en:"He taught himself to play guitar. We organised the party ourselves. They help each other.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1-comp-sup',name:"Comparative and superlative: Review Intermediate",
+     desc:"Pendalaman comparative dan superlative dengan modifier penguat serta struktur ganda yang lebih kompleks dari level A2.",
+     learn:[
+       "Double comparatives (peningkatan bertahap): It's getting colder and colder. / More and more people are studying online.",
+       "The + comparative, the + comparative (hubungan proporsional): The more you practise, the better you get.",
+       "Modifier penguat: much, far, a lot, considerably (perbedaan besar) — much better, far more interesting.",
+       "Modifier lemah: a bit, a little, slightly (perbedaan kecil) — a bit taller, slightly more expensive.",
+       "As...as (kesetaraan): He's as tall as his brother. / She doesn't work as hard as him.",
+       "Gradasi: not quite as fast, almost as fast, nowhere near as fast as."
+     ],
+     goals:[
+       "Bisa menyusun perbandingan kompleks dengan modifier yang tepat sesuai besar-kecilnya perbedaan",
+       "Menguasai struktur 'the more...the more' untuk hubungan proporsional dua hal"
+     ],
+     ex:[{en:"The more you practise, the better you get. It's getting harder and harder.",id:""}],
      res:['Test-English.com']}
   ]},
 
@@ -2469,6 +2797,70 @@ const DEFAULT_CUR=[
        "Mampu mendeteksi pergeseran nuansa makna esai hanya dengan melihat perubahan bentuk kata kerjanya"
      ],
      ex:[{en:"She has been working here since 2020. By next week, I'll have finished the project.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-used-to-all',name:"Used to, be used to, get used to: Tiga ekspresi berbeda",
+     desc:"Tiga ekspresi 'used to' yang artinya sama sekali berbeda — wajib dipisah dengan tegas agar tidak salah paham.",
+     learn:[
+       "USED TO + V1: kebiasaan/keadaan MASA LALU yang sudah tidak berlaku (hanya past tense) — I used to live in Bandung.",
+       "BE USED TO + noun/-ing: TERBIASA dengan sesuatu SEKARANG, terasa normal — I'm used to working nights.",
+       "GET USED TO + noun/-ing: PROSES menjadi terbiasa, sedang berlangsung — I'm getting used to the new system.",
+       "Bisa dalam tense apapun: I was used to it. (dulu terbiasa) / I'll get used to it. (akan jadi terbiasa)",
+       "Kesalahan fatal: I'm used to wake up early ✗ → I'm used to waking up early ✓ (wajib -ing setelah be used to)"
+     ],
+     goals:[
+       "Tidak tertukar lagi antara used to (kebiasaan lampau) dan be/get used to (terbiasa sekarang/proses)",
+       "Bisa menjelaskan adaptasi diri terhadap rutinitas baru secara akurat dalam berbagai tense"
+     ],
+     ex:[{en:"I used to hate coffee. Now I'm used to drinking it. I'm getting used to the new schedule.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-would-used-to',name:"Would and used to: Kebiasaan masa lalu berulang",
+     desc:"Perbedaan kapan 'would' dan 'used to' bisa dipakai bergantian, dan kapan hanya 'used to' yang boleh dipakai.",
+     learn:[
+       "KEDUANYA bisa untuk kebiasaan masa lalu yang berulang: Every Sunday I used to/would go to the market.",
+       "HANYA 'used to' untuk KEADAAN masa lalu (state, bukan aksi): She used to be shy. ✓ (BUKAN: She would be shy ✗)",
+       "HANYA 'used to' saat mengontraskan dengan masa kini: I used to smoke, but I don't anymore. (would tidak bisa dipakai di sini)",
+       "'Would' sering dipakai dalam narasi yang nostalgia/literer: Every evening she would sit by the window and read.",
+       "Pola narasi: 'used to' MEMBUKA cerita masa lalu, lalu 'would' MELANJUTKAN dengan detail kebiasaan."
+     ],
+     goals:[
+       "Bisa menulis narasi nostalgia masa lalu dengan kombinasi used to dan would secara natural",
+       "Paham kapan 'would' TIDAK BOLEH dipakai (untuk keadaan/state, bukan aksi berulang)"
+     ],
+     ex:[{en:"She used to be shy. Every evening she would sit by the window and read for hours.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-do-make',name:"Do or Make: Pendalaman collocations",
+     desc:"Review lengkap collocation 'do' dan 'make' di level B1+ dengan lebih banyak contoh idiomatik.",
+     learn:[
+       "DO: aktivitas/tugas/proses — do homework, do exercise, do business, do your best, do a course, do research.",
+       "MAKE: menciptakan/menghasilkan — make a decision, make a mistake, make progress, make an effort, make money.",
+       "Idiom khusus: make do (= bertahan dengan apa yang ada), do well (= berhasil/sukses), make sense (= logis).",
+       "Tes cepat: jika ada HASIL/PRODUK nyata → make. Jika berupa PROSES/AKTIVITAS → do.",
+       "Latihan kontekstual: She made a decision to do a course in business. He always does his best."
+     ],
+     goals:[
+       "Hafal collocation do/make untuk konteks bisnis dan akademik tingkat menengah",
+       "Bisa membedakan secara cepat tanpa ragu kapan harus pakai do vs make"
+     ],
+     ex:[{en:"She made a decision to do a course. He did his best but made mistakes.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-aux-verbs',name:"Auxiliary verbs: Berbagai fungsi lanjutan",
+     desc:"Semua fungsi auxiliary verbs di level B1+ — emphasis, substitusi, persetujuan, dan ellipsis.",
+     learn:[
+       "EMPHASIS: menambah tekanan pada DO/DID untuk menegaskan — 'You don't like it.' → 'I DO like it!'",
+       "SUBSTITUTION: mengganti frasa kerja agar tidak diulang — She works harder than I DO. (do = work)",
+       "AGREEMENT: So + auxiliary (setuju positif) / Neither + auxiliary (setuju negatif) — So am I. / Neither can she.",
+       "SHORT ANSWERS: selalu pakai auxiliary — Have you eaten? — Yes, I have.",
+       "ELLIPSIS: menghilangkan kata kerja yang sudah jelas dari konteks — I'll go if you will. (will = will go)"
+     ],
+     goals:[
+       "Menguasai semua fungsi auxiliary verbs dalam satu sistem terpadu",
+       "Bisa menghindari pengulangan kata kerja secara natural dalam percakapan panjang"
+     ],
+     ex:[{en:'"You don\'t like it." — "I DO like it!" / She works harder than I do. / So do I!',id:""}],
      res:['Test-English.com']}
   ]},
 
@@ -2519,6 +2911,39 @@ const DEFAULT_CUR=[
        "Tepat menempatkan posisi kata already, still, dan yet sesuai dengan jenis struktur kalimatnya"
      ],
      ex:[{en:"She's already left. He's still waiting. I haven't started yet. She still hasn't called!",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-participle-adj',name:"Participles as adjectives: -ed / -ing review lanjutan",
+     desc:"Pendalaman kata sifat dari participle dengan daftar pasangan lebih lengkap dan modifikasi adverb.",
+     learn:[
+       "-ING adjective: menjelaskan PEMICU perasaan (cause) — an interesting book, a tiring day, a frightening experience.",
+       "-ED adjective: menjelaskan PERASAAN yang dialami (feeling) — an interested student, a tired person, a frightened child.",
+       "Daftar lengkap pasangan: boring/bored, exciting/excited, surprising/surprised, disappointing/disappointed, confusing/confused, exhausting/exhausted, annoying/annoyed, embarrassing/embarrassed.",
+       "Dimodifikasi adverb: deeply interested, completely exhausted, rather boring.",
+       "Tes cepat: tanyakan apakah objek ini MENYEBABKAN perasaan (-ing) atau MERASAKAN perasaan itu (-ed)."
+     ],
+     goals:[
+       "Bisa mendeskripsikan pengalaman dengan variasi kata sifat participle yang lebih luas",
+       "Tidak salah lagi memodifikasi participle adjective dengan adverb yang tepat"
+     ],
+     ex:[{en:"It was an exhausting race. The exhausted runners collapsed at the finish line.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-so-such',name:"So, such (a), so much, so many: Review lanjutan",
+     desc:"Pendalaman penggunaan so/such di level B1+ dengan struktur result clause yang lebih kompleks.",
+     learn:[
+       "SO + adjective/adverb: so clever, so quickly — tanpa noun setelahnya.",
+       "SUCH A/AN + adj + singular countable noun: such a good idea, such an interesting place.",
+       "SUCH + adj + plural/uncountable noun (tanpa artikel): such beautiful flowers, such lovely weather.",
+       "SO MUCH + uncountable: so much noise / SO MANY + countable plural: so many problems.",
+       "Result clause (akibat): It was so dark THAT I couldn't see. / Such a mess THAT nobody wanted to help.",
+       "Kesalahan umum: It was so a beautiful day ✗ → It was such a beautiful day ✓"
+     ],
+     goals:[
+       "Bisa menyusun kalimat result clause kompleks dengan so/such...that secara fasih",
+       "Tidak salah struktur antara so + adjective vs such a + adjective + noun"
+     ],
+     ex:[{en:"There was such terrible traffic that we were an hour late. It was so complicated!",id:""}],
      res:['Test-English.com']}
   ]},
 
@@ -2651,6 +3076,23 @@ const DEFAULT_CUR=[
   ]},
 
   {name:'5. Struktur Pertanyaan, Penekanan & Urutan Kata Baku (Word Order)',topics:[
+    {id:'b1p-questions-types',name:"Questions: Berbagai tipe pertanyaan lanjutan",
+     desc:"Semua tipe pertanyaan bahasa Inggris secara comprehensive di level B1+ — direct, subject/object, tag, negative, dan rhetorical.",
+     learn:[
+       "DIRECT questions: Do you like? Where are you going? Have you?",
+       "SUBJECT questions (wh-word = subjek, tanpa auxiliary): Who called? What happened?",
+       "OBJECT questions (wh-word = objek, perlu auxiliary): Who did you call? What did she say?",
+       "TAG questions (auxiliary di akhir, polaritas berlawanan): She's coming, isn't she?",
+       "NEGATIVE questions (mengharapkan persetujuan/kejutan): Isn't it beautiful? Don't you agree?",
+       "RHETORICAL questions (tidak mengharapkan jawaban): Who cares? Why bother?"
+     ],
+     goals:[
+       "Bisa membedakan dan menggunakan semua tipe pertanyaan secara fleksibel sesuai konteks percakapan",
+       "Menguasai perbedaan subject question (no aux) vs object question (perlu aux)"
+     ],
+     ex:[{en:"Who told you that? (subject Q = no do) vs Who did you tell? (object Q = did needed)",id:""}],
+     res:['Test-English.com']},
+
     {id:'b1p-indirect',name:"Indirect questions: Pola interogasi tingkat tinggi",
      desc:"Menyusun kalimat tanya tidak langsung yang super sopan dan formal demi menjaga tata krama saat berbicara dengan orang asing, atasan kerja, atau klien bisnis.",
      learn:[
@@ -2770,6 +3212,38 @@ const DEFAULT_CUR=[
      ex:[{en:"Whatever you decide, I'll support you. However tired I am, I always finish my work.",id:""}],
      res:['Test-English.com']},
 
+    {id:'b1p-zero-first',name:"Zero and first conditional: Review & future time clauses",
+     desc:"Mendalami zero conditional (fakta umum) dan first conditional (kemungkinan nyata) dengan variasi struktur klausa waktu.",
+     learn:[
+       "ZERO CONDITIONAL: If/When + present, present — fakta umum atau hukum alam: If you heat water to 100°C, it boils.",
+       "Zero conditional juga untuk instruksi: If you have problems, call this number.",
+       "FIRST CONDITIONAL: If + present simple, will + V1 — kemungkinan nyata di masa depan.",
+       "Future time clauses (bukan hanya if): when, as soon as, before, after, until, once + present simple.",
+       "Alternatif untuk if: unless (jika tidak), as long as, provided that, even if."
+     ],
+     goals:[
+       "Bisa membedakan fakta universal (zero) dengan kemungkinan nyata (first conditional)",
+       "Lancar menggunakan berbagai time clause selain 'if' untuk menyatakan kondisi masa depan"
+     ],
+     ex:[{en:"Once she arrives, we'll start. As soon as I know, I'll tell you. Unless it rains, we'll go.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-second-third',name:"Second and third conditional: Pengandaian tidak nyata",
+     desc:"Membandingkan dua jenis conditional tidak nyata — second (sekarang/masa depan) dan third (masa lalu).",
+     learn:[
+       "SECOND: If + past simple, would + V1 — membayangkan PRESENT/FUTURE yang tidak nyata: If I had wings, I'd fly.",
+       "THIRD: If + past perfect, would have + pp — membayangkan PAST yang berbeda: If I had studied, I would have passed.",
+       "Perbedaan kunci: second = situasi sekarang yang berbeda, third = situasi masa lalu yang berbeda.",
+       "Alternatif klausa hasil: could/might (second), could have/might have (third).",
+       "Kedua tipe sama-sama pakai 'would' di klausa hasil, tapi bentuk kata kerjanya berbeda."
+     ],
+     goals:[
+       "Tidak bingung lagi membedakan kapan memakai second vs third conditional",
+       "Bisa membayangkan dan menjelaskan skenario hipotetis di masa kini dan masa lalu secara akurat"
+     ],
+     ex:[{en:"If I had wings, I'd fly. (2nd = sekarang imajiner) / If I had studied, I would have passed. (3rd = masa lalu imajiner)",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
     {id:'b1p-when-future',name:"When I do vs When I have done: Kronologi klausa waktu",
      desc:"Analisis perbedaan super halus dalam klausa waktu masa depan: Kapan harus memicu Present Simple biasa vs Present Perfect guna menentukan syarat mutlak pengerjaan tugas.",
      learn:[
@@ -2784,6 +3258,73 @@ const DEFAULT_CUR=[
        "Paham pergeseran makna halus saat menyisipkan aspek perfektif di dalam klausa waktu penunjuk masa depan"
      ],
      ex:[{en:"I'll start cooking when she's arrived. (= Menunggu dia beres tiba dulu) vs Call me when you get home (= Instan saat tiba).",id:""}],
+     res:['Test-English.com']}
+  ]},
+
+  {name:'7. Pola Kata Kerja Ganda, Preferensi & Penentu Jumlah Lanjutan',topics:[
+    {id:'b1p-gerund-inf',name:"Gerund or infinitive: Verb patterns lanjutan",
+     desc:"Pola verb pattern lengkap di level B1+ dengan lebih banyak kata kerja dan kasus perbedaan makna.",
+     learn:[
+       "Verbs + to-infinitive: want, need, hope, decide, plan, agree, refuse, promise, offer, manage, fail, afford.",
+       "Verbs + gerund (-ing): enjoy, finish, mind, avoid, suggest, keep, consider, risk, miss, imagine, practise.",
+       "Verbs + KEDUANYA (makna SAMA): like, love, hate, start, begin, continue, prefer.",
+       "Verbs + KEDUANYA (makna BERBEDA): stop, remember, forget, try, regret, mean — wajib hafal perbedaan maknanya.",
+       "Setelah PREPOSISI selalu -ing: interested in doing, good at cooking, after finishing, without saying."
+     ],
+     goals:[
+       "Menguasai verb pattern lengkap untuk kata kerja paling sering dipakai di level menengah-atas",
+       "Bisa membedakan makna verb+gerund vs verb+infinitive untuk kata kerja ambigu seperti stop, remember, try"
+     ],
+     ex:[{en:"She regrets saying that. (past action) / She regrets to say that. (formal, present)",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
+    {id:'b1p-would-rather',name:"Would rather, would prefer: Mengekspresikan preferensi",
+     desc:"Berbagai cara menyatakan preferensi secara formal dan informal di level B1+.",
+     learn:[
+       "WOULD RATHER + V1: I'd rather stay home. / I'd rather not go.",
+       "WOULD RATHER + V1 than + V1: I'd rather walk than take the bus.",
+       "WOULD RATHER + past simple (tentang orang lain): I'd rather you didn't tell anyone.",
+       "WOULD PREFER + to-infinitive: I'd prefer to stay home.",
+       "WOULD PREFER...TO...: I'd prefer coffee to tea. / PREFER + -ing + TO + -ing: I prefer walking to driving."
+     ],
+     goals:[
+       "Bisa menyatakan preferensi pribadi dan preferensi tentang tindakan orang lain secara tepat",
+       "Menguasai struktur perbandingan would rather...than dan prefer...to"
+     ],
+     ex:[{en:"I'd rather stay home. I'd rather you didn't mention this to anyone. I'd prefer coffee to tea.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-reporting-verbs',name:"Reporting verbs: Admit doing, refuse to do, etc.",
+     desc:"Reporting verbs dengan pola berbeda-beda — gerund, infinitive, dan that-clause.",
+     learn:[
+       "Verb + to-infinitive: agree, offer, promise, refuse, threaten, decide, fail, manage — He refused to help.",
+       "Verb + -ing: admit, deny, suggest, recommend, consider, mention — He admitted stealing.",
+       "Verb + obj + to-infinitive: tell, ask, advise, warn, encourage, remind — She told me to sit down.",
+       "Verb + that-clause: say, tell, explain, claim, complain, announce, warn, insist — She claimed that she was innocent.",
+       "Beberapa verb bisa pakai -ing ATAU that-clause: She admitted stealing. = She admitted that she had stolen."
+     ],
+     goals:[
+       "Bisa melaporkan perkataan orang lain dengan reporting verb yang sesuai pola gramatikalnya",
+       "Tidak salah menggunakan obj + to-infinitive untuk verb yang tidak boleh diikuti objek langsung (explain, suggest)"
+     ],
+     ex:[{en:"She admitted lying. / He denied having stolen anything. / She told me to leave immediately.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b1p-quantifiers-all',name:"Quantifiers: All, most, both, either, neither, any, no, none",
+     desc:"Sistem quantifier lengkap di level B1+ — semua bentuk dengan pronoun dan determiner.",
+     learn:[
+       "ALL (of): all students (general) | all of the students (spesifik) | all of them (pronoun).",
+       "MOST (of): most people (general) | most of the people (spesifik) | most of them.",
+       "BOTH (of): both parents (2 hal, benar keduanya) | both of them | both...and.",
+       "EITHER: salah satu dari dua, NEITHER: tidak keduanya — Either day works. / Neither answer is correct.",
+       "ANY (of) / NO / NONE (of): any student (terbuka) | no students came | none of them came.",
+       "Posisi mid-position: They all agreed. / We both saw it. / She has none."
+     ],
+     goals:[
+       "Menguasai sistem quantifier lengkap untuk menyatakan proporsi dan jumlah dengan presisi",
+       "Bisa menggunakan quantifier dengan pronoun secara natural dalam percakapan"
+     ],
+     ex:[{en:"All of them passed. Most of the food was eaten. Neither option is ideal.",id:""}],
      res:['Test-English.com']}
   ]}
 ]},
@@ -2858,6 +3399,23 @@ const DEFAULT_CUR=[
   ]},
 
   {name:'2. Spekulasi Logika, Persepsi Indra & Kata Kerja Fleksibel',topics:[
+    {id:'b2-modal-permission',name:"Modal verbs: permission, obligation, prohibition, necessity",
+     desc:"Sistem modal lengkap di level B2 — semua nuansa izin, kewajiban, larangan, dan kebutuhan termasuk bentuk masa lalu.",
+     learn:[
+       "PERMISSION (urutan formalitas naik): can / could / may / might — Can I sit here? / May I help you?",
+       "OBLIGATION: must (personal) / have to (eksternal) / need to (kebutuhan).",
+       "TIDAK WAJIB: don't have to / needn't / don't need to — semuanya berarti opsional.",
+       "PROHIBITION: can't / mustn't — tidak diperbolehkan.",
+       "PAST FORMS: had to (kewajiban lampau), was/were allowed to (izin lampau), didn't have to (tidak wajib lampau), couldn't (dilarang lampau).",
+       "Kombinasi deduksi: He must have left — the lights are off. (deduksi present tentang past)"
+     ],
+     goals:[
+       "Menguasai sistem modal lengkap untuk semua nuansa izin dan kewajiban termasuk bentuk lampau",
+       "Bisa mengekspresikan aturan formal dan informal sesuai konteks profesional"
+     ],
+     ex:[{en:"Students must submit work by Friday. You don't have to stay late, but you're welcome to.",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
     {id:'b2-speculation-deduction',name:"Speculation and deduction: Sistem penalaran komprehensif",
      desc:"Menguasai seluruh spektrum kata kerja modal spekulasi untuk menarik kesimpulan logis lintas dimensi waktu (Masa Sekarang dan Masa Lalu) bersandarkan sisa bukti konkret.",
      learn:[
@@ -3019,6 +3577,152 @@ const DEFAULT_CUR=[
      ],
      ex:[{en:"She was given a promotion. (Pola bentuk 1) / A promotion was given to her. (Pola bentuk 2)",id:""}],
      res:['Test-English.com']},
+
+    {id:'b2-have-aux',name:"Have: Auxiliary atau main verb?",
+     desc:"Dua fungsi 'have' yang berbeda — sering membingungkan karena bentuknya identik tapi fungsinya berbeda total.",
+     learn:[
+       "HAVE sebagai AUXILIARY (perfect tenses, tanpa do/does/did): I HAVE seen it. / Have you eaten?",
+       "HAVE sebagai MAIN VERB (kepemilikan, pakai do/does/did): Do you have a car? / She doesn't have time.",
+       "HAVE sebagai MAIN VERB (aktivitas): have breakfast, have a shower, have fun, have a meeting.",
+       "HAVE GOT (kepemilikan, British English): I've got a problem. (TIDAK bisa untuk aktivitas: I've got a shower setiap hari ✗)",
+       "CAUSATIVE HAVE: I had my photo taken. / I'm having my flat painted."
+     ],
+     goals:[
+       "Bisa membedakan have sebagai auxiliary vs main verb dalam konteks yang berbeda",
+       "Menguasai causative have untuk menyatakan jasa yang dilakukan orang lain"
+     ],
+     ex:[{en:"Have you had lunch? (main verb - activity) / Have you had any messages? (auxiliary - perfect)",id:""}],
+     res:['Test-English.com']}
+  ]},
+
+  {name:'4b. Pola Kata Kerja Kompleks & Hubungan Klausa (Patterns)',topics:[
+    {id:'b2-verb-obj-inf',name:"Verb + object + infinitive/gerund: Pola lanjutan",
+     desc:"Pola kata kerja kompleks dengan objek — sangat penting untuk FCE Use of English.",
+     learn:[
+       "Verb + obj + to-infinitive: want, ask, tell, advise, encourage, remind, allow, force, expect — She told me to sit down.",
+       "Causative: make/let/have + obj + bare infinitive — She made me apologise. / Let him go.",
+       "Sense verb + obj + bare infinitive (aksi lengkap): I saw him leave.",
+       "Sense verb + obj + -ing (aksi berlangsung): I saw him leaving.",
+       "Verb + obj + past participle: I want it done. / She had her nails painted."
+     ],
+     goals:[
+       "Menguasai pola verb+object+infinitive/gerund untuk kalimat kompleks tingkat lanjut",
+       "Bisa membedakan causative make/let/have dengan nuansa makna masing-masing"
+     ],
+     ex:[{en:"She made me apologise. I watched them playing. I had my photo taken.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b2-gerunds-complex',name:"Gerunds and infinitives: Complex forms",
+     desc:"Bentuk gerund/infinitive lanjutan — perfect, passive, dan bentuk negatif.",
+     learn:[
+       "Perfect infinitive (to have done): He appears to have forgotten. / I'm glad to have met you.",
+       "Perfect gerund (having done): Having finished, she left. / I regret having said that.",
+       "Passive infinitive (to be done): It needs to be fixed. / I don't want to be ignored.",
+       "Passive gerund (being done): I don't like being interrupted. / She hates being watched.",
+       "Bentuk negatif: not doing / not to do — I decided not to go. / She regrets not having tried."
+     ],
+     goals:[
+       "Bisa menggunakan bentuk perfect dan passive dari gerund/infinitive secara akurat",
+       "Menguasai struktur kompleks yang sering muncul di FCE writing dan reading"
+     ],
+     ex:[{en:"He appears to have forgotten. She regrets not having studied harder.",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
+    {id:'b2-reflexive-reciprocal',name:"Reflexive and reciprocal pronouns: Review lanjutan",
+     desc:"Review lengkap di level B2 — semua kegunaan reflexive dan perbedaan dengan reciprocal pronoun.",
+     learn:[
+       "Reflexive: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves.",
+       "Fungsi 1 (aksi ke diri sendiri): She cut herself. He burned himself.",
+       "Fungsi 2 (penegasan tanpa bantuan): I did it myself. She organised it herself.",
+       "BY + reflexive = sendirian: I live by myself. He did it by himself.",
+       "Reciprocal 'each other' (2 orang): They love each other. / 'one another' (2+ orang, formal)."
+     ],
+     goals:[
+       "Menguasai semua fungsi reflexive pronoun untuk emphasis dan aksi diri sendiri",
+       "Tidak tertukar antara reflexive (untuk diri sendiri) dan reciprocal (untuk dua arah)"
+     ],
+     ex:[{en:"She organised everything herself. They borrowed each other's notes. We blamed ourselves.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b2-generic-pronouns',name:"Generic or common-gender pronouns",
+     desc:"Merujuk pada orang secara umum — tidak spesifik, bukan orang tertentu.",
+     learn:[
+       "THEY/THEM/THEIR (singular generic, makin standar dipakai): When someone calls, tell them I'm busy.",
+       "YOU (generic, nasihat/kebenaran umum): You need a visa to enter the country.",
+       "ONE (formal/literer): One should be careful. One never knows.",
+       "PEOPLE (paling natural informal): People often underestimate the difficulty.",
+       "WE (inklusif): We all make mistakes. / In England, we drive on the left."
+     ],
+     goals:[
+       "Bisa merujuk pada orang secara umum tanpa menyebut gender spesifik",
+       "Menguasai penggunaan they/them sebagai kata ganti generik tunggal yang modern"
+     ],
+     ex:[{en:"Everyone should bring their own lunch. When someone calls, tell them I'm busy.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b2-compound-nouns',name:"Compound nouns and possessive forms",
+     desc:"Membentuk dan menggunakan compound nouns secara benar — stress, struktur, dan possessive.",
+     learn:[
+       "Compound nouns (noun + noun): car park, credit card, football, bedroom.",
+       "Stress pada elemen PERTAMA: CAR park, CREDIT card, BEDroom.",
+       "Possessive 's: John's book, the company's policy, the team's performance.",
+       "Compound vs possessive: car park (compound) vs the car's engine (possessive).",
+       "Double possessive: a friend of mine, a book of hers."
+     ],
+     goals:[
+       "Bisa membentuk compound noun dengan stress yang tepat",
+       "Menguasai perbedaan compound noun dan possessive 's"
+     ],
+     ex:[{en:"The car park was full. I need a week's notice. Yesterday's meeting was productive.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b2-possessive-time',name:"Possessive 's with time expressions: Two hours' walk",
+     desc:"Genitif waktu — pola yang sering diabaikan tapi penting untuk akurasi tata bahasa B2.",
+     learn:[
+       "Struktur: periode waktu + 's + noun — a day's work, a week's holiday, an hour's journey.",
+       "Plural time + ' (tanpa s tambahan): two hours' walk, three weeks' holiday, five minutes' drive.",
+       "Contoh: It was a two-hour walk. = It was two hours' walk. (compound adj vs possessive)",
+       "Juga dipakai untuk: today's, yesterday's, tomorrow's — today's news, yesterday's meeting.",
+       "Mengapa possessive? Bahasa Inggris menganggap waktu 'memiliki' noun yang terkait dengannya."
+     ],
+     goals:[
+       "Bisa menggunakan possessive 's untuk ekspresi waktu secara akurat",
+       "Tidak salah menambahkan s ekstra pada plural time possessive"
+     ],
+     ex:[{en:"It's a two hours' walk from here. After a good night's sleep, everything seemed clearer.",id:""}],
+     res:['Test-English.com']},
+
+    {id:'b2-relative-clauses',name:"Relative clauses: Defining and non-defining — Review B2",
+     desc:"Review lengkap semua jenis relative clause di level B2 termasuk struktur formal.",
+     learn:[
+       "Defining (tanpa koma): informasi penting — The man who called was John.",
+       "Non-defining (dengan koma): informasi tambahan — My sister, who lives in Leeds, is a teacher.",
+       "Which merujuk pada keseluruhan klausa sebelumnya: She passed, which surprised everyone.",
+       "Preposisi + which (formal): The book in which I found it was old.",
+       "Where (tempat), when (waktu), why (alasan), whose (kepemilikan) dalam relative clause."
+     ],
+     goals:[
+       "Menguasai semua jenis relative clause termasuk struktur formal dengan preposisi",
+       "Bisa menulis kalimat kompleks dengan informasi tambahan yang elegan"
+     ],
+     ex:[{en:"The reason why she left is unclear. She was late, which caused problems.",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
+    {id:'b2-there-it',name:"'There' and 'it': Preparatory subjects",
+     desc:"'There' dan 'it' sebagai preparatory/dummy subject — penggunaan lanjutan di level B2.",
+     learn:[
+       "IT sebagai preparatory subject + to-infinitive: It's difficult to understand.",
+       "IT + seem/appear + adj/that: It seems strange. / It appears that she's left.",
+       "THERE untuk existence: There seem to be problems. / There appears to be no solution.",
+       "Cleft sentences dengan IT: It was John who called. / It's the price that bothers me.",
+       "IT = cuaca/waktu/jarak: It's raining. It's 3pm. It's 5km."
+     ],
+     goals:[
+       "Menguasai penggunaan it dan there sebagai dummy subject dalam berbagai konteks",
+       "Bisa membentuk cleft sentence dengan it untuk penekanan"
+     ],
+     ex:[{en:"It's impossible to predict. There appear to be several issues. It was her idea!",id:""}],
+     res:['Test-English.com']}
   ]},
 
   {name:'5. Ikatan Paket Mati Kata & Strategi Penghematan Kalimat',topics:[
@@ -3149,10 +3853,43 @@ const DEFAULT_CUR=[
        "Akurat memanggil kata kerja bantu (should/were/had) saat memicu pembalikan posisi kalimat pengandaian tanpa kata 'If'"
      ],
      ex:[{en:"Not only did she win, but she also broke the record. / Had I known, I would have helped.",id:"Inversi Adverbial Negatif vs Inversi Conditional Tipe 3 formal."}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
+    {id:'b2-contrast-purpose',name:"Clauses of contrast, purpose, reason and result: Review lengkap",
+     desc:"Semua jenis clause penghubung logis di level B2 — kontras, tujuan, alasan, dan hasil dengan register yang tepat.",
+     learn:[
+       "CONTRAST + klausa: although/even though/while/whereas — Whereas he prefers tea, I prefer coffee.",
+       "CONTRAST + noun/-ing: despite/in spite of/regardless of — Despite feeling ill, she went to work.",
+       "PURPOSE + infinitive: to, in order to, so as to (so as not to untuk negatif).",
+       "REASON: because (informal) / since, as (formal) / because of, due to + noun.",
+       "RESULT: so + klausa / consequently, therefore (formal) / so...that, such...that.",
+       "Register: pilih konektor sesuai formal/informal — because/so vs therefore/consequently."
+     ],
+     goals:[
+       "Menguasai semua jenis clause penghubung dengan register yang sesuai konteks",
+       "Bisa menulis esai argumentatif dengan variasi konektor yang kaya dan tepat"
+     ],
+     ex:[{en:"Despite feeling ill, she went to work so that she wouldn't miss the deadline.",id:""}],
+     res:['Test-English.com','Cambridge Grammar in Use']},
+
+    {id:'b2-discourse-markers',name:"Discourse markers: Linking words untuk teks kohesif",
+     desc:"Kata penghubung untuk membuat teks tulisan dan lisan yang kohesif di level B2 — penting untuk FCE Writing.",
+     learn:[
+       "ADDITION: furthermore, moreover, in addition, besides, what is more.",
+       "CONTRAST: however, nevertheless, on the other hand, that said, nonetheless.",
+       "RESULT: consequently, therefore, as a result, hence, thus.",
+       "CONCESSION: admittedly, granted, it's true that...but.",
+       "CLARIFICATION: in other words, that is to say, namely.",
+       "CONCLUSION: to sum up, in conclusion, all in all, on balance."
+     ],
+     goals:[
+       "Bisa menyusun esai FCE yang kohesif dengan discourse marker yang variatif",
+       "Menguasai register formal untuk linking words dalam tulisan akademik"
+     ],
+     ex:[{en:"The product is expensive; nevertheless, demand remains high. Furthermore, quality has improved.",id:""}],
      res:['Test-English.com','Cambridge Grammar in Use']}
   ]}
 ]},
-/* ══════ C1 ══════ */
 /* ══════ C1 ══════ */
 {lv:'C1',title:'C1 — Advanced',sub:'Cambridge Advanced (CAE) · Test-English.com C1',cats:[
   {name:'1. Aspek Kata Kerja Lanjutan & Modalitas Karakteristik',topics:[
@@ -3684,6 +4421,7 @@ function openEditTopic(li,ci,tid){
   document.getElementById('eLv').disabled=true;
   document.getElementById('eDesc').value=t.desc||'';
   document.getElementById('eLearn').value=(t.learn||[]).join('\n');
+  document.getElementById('eGoals').value=(t.goals||[]).join('\n');
   document.getElementById('eEx').value=(t.ex||[]).map(e=>e.id?`${e.en} | ${e.id}`:e.en).join('\n');
   document.getElementById('eRes').value=(t.res||[]).join('\n');
   document.getElementById('eOverlay').classList.add('open');
@@ -3698,6 +4436,7 @@ function openAddTopic(li,ci){
   document.getElementById('eLv').disabled=true;
   document.getElementById('eDesc').value='';
   document.getElementById('eLearn').value='';
+  document.getElementById('eGoals').value='';
   document.getElementById('eEx').value='';
   document.getElementById('eRes').value='Test-English.com\nBritish Council Grammar';
   document.getElementById('eOverlay').classList.add('open');
@@ -3713,6 +4452,7 @@ function openAddCat(li){
   document.getElementById('eLv').disabled=true;
   document.getElementById('eDesc').value='';
   document.getElementById('eLearn').value='';
+  document.getElementById('eGoals').value='';
   document.getElementById('eEx').value='';
   document.getElementById('eRes').value='';
   document.getElementById('eOverlay').classList.add('open');
@@ -3727,6 +4467,7 @@ function openEditCat(li,ci){
   document.getElementById('eLv').disabled=true;
   document.getElementById('eDesc').value='';
   document.getElementById('eLearn').value='';
+  document.getElementById('eGoals').value='';
   document.getElementById('eEx').value='';
   document.getElementById('eRes').value='';
   document.getElementById('eOverlay').classList.add('open');
@@ -3742,6 +4483,7 @@ function openAddLevel(){
   document.getElementById('eLv').disabled=false;
   document.getElementById('eDesc').value='';
   document.getElementById('eLearn').value='';
+  document.getElementById('eGoals').value='';
   document.getElementById('eEx').value='';
   document.getElementById('eRes').value='';
   document.getElementById('eOverlay').classList.add('open');
@@ -3756,6 +4498,7 @@ function openEditLevel(li){
   document.getElementById('eLv').disabled=false;
   document.getElementById('eDesc').value='';
   document.getElementById('eLearn').value='';
+  document.getElementById('eGoals').value='';
   document.getElementById('eEx').value='';
   document.getElementById('eRes').value='';
   document.getElementById('eOverlay').classList.add('open');
@@ -3777,12 +4520,14 @@ function saveEdit(){
     t.name=name;
     t.desc=document.getElementById('eDesc').value.trim();
     t.learn=document.getElementById('eLearn').value.split('\n').map(s=>s.trim()).filter(Boolean);
+    t.goals=document.getElementById('eGoals').value.split('\n').map(s=>s.trim()).filter(Boolean);
     t.ex=document.getElementById('eEx').value.split('\n').map(s=>s.trim()).filter(Boolean).map(s=>{const p=s.split('|');return{en:p[0]?.trim()||s,id:p[1]?.trim()||''};});
     t.res=document.getElementById('eRes').value.split('\n').map(s=>s.trim()).filter(Boolean);
   } else if(mode==='add-topic'){
     const newT={
       id:uid(), name, desc:document.getElementById('eDesc').value.trim(),
       learn:document.getElementById('eLearn').value.split('\n').map(s=>s.trim()).filter(Boolean),
+      goals:document.getElementById('eGoals').value.split('\n').map(s=>s.trim()).filter(Boolean),
       ex:document.getElementById('eEx').value.split('\n').map(s=>s.trim()).filter(Boolean).map(s=>{const p=s.split('|');return{en:p[0]?.trim()||s,id:p[1]?.trim()||''};}),
       res:document.getElementById('eRes').value.split('\n').map(s=>s.trim()).filter(Boolean)
     };
